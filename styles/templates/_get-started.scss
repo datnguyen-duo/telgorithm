@@ -1,0 +1,100 @@
+.page-template-get-started-container {
+    padding-bottom: 154px;
+
+    .hero-section {
+        padding-top: 230px;
+        padding-bottom: 80px;
+        position: relative;
+        margin-bottom: 276px;
+        z-index: 1;
+        background-color: $pink;
+
+        .section-content {
+            display: flex;
+            align-items: center;
+
+            .left {
+                width: 53%;
+                padding-right: 164px;
+                box-sizing: border-box;
+
+                .title {
+                    font-family: $font-3-bold;
+                    font-size: 95px;
+                    color: $dark-blue;
+                    line-height: 1em;
+                    margin-bottom: 100px;
+                }
+
+                .list {
+                    max-width: 600px;
+
+                    li {
+                        margin-bottom: 15px;
+                        display: flex;
+                        align-items: flex-start;
+
+                        &:last-of-type {
+                            margin-bottom: 0;
+                        }
+
+                        img {
+                            margin-right: 10px;
+                            position: relative;
+                            top: -1px;
+                        }
+
+                        span {
+                            @include p2();
+                            line-height: 1.4em;
+
+                            b {
+                                font-family: $font-bold;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .right {
+                width: 47%;
+
+                .image-holder {
+                    position: relative;
+                    padding-top: 82.6%;
+                    border-radius: 25px;
+                    overflow: hidden;
+
+                    img {
+                        @include cropped-img();
+                    }
+                }
+            }
+        }
+    }
+
+    .form-section {
+        margin: auto;
+        max-width: 1140px;
+
+        .title {
+            font-family: $font-3-bold;
+            font-size: 60px;
+            color: $dark-blue;
+            text-align: center;
+            line-height: 1.3em;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-family: $font-bold;
+            font-size: 22px;
+            color: $dark-blue;
+            margin-top: 18px;
+        }
+
+        form {
+            margin-top: 115px;
+        }
+    }
+}

@@ -1,0 +1,26 @@
+@mixin include-font($family: arial, $weight: normal, $style: normal) {
+    $font-path: "../telgorithm/fonts/";
+
+    @font-face {
+        font-family: $family;
+        src:url('#{$font-path+$family}.eot');
+        src:url('#{$font-path+$family}.eot?#iefix') format('embedded-opentype'),
+        url('#{$font-path+$family}.woff') format('woff'),
+        url('#{$font-path+$family}.ttf') format('truetype');
+        font-weight: $weight;
+        font-style: $style;
+        font-display: swap;
+    }
+}
+
+$fonts: 'Grosa-Bold', 'Grosa-Regular', 'GTHaptik-Medium', 'GTHaptik-MediumOblique', 'PPEiko-Heavy';
+
+@each $font in $fonts {
+    @include include-font(#{$font});
+}
+
+$font-bold: 'Grosa-Bold', sans-serif;
+$font-regular: 'Grosa-Regular', sans-serif;
+$font-2-medium: 'GTHaptik-Medium', sans-serif;
+$font-2-medium-oblique: 'GTHaptik-MediumOblique', sans-serif;
+$font-3-bold: 'PPEiko-Heavy', sans-serif;

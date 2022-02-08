@@ -1,0 +1,62 @@
+.page-template-contact-container {
+    padding-top: 337px;
+    padding-bottom: 137px;
+
+    .hero-section {
+        max-width: 1200px;
+        margin: auto;
+        text-align: center;
+
+        .title {
+            font-family: $font-3-bold;
+            font-size: 96px;
+            margin-bottom: 55px;
+        }
+
+        .description {
+            font-family: $font-2-medium;
+            font-size: 22px;
+        }
+    }
+
+    .form-section {
+        margin: 160px auto 0;
+        max-width: 1140px;
+
+        .form-selector {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 80px;
+
+            li {
+                @include h3();
+                margin-right: 30px;
+                cursor: pointer;
+
+                &:last-of-type {
+                    margin-right: 0;
+                }
+
+                &.active {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .forms {
+            @include transition(all, 300ms);
+
+            &.loading {
+                opacity: 0;
+            }
+        }
+
+        .form-container {
+            display: none;
+
+            &.active {
+                display: block;
+            }
+        }
+    }
+}

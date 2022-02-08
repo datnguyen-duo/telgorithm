@@ -1,0 +1,95 @@
+.template-part-posts-section {
+    .title {
+        color: $dark-blue;
+        text-align: center;
+
+        &:not(.type_2) {
+            font-family: $font-3-bold;
+            font-size: 60px;
+            margin-bottom: 78px;
+        }
+
+        &.type_2 {
+            font-family: $font-2-medium;
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 55px;
+        }
+    }
+
+    .posts {
+        display: flex;
+        width: calc( 100% + 60px );
+        margin-left: -30px;
+
+        .post-container {
+            width: 33.333%;
+            padding: 0 30px;
+            box-sizing: border-box;
+
+            .post {
+                display: block;
+                background-color: #fff;
+                border: solid 1px $dark-blue;
+                border-radius: 30px;
+                overflow: hidden;
+
+                $imageHeight: 58.7%;
+                $linkHeight: 23px;
+                $linkMarginTop: 10px;
+
+                &:hover {
+                    .post-image {
+                        padding-top: calc(#{$imageHeight} - (#{$linkHeight} + #{$linkMarginTop}));
+                    }
+
+                    .post-info {
+                        .link {
+                            height: $linkHeight;
+                            margin-top: $linkMarginTop;
+                        }
+                    }
+                }
+
+                .post-image {
+                    @include transition();
+                    padding-top: $imageHeight;
+                    position: relative;
+
+                    img {
+                        @include cropped-img();
+                        z-index: 0;
+                    }
+                }
+
+                .post-info {
+                    box-sizing: border-box;
+                    padding: 34px 40px 55px;
+
+                    .tag {
+                        background-color: $cream;
+                    }
+
+                    .post-date {
+                        z-index: 2;
+                        margin-bottom: 12px;
+                    }
+
+                    .post-title {
+                        font-family: $font-2-medium;
+                        font-size: 22px;
+                        line-height: 1.3em;
+                        color: $dark-blue;
+                    }
+
+                    .link {
+                        @include transition();
+                        display: block;
+                        height: 0;
+                        overflow: hidden;
+                    }
+                }
+            }
+        }
+    }
+}

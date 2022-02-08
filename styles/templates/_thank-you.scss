@@ -1,0 +1,43 @@
+.page-template-thank-you-container {
+    padding-top: 304px;
+    padding-bottom: 117px;
+
+    .hero-section {
+        .section-content {
+            .image-holder {
+                max-width: 537px;
+                margin: auto;
+                margin-bottom: 54px;
+
+                .image {
+                    position: relative;
+                    padding-top: 79.2%;
+                    border-radius: 25px;
+                    overflow: hidden;
+
+                    img {
+                        @include cropped-img();
+                    }
+                }
+            }
+
+            .title {
+                font-family: $font-3-bold;
+                font-size: 95px;
+                color: $dark-blue;
+                line-height: 1em;
+                text-align: center;
+            }
+        }
+    }
+
+    .template-part-posts-section {
+        margin-top: 218px;
+
+        .section-content {
+            padding-top: 117px;
+
+            border-top: solid 1px #000;
+        }
+    }
+}

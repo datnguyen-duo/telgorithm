@@ -1,0 +1,129 @@
+.site-header {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    &.dark-header {
+        .section-content {
+            .top {
+                border-bottom: solid 1px #000;
+
+                ul {
+                    li {
+                        a {
+                            color: #000;
+                        }
+                    }
+                }
+            }
+
+            .bottom {
+                nav {
+                    ul {
+                        li {
+                            &.current-menu-item {
+                                border-bottom: solid 1px #000;
+                            }
+
+                            a {
+                                color: #000;
+                            }
+                        }
+                    }
+                }
+
+                .button-holder {
+                    a {
+                        background-color: #000;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+
+    .section-content {
+        max-width: 1980px;
+        margin: auto;
+        padding: 17px 100px 0;
+        box-sizing: border-box;
+
+        .top {
+            padding-bottom: 21px;
+            border-bottom: solid 1px #fff;
+            margin-bottom: 25px;
+
+            ul {
+                display: flex;
+                justify-content: flex-end;
+
+                li {
+                    margin-right: 24px;
+
+                    &:last-of-type {
+                        margin-right: 0;
+                    }
+
+                    a {
+                        font-family: $font-2-medium;
+                        font-size: 16px;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+
+        .bottom {
+            display: flex;
+            justify-content: space-between;
+
+            nav {
+                display: flex;
+                align-items: center;
+
+                .logo {
+                    margin-right: 55px;
+                }
+
+                ul {
+                    display: flex;
+
+                    li {
+                        margin-right: 40px;
+
+                        &:last-of-type {
+                            margin-right: 0;
+                        }
+
+                        &.current-menu-item {
+                            border-bottom: solid 1px #fff;
+                        }
+
+                        a {
+                            font-family: $font-2-medium;
+                            font-size: 22px;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+
+            .button-holder {
+                a {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    min-width: 247px;
+                    height: 55px;
+                    background-color: #fff;
+                    border-radius: 10px;
+                    font-family: $font-2-medium;
+                    font-size: 22px;
+                    color: $dark-blue;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,28 @@
+@mixin p1 {
+    font-family: $font-2-medium;
+    font-size: 14px;
+    color: $dark-blue;
+}
+
+@mixin p2 {
+    font-family: $font-regular;
+    font-size: 18px;
+    color: $dark-blue;
+}
+
+@mixin h1 {
+    font-family: $font-3-bold;
+    font-size: 100px;
+}
+
+@mixin h2 {
+    font-family: $font-3-bold;
+    font-size: 70px;
+    color: $dark-blue;
+}
+
+@mixin h3 {
+    font-family: $font-2-medium;
+    font-size: 36px;
+    color: $dark-blue;
+}
