@@ -1,9 +1,23 @@
 .front-page-container {
     .hero-section{
         padding-top: 190px;
-        padding-bottom: 190px;
+        // padding-bottom: 190px;
         box-sizing: border-box;
 
+        .hero_shape{
+            width: 100%;
+            vertical-align: bottom;
+        }
+
+        .hero_icon{
+            position: relative;
+            opacity: 0;
+            @include transition(all, 800ms);
+
+            &.in_view{
+                opacity: 1;
+            }
+        }
 
         .content-container{
             padding: 0 50px;
@@ -18,6 +32,7 @@
                 .left, .right{
                     img{
                         width: 100%;
+                        width: 23vw;
 
                         &:last-child{
                             margin-top: 40px;
@@ -30,12 +45,14 @@
                     width: 100%;
 
                     h1{
-                        @include h1();
+                        font-family: $font-3-bold;
+                        color: $dark-blue;
                         margin-bottom: 35px;
                         font-size: 4.5vw;
                     }
 
                     .button-holder {
+                        
                         a {
                             display: inline-flex;
                             align-items: center;
@@ -48,6 +65,10 @@
                             font-size: 22px;
                             color: #fff;
                             @include transition();
+
+                            @media #{$s1500} {
+                                font-size: 18px;
+                            }
 
                             &:hover{
                                 background-color: $dark-blue;
@@ -67,19 +88,36 @@
             padding: 0 10vw;
             box-sizing: border-box;
 
+            @media #{$s1500} {
+                padding: 0 100px;
+            }
+
+            @media #{$s1300} {
+                padding: 0 80px;
+            }
+
             .headline-holder{
                 padding-top: 200px;
                 padding-bottom: 200px;
                 box-sizing: border-box;
 
+                @media #{$s1500} {
+                    padding-top: 120px;
+                    padding-bottom: 120px;
+                }
+
                 span{
                     color: $dark-blue;
+                    margin-bottom: 15px;
+                    display: block;
                     @include p1();
+                    @include fade-up();
                 }
 
                 h2{
                     @include h1();
                     color: $dark-blue;
+                    // @include fade-up();
                 }
             }
 
@@ -100,14 +138,7 @@
                             padding-bottom: 8vw;
                             max-width: 500px;
                             box-sizing: border-box;
-
-                            // &:first-child{
-                            //     padding-top: 0;
-                            // }
-
-                            // &:last-child{
-                            //     padding-bottom: 0;
-                            // }
+                            @include fade-up();
 
                             h2{
                                 @include h3();
@@ -124,11 +155,10 @@
 
                     .right{
                         width: 40%;
-                        // height: 100vh;
 
                         .right-content{
                             position: sticky;
-                            top: 0;
+                            top: 20%;
                             padding-top: 4vw;
                         }
 
@@ -138,7 +168,7 @@
                             padding-top: 70%;
                             overflow: hidden;
 
-                            img{
+                            img, video{
                                 @include cropped-img();
                             }
                         }
@@ -157,13 +187,17 @@
                         display: flex;
                         padding-bottom: 150px;
                         box-sizing: border-box;
-
+                        
                         .single-feature-box-holder{
                             width: 33.33333%;
                             padding: 0 25px;
                             box-sizing: border-box;
+                            
+                            @media #{$s1500} {
+                                padding: 0 15px;
+                            }
                         }
-
+                        
                         .single-feature-box{
                             height: 100%;
                             padding: 60px;
@@ -175,6 +209,11 @@
                             flex-direction: column;
                             align-items: center;
                             box-sizing: border-box;
+                            @include fade-up();
+                            
+                            @media #{$s1500} {
+                                padding: 60px 30px;
+                            }
 
                             .icon_holder{
                                 margin-bottom: 50px;
@@ -183,6 +222,11 @@
                                 width: 190px;
                                 position: relative;
                                 overflow: hidden;
+
+                                @media #{$s1500} {
+                                    height: 150px;
+                                    width: 150px;
+                                }
 
                                 img{
                                     @include cropped-img();
@@ -195,6 +239,10 @@
                                     @include h3();
                                     margin-bottom: 10px;
                                     font-size: 22px;
+
+                                    @media #{$s1500} {
+                                        font-size: 18px;
+                                    }
                                 }
 
                                 p{
@@ -217,22 +265,34 @@
             padding: 180px 0;
             box-sizing: border-box;
 
+            @media #{$s1500} {
+                padding: 150px 0;
+            }
+
             .left{
                 width: 35%;
+
+                @media #{$s1300} {
+                    width: 40%;
+                }
 
                 .headline-holder{
                     margin-bottom: 50px;
 
                     span{
                         @include p1();
+                        @include fade-up();
                     }
 
                     h2{
                         @include h3();
+                        @include fade-up();
                     }
                 }
 
                 .accorions-wrap{
+                    @include fade-up();
+
                     .single-accordion{
                         margin-bottom: 20px;
                         padding: 30px;
@@ -280,6 +340,10 @@
                                 font-family: $font-2-medium;
                                 font-size: 22px;
                                 color: $dark-blue;
+
+                                @media #{$s1500} {
+                                    font-size: 18px;
+                                }
 
                                 span{
                                     display: inline-block;
@@ -330,6 +394,11 @@
 
             .right{
                 width: 65%;
+                @include fade-up();
+
+                @media #{$s1300} {
+                    width: 60%;
+                }
 
                 .image-holder{
                     position: relative;

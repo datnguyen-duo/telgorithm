@@ -1,7 +1,12 @@
 .page-template-about-container {
     .hero-section{
-        padding: 180px 0;
+        padding: 300px 0;
+        padding-bottom: 180px;
         box-sizing: border-box;
+
+        @media #{$s1500} {
+            padding-bottom: 150px;
+        }
 
         .section-content{
             padding-bottom: 180px;
@@ -9,42 +14,81 @@
             text-align: center;
             border-bottom: 2px solid $dark-blue;
 
+            @media #{$s1500} {
+                padding-bottom: 150px;
+            }
+
             span{
                 display: block;
                 @include p1();
                 margin-bottom: 20px;
                 color: $dark-blue;
+                @include fade-up();
             }
 
             h1{
                 @include h1();
-                margin-bottom: 50px;
                 color: $dark-blue;
                 list-style: 1.1em;
+                max-width: 1400px;
+                margin: auto;
+                margin-bottom: 50px;
             }
 
             p{
                 font-family: $font-2-medium;
                 font-size: 22px;
                 color: $dark-blue;
+                max-width: 1100px;
+                margin: auto;
                 line-height: 1.4em;
+                @include fade-up();
+
+                @media #{$s1500} {
+                    font-size: 18px;
+                }
             }
         }
     }
 
     .second-section{
+        .green_shape{
+            width: 100%;
+            vertical-align: bottom;
+        }
+
         .section-content{
+            h2{
+                font-size: 60px;
+                color: $dark-blue;
+                font-family: $font-3-bold;
+                max-width: 1400px;
+                margin: auto;
+                text-align: center;
+                margin-bottom: 60px;
+                line-height: 1.2em;
+            }
             .boxes-holder{
                 display: flex;
-                padding-bottom: 150px;
+                padding-bottom: 50px;
                 box-sizing: border-box;
                 width: calc(100% + 50px);
                 margin-left: -25px;
+                @include fade-up();
+
+                @media #{$s1500} {
+                    width: calc(100% + 30px);
+                    margin-left: -15px;
+                }
 
                 .single-box-holder{
                     width: 25%;
                     padding: 0 25px;
                     box-sizing: border-box;
+
+                    @media #{$s1500} {
+                        padding: 0 15px;
+                    }
                 }
 
                 .single-box{
@@ -59,6 +103,10 @@
                     align-items: center;
                     box-sizing: border-box;
 
+                    @media #{$s1500} {
+                        padding: 30px 15px;
+                    }
+
                     .icon_holder{
                         margin-bottom: 50px;
                         border-radius: 100%;
@@ -66,6 +114,11 @@
                         width: 190px;
                         position: relative;
                         overflow: hidden;
+
+                        @media #{$s1500} {
+                            height: 150px;
+                            width: 150px;
+                        }
 
                         img{
                             @include cropped-img();
@@ -78,6 +131,10 @@
                             @include h3();
                             margin-bottom: 10px;
                             font-size: 22px;
+
+                            @media #{$s1500} {
+                                font-size: 18px;
+                            }
                         }
 
                         p{
@@ -102,10 +159,17 @@
         box-sizing: border-box;
         margin-bottom: 160px;
 
+        @media #{$s1500} {
+            padding-top: 150px;
+            padding-bottom: 150px;
+        }
+
         .headline-holder{
             text-align: center;
+            max-width: 1000px;
+            margin: auto;
             margin-bottom: 280px;
-
+            
             h2{
                 @include h1();
                 color: #fff;
@@ -117,6 +181,11 @@
                 font-size: 22px;
                 font-family: $font-2-medium;
                 color: #fff;
+                @include fade-up();
+
+                @media #{$s1500} {
+                    font-size: 18px;
+                }
             }
         }
 
@@ -170,6 +239,7 @@
                     min-height: 60vh;
                     display: flex;
                     position: relative;
+                    max-width: 600px;
 
                     .year-holder{
                         position: relative;
@@ -290,6 +360,10 @@
             .left{
                 width: 40%;
 
+                @media #{$s1300} {
+                    width: 45%;
+                }
+
                 h2{
                     @include h1();
                     color: $dark-blue;
@@ -300,6 +374,7 @@
                     @include p2();
                     color: $dark-blue;
                     line-height: 1.4em;
+                    @include fade-up();
                 }
             }
 
@@ -308,6 +383,13 @@
                 padding-left: 200px;
                 box-sizing: border-box;
                 position: relative;
+                @include fade-up();
+
+
+                @media #{$s1300} {
+                    width: 55%;
+                    padding-left: 140px;
+                }
 
                 .image-holder{
                     position: relative;
@@ -324,12 +406,23 @@
                     position: absolute;
                     left: 10%;
                     bottom: 200px;
+                    width: 3vw;
                 }
 
                 .team_cta{
                     display: flex;
                     align-items: center;
                     margin-top: 80px;
+
+                    @media #{$s1500} {
+                        margin-top: 40px;
+                    }
+
+                    img{
+                        @media #{$s1500} {
+                            width: 140px;
+                        }
+                    }
 
                     .team_cta_info{
                         padding-left: 40px;
@@ -345,6 +438,15 @@
                             @include p2();
                             margin-bottom: 20px;
                         }
+                        a{
+                            display: flex;
+                            align-items: center;
+
+                            img{
+                                margin-left: 5px;
+                                width: auto;
+                            }
+                        }
                     }
                 }
             }
@@ -356,8 +458,15 @@
 
         .section-content {
             padding-top: 117px;
-
             border-top: solid 1px #000;
+
+            .posts{
+                .post-container{
+                    .post{
+                        height: 100%;
+                    }
+                }
+            }
         }
     }
 }

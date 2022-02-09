@@ -9,6 +9,15 @@
         box-sizing: border-box;
         position: relative;
 
+        @media #{$s1500} {
+            margin: 0 auto 300px auto;
+            padding: 280px 100px 0;
+        }
+
+        @media #{$s1300} {
+            padding: 280px 80px 0;
+        }
+
         &:after {
             content: "";
             display: block;
@@ -33,6 +42,11 @@
                 padding-right: 214px;
                 box-sizing: border-box;
 
+                @media #{$s1500} {
+                    padding-top: 60px;
+                    padding-right: 120px;
+                }
+
                 .back-button {
                     @include p1();
                     color: #fff;
@@ -41,14 +55,14 @@
                 }
 
                 .title {
-                    font-family: $font-3-bold;
-                    font-size: 95px;
+                    @include h1();
                     color: #fff;
                 }
             }
 
             .right {
                 width: 45.6%;
+                @include fade-up();
 
                 .image-holder {
                     position: relative;
@@ -71,7 +85,7 @@
             justify-content: space-between;
 
             .tag {
-                background-color: rgba(#FAF5F2, 15%);
+                background-color: rgba(250, 245, 242, 0.15);
                 color: #fff;
                 min-width: 177px;
                 padding-top: 13px;
@@ -109,6 +123,10 @@
             font-size: 22px;
             font-family: $font-2-medium;
             margin-bottom: 7px;
+
+            @media #{$s1500} {
+                font-size: 18px;
+            }
         }
 
         p,
@@ -169,8 +187,13 @@
             box-sizing: border-box;
             border-radius: 30px;
 
+            @media #{$s1500} {
+                padding: 80px;
+            }
+
             .left {
                 width: 41.8%;
+                @include fade-up();
 
                 .image-holder {
                     position: relative;
@@ -190,6 +213,10 @@
                 padding-left: 125px;
                 box-sizing: border-box;
 
+                @media #{$s1500} {
+                    padding-left: 80px;
+                }
+
                 .title {
                     font-family: $font-3-bold;
                     font-size: 60px;
@@ -197,6 +224,10 @@
                     margin-bottom: 50px;
                     line-height: 1.2em;
                     max-width: 693px;
+
+                    @media #{$s1500} {
+                        font-size: 50px;
+                    }
                 }
 
                 a {
@@ -210,6 +241,19 @@
                     font-family: $font-2-medium;
                     font-size: 18px;
                     color: $dark-blue;
+                    @include transition();
+                    @include fade-up();
+
+                    &:hover{
+                        background-color: $dark-blue;
+                        color: #fff;
+                    }
+
+                    @media #{$s1500} {
+                        font-size: 16px;
+                        height: 62px;
+                        min-width: 286px;
+                    }
                 }
             }
         }
@@ -218,5 +262,9 @@
     .template-part-posts-section {
         margin-top: 180px;
         padding-bottom: 118px;
+
+        @media #{$s1500} {
+            padding-bottom: 0;
+        }
     }
 }

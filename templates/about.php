@@ -6,21 +6,23 @@ get_header(); ?>
         $hero_section = get_field('hero_section');
         if( $hero_section['subtitle'] || $hero_section['title'] || $hero_section['description'] ): ?>
             <section class="hero-section">
+            
                 <div class="content-container">
                     <div class="section-content">
                         <?php if( $hero_section['subtitle'] ): ?>
-                            <span><?= $hero_section['subtitle'] ?></span>
+                            <span class="fadein_wrap"><?= $hero_section['subtitle'] ?></span>
                         <?php endif; ?>
 
                         <?php if( $hero_section['title'] ): ?>
-                            <h1><?= $hero_section['title'] ?></h1>
+                            <h1 class="letter_wrap"><?= $hero_section['title'] ?></h1>
                         <?php endif; ?>
 
                         <?php if( $hero_section['description'] ): ?>
-                            <p><?= $hero_section['description'] ?></p>
+                            <p class="fadein_wrap"><?= $hero_section['description'] ?></p>
                         <?php endif; ?>
                     </div>
                 </div>
+                
             </section>
         <?php endif; ?>
 
@@ -30,8 +32,11 @@ get_header(); ?>
             <section class="second-section">
                 <div class="content-container">
                     <div class="section-content">
+                        <h2 class="letter_wrap">
+                            Transparency, compliance, and personalization are at the heart of who we are.
+                        </h2>
                         <?php if( $cards_section['cards'] ): ?>
-                            <div class="boxes-holder">
+                            <div class="boxes-holder fadein_wrap">
                                 <?php foreach ( $cards_section['cards'] as $card ): ?>
                                     <div class="single-box-holder">
                                         <div class="single-box">
@@ -57,6 +62,7 @@ get_header(); ?>
                         <?php endif; ?>
                     </div>
                 </div>
+                <img src="<?= get_template_directory_uri() ?>/images/green_shape.svg" class="green_shape" alt="">
             </section>
         <?php endif; ?>
 
@@ -66,11 +72,11 @@ get_header(); ?>
             <section class="history-section">
                 <div class="headline-holder">
                     <?php if( $history_section['title'] ): ?>
-                        <h2><?= $history_section['title'] ?></h2>
+                        <h2 class="letter_wrap"><?= $history_section['title'] ?></h2>
                     <?php endif; ?>
 
                     <?php if( $history_section['description'] ): ?>
-                        <p><?= $history_section['description'] ?></p>
+                        <p class="fadein_wrap"><?= $history_section['description'] ?></p>
                     <?php endif; ?>
                 </div>
 
@@ -113,33 +119,34 @@ get_header(); ?>
         <?php endif; ?>
 
         <?php
-        $img_with_desc_section = get_field('image_with_description');
+        $img_with_desc_section = get_field('image_with_description_section');
         ?>
         <section class="team-section">
             <div class="content-container">
                 <div class="section-content">
                     <div class="left">
                         <?php if( $img_with_desc_section['title'] ): ?>
-                            <h2><?= $img_with_desc_section['title'] ?></h2>
+                            <h2 class="letter_wrap"><?= $img_with_desc_section['title'] ?></h2>
                         <?php endif; ?>
 
                         <?php if( $img_with_desc_section['description'] ): ?>
-                            <p><?= $img_with_desc_section['description'] ?></p>
+                            <p class="fadein_wrap"><?= $img_with_desc_section['description'] ?></p>
                         <?php endif; ?>
                     </div>
-                    <div class="right">
+                    <div class="right fadein_wrap">
                         <div class="image-holder">
                             <?= wp_get_attachment_image($img_with_desc_section['image']['id'], 'full') ?>
                         </div>
                         <img src="<?= get_template_directory_uri() ?>/images/team_icon2.svg" class="team_icon2" alt="">
                         <div class="team_cta">
                             <img src="<?= get_template_directory_uri() ?>/images/team_icon1.svg" alt="">
+                            
                             <div class="team_cta_info">
                                 <h3>Our team is growing</h3>
                                 <p>
                                     You’ll find only the best of the best on our team—and we intend to keep it that way.
                                 </p>
-                                <a href="" class="link">Join Us!</a>
+                                <a href="" class="link">Join Us!<img src="<?= get_template_directory_uri() ?>/images/blue_arrow_right.svg" alt=""></a>
                             </div>
                         </div>
                     </div>

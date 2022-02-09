@@ -8,21 +8,37 @@
     font-family: $font-regular;
     font-size: 18px;
     color: $dark-blue;
+
+    @media #{$s1500} {
+        font-size: 16px;
+    }
 }
 
 @mixin h1 {
     font-family: $font-3-bold;
-    font-size: 100px;
+    font-size: 95px;
+
+    @media #{$s1500} {
+        font-size: 75px;
+    }
 }
 
 @mixin h2 {
     font-family: $font-3-bold;
     font-size: 70px;
     color: $dark-blue;
+
+    @media #{$s1500} {
+        font-size: 50px;
+    }
 }
 
 @mixin h3 {
     font-family: $font-2-medium;
     font-size: 36px;
     color: $dark-blue;
+
+    @media #{$s1500} {
+        font-size: 28px;
+    }
 }
