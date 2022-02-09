@@ -96,20 +96,26 @@ body {
 }
 
 .form-holder {
-    form {
-        input:not([type='']),
-        textarea {
-            width: 100%;
-            border: solid 1px $dark-blue;
-            border-radius: 10px;
-            @include p2();
-            padding: 0 33px;
-            box-sizing: border-box;
-            background-color: #fff;
+    $inputHeight: 72px;
 
-            &::placeholder {
-                color: inherit;
-            }
+    @mixin inputStyles {
+        border-radius: 10px;
+        border: solid 1px $dark-blue;
+        background-color: #fff;
+        box-sizing: border-box;
+        padding: 0 33px !important;
+        @include p2();
+
+        &::placeholder {
+            @include p2();
+        }
+    }
+
+    form {
+        input,
+        button,
+        textarea {
+            @include inputStyles();
         }
 
         input {
@@ -117,19 +123,20 @@ body {
         }
 
         textarea {
-            padding: 20px 33px;
-            height: 230px;
+            padding: 20px 33px !important;
         }
 
-        input[type=submit] {
+        button {
             background-color: $blue;
             color: #fff;
             border: none;
             font-family: $font-2-medium;
+            height: $inputHeight;
         }
 
         label {
             @include p2();
+            font-weight: normal !important;
             font-family: $font-2-medium;
             display: block;
             margin-bottom: 15px;
@@ -139,21 +146,157 @@ body {
             margin-bottom: 60px;
         }
 
-        .two-cols {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: flex-end;
+        .acf-notice {
+            border-radius: 10px;
+            border: 0;
 
-            .input-holder {
-                width: 50%;
-                box-sizing: border-box;
+            p {
+                @include p2();
+                color: #fff;
+                font-size: 14px;
+            }
+        }
 
-                &:nth-child(odd) {
-                    padding-right: 20px;
+        .acf-field,
+        .af-submit {
+            border: none !important;
+            padding: 0 20px !important;
+            margin-bottom: 60px;
+        }
+
+        .af-submit {
+            button {
+                width: 100%;
+            }
+        }
+
+        .acf-field {
+            .acf-input {
+                position: relative;
+
+                .acf-error-message {
+                    position: absolute;
+                    bottom: 0;
+                    transform: translateY(100%);
+                    margin: 0;
+                    background-color: transparent;
+                    padding: 0;
+                    border: 0;
+
+                    p {
+                        font-size: 14px;
+                        margin: 0;
+                        color: red;
+                    }
                 }
+            }
 
-                &:nth-child(even) {
-                    padding-left: 20px;
+            &.acf-field-radio,
+            &.acf-field-checkbox {
+                .acf-input {
+                    .acf-radio-list,
+                    .acf-checkbox-list {
+                        &.acf-bl {
+                            //vertical
+                            li {
+                                margin-bottom: 15px;
+
+                                &:last-of-type {
+                                    margin-bottom: 0;
+                                }
+                            }
+                        }
+
+                        &.acf-hl {
+                            //horizontal
+                            width: calc(100% + 14px);
+                            margin-left: -7px;
+                            display: flex;
+
+                            li {
+                                margin: 0;
+                                padding: 0 7px;
+                                box-sizing: border-box;
+                                width: 100%;
+                            }
+                        }
+
+                        li {
+                            label {
+                                border: solid 1px $dark-blue;
+                                border-radius: 10px;
+                                @include p2();
+                                height: $inputHeight;
+                                padding: 0 33px !important;
+                                box-sizing: border-box;
+                                background-color: #fff;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                cursor: pointer;
+                                margin: 0;
+
+                                &.selected {
+                                    background-color: $blue;
+                                    color: #fff;
+                                }
+
+                                input {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.acf-field-file {
+                .acf-basic-uploader {
+                    @include inputStyles();
+                    cursor: pointer;
+                    position: relative;
+
+                    .file-name {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%,-50%);
+                        text-align: center;
+                    }
+
+                    .clear-input {
+                        margin-top: 10px;
+                        font-size: 14px;
+                        text-decoration: underline;
+                        position: absolute;
+                        left: 50%;
+                        bottom: 0;
+                        transform: translate(-50%, calc(100% + 10px));
+                        z-index: 2;
+                    }
+
+                    &:not(.file-is-selected) {
+                        &:after {
+                            content: "Drag & drop or";
+                            position: absolute;
+                            top: 50%;
+                            left: 47%;
+                            transform: translate(-50%,-50%);
+                        }
+
+                        &:before {
+                            content: "browse";
+                            position: absolute;
+                            top: 50%;
+                            left: 55.5%;
+                            transform: translate(-50%,-50%);
+                            text-decoration: underline;
+                        }
+                    }
+
+                    input {
+                        opacity: 0;
+                    }
                 }
             }
         }

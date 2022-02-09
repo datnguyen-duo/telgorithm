@@ -34,57 +34,56 @@ get_header(); ?>
             </div>
         </div>
 
-        <?php $form_section = get_field('form_section') ?>
-        <div class="form-section">
-            <div class="form-container form-holder">
-                <?php if( $form_section['title'] ): ?>
-                    <h2 class="title"><?= $form_section['title'] ?></h2>
-                <?php endif; ?>
+        <?php
+        $form_section = get_field('form_section');
+        if( $form_section['title'] || $form_section['subtitle'] || $form_section['form_key'] ): ?>
+            <div class="form-section">
+                <div class="form-container">
+                    <?php if( $form_section['title'] ): ?>
+                        <h2 class="title"><?= $form_section['title'] ?></h2>
+                    <?php endif; ?>
 
-                <?php if( $form_section['subtitle'] ): ?>
-                    <p class="subtitle"><?= $form_section['subtitle'] ?></p>
-                <?php endif; ?>
+                    <?php if( $form_section['subtitle'] ): ?>
+                        <p class="subtitle"><?= $form_section['subtitle'] ?></p>
+                    <?php endif; ?>
 
-                <form action="">
-                    <div class="two-cols">
-                        <div class="input-holder">
-                            <label for="first-name">Name</label>
-                            <input type="text" name="first-name" id="first-name" placeholder="First Name">
+                    <?php if( $form_section['form_key'] ): ?>
+                        <div class="form-holder">
+                            <?php
+                            $args = array(
+                                // Whether the title should be displayed or not (true/false)
+                                'display_title' => false,
+
+                                // Whether the description should be displayed or not (true/false)
+                                'display_description' => false,
+
+                                // Text used for the submit button
+                                'submit_text' => 'Submit',
+
+                                // The URL to which the form points. Defaults to the current URL which will automatically display a success message after submission
+                                // If this is overriden you may use af_has_submission to check for a form submission
+                                //                            'target' => CURRENT_URL,
+
+                                // Whether the form output should be echoed or returned
+                                'echo' => true,
+
+                                // Field values to pre-fill. Should be an array with format: $field_name_or_key => $field_prefill_value
+                                'values' => array(),
+
+                                // Array of field keys or names to exclude from form rendering
+                                'exclude_fields' => array(),
+
+                                // Either 'wp' or 'basic'. Whether to use the Wordpress media uploader or a regular file input for file/image fields.
+                                'uploader' => 'wp',
+
+                                // The URL to redirect to after a successful submission. Defaults to false for no redirection.
+                                'redirect' => home_url('thank-you'),
+                            );
+                            advanced_form( $form_section['form_key'], $args ); ?>
                         </div>
-
-                        <div class="input-holder">
-                            <input type="text" name="last-name" id="last-name" placeholder="Last Name">
-                        </div>
-
-                        <div class="input-holder">
-                            <label for="email">Email Address</label>
-                            <input type="text" name="email" id="email" placeholder="Email Address">
-                        </div>
-
-                        <div class="input-holder">
-                            <label for="company-name">Company Name</label>
-                            <input type="text" name="last-name" id="company-name" placeholder="Company Name">
-                        </div>
-
-                        <div class="input-holder">
-                            <label for="company-website">Company Website</label>
-                            <input type="text" name="last-name" id="company-website" placeholder="Company Website">
-                        </div>
-                        <div class="input-holder">
-                            <label for="phone">Phone Number</label>
-                            <input type="text" name="last-name" id="phone" placeholder="Phone Number">
-                        </div>
-                    </div>
-
-
-                    <div class="input-holder">
-                        <label for="message">What brings you to Telgorithm?</label>
-                        <textarea name="message" id="message" placeholder="What can we help you with?"></textarea>
-                    </div>
-
-                    <input type="submit" value="Submit">
-                </form>
+                    <?php endif; ?>
+                </div>
             </div>
-        </div>
+        <?php endif; ?>
     </div>
 <?php get_footer();
