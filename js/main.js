@@ -217,24 +217,28 @@
     });
     //Blog page END
 
-    $('.acf-basic-uploader').on('click','.clear-input', function(event){
-        event.preventDefault();
-        let $inputWrapper = $(this).parent();
-        $inputWrapper.find('input').val('').change();
-    });
+    //get started and contact page templates
+    if( $('.page-template-get-started-container').length || $('.page-template-contact-container').length ) {
+        $('.acf-basic-uploader').on('click','.clear-input', function(event){
+            event.preventDefault();
+            let $inputWrapper = $(this).parent();
+            $inputWrapper.find('input').val('').change();
+        });
 
-    $("input[type=file]").on('change',function(){
-        let file = $(this)[0].files[0];
-        let $inputWrapper = $(this).parent();
+        $("input[type=file]").on('change',function(){
+            let file = $(this)[0].files[0];
+            let $inputWrapper = $(this).parent();
 
-        if( file ) {
-            $inputWrapper.addClass('file-is-selected').append('<p class="file-name">' + file.name + '</p>');
-            $inputWrapper.append('<p class="clear-input"> Clear </p>');
-        } else {
-            $inputWrapper.removeClass('file-is-selected').find('.clear-input').remove();
-            $inputWrapper.find('.file-name').remove();
-        }
-    });
+            if( file ) {
+                $inputWrapper.addClass('file-is-selected').append('<p class="file-name">' + file.name + '</p>');
+                $inputWrapper.append('<p class="clear-input"> Clear </p>');
+            } else {
+                $inputWrapper.removeClass('file-is-selected').find('.clear-input').remove();
+                $inputWrapper.find('.file-name').remove();
+            }
+        });
+    }
+    //get started and contact page templates END
 
     $(window).load(function(){});
 
