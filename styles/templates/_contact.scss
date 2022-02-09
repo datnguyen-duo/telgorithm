@@ -8,14 +8,18 @@
         text-align: center;
 
         .title {
-            font-family: $font-3-bold;
-            font-size: 96px;
+            @include h1();
             margin-bottom: 55px;
         }
 
         .description {
             font-family: $font-2-medium;
             font-size: 22px;
+            @include fade-up();
+
+            @media #{$s1500} {
+                font-size: 18px;
+            }
         }
     }
 
@@ -27,6 +31,7 @@
             display: flex;
             justify-content: center;
             margin-bottom: 80px;
+            @include fade-up();
 
             li {
                 @include h3();

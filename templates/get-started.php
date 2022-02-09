@@ -9,11 +9,11 @@ get_header(); ?>
                 <div class="section-content">
                     <div class="left">
                         <?php if( $hero_section['title'] ): ?>
-                            <h1 class="title"><?= $hero_section['title'] ?></h1>
+                            <h1 class="title letter_wrap"><?= $hero_section['title'] ?></h1>
                         <?php endif; ?>
 
                         <?php if( $hero_section['list'] ): ?>
-                            <ul class="list">
+                            <ul class="list fadein_wrap">
                                 <?php foreach ( $hero_section['list'] as $item ): ?>
                                     <li>
                                         <img src="<?= get_template_directory_uri() ?>/images/checkmark.svg" alt="">
@@ -32,6 +32,8 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
+            
+            <img src="<?= get_template_directory_uri() ?>/images/shape_cream.svg" class="hero_shape" alt="">    
         </div>
 
         <?php
@@ -40,15 +42,15 @@ get_header(); ?>
             <div class="form-section">
                 <div class="form-container">
                     <?php if( $form_section['title'] ): ?>
-                        <h2 class="title"><?= $form_section['title'] ?></h2>
+                        <h2 class="title letter_wrap"><?= $form_section['title'] ?></h2>
                     <?php endif; ?>
 
                     <?php if( $form_section['subtitle'] ): ?>
-                        <p class="subtitle"><?= $form_section['subtitle'] ?></p>
+                        <p class="subtitle fadein_wrap"><?= $form_section['subtitle'] ?></p>
                     <?php endif; ?>
 
                     <?php if( $form_section['form_key'] ): ?>
-                        <div class="form-holder">
+                        <div class="form-holder fadein_wrap">
                             <?php
                             $args = array(
                                 // Whether the title should be displayed or not (true/false)

@@ -8,11 +8,11 @@ get_header(); ?>
         if( $title || $desc ): ?>
             <section class="hero-section">
                 <?php if( $title ): ?>
-                    <h1 class="title"><?= $title ?></h1>
+                    <h1 class="title letter_wrap"><?= $title ?></h1>
                 <?php endif; ?>
 
                 <?php if( $desc ): ?>
-                    <p class="description"><?= $desc ?></p>
+                    <p class="description fadein_wrap"><?= $desc ?></p>
                 <?php endif; ?>
             </section>
         <?php endif; ?>
@@ -20,7 +20,7 @@ get_header(); ?>
         <?php
         $forms = get_field('forms');
         if( $forms ): ?>
-            <div class="form-section">
+            <div class="form-section fadein_wrap">
                 <ul class="form-selector">
                     <?php foreach ( $forms as $index => $form ): ?>
                         <li class="<?= ( $index == 0 ) ? 'active' : null ?>" data-form=".form-<?= $index ?>"><?= $form['title'] ?></li>

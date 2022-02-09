@@ -3,11 +3,20 @@
 
     .hero-section {
         padding-top: 230px;
-        padding-bottom: 80px;
+        // padding-bottom: 80px;
         position: relative;
-        margin-bottom: 276px;
+        margin-bottom: 50px;
         z-index: 1;
         background-color: $pink;
+
+        .content-container{
+            padding-bottom: 80px;
+        }
+
+        .hero_shape{
+            width: 100%;
+            vertical-align: bottom;
+        }
 
         .section-content {
             display: flex;
@@ -18,16 +27,28 @@
                 padding-right: 164px;
                 box-sizing: border-box;
 
+                @media #{$s1500} {
+                    padding-right: 100px;
+                }
+
+                @media #{$s1300} {
+                    padding-right: 60px;
+                }
+
                 .title {
-                    font-family: $font-3-bold;
-                    font-size: 95px;
+                    @include h1();
                     color: $dark-blue;
                     line-height: 1em;
                     margin-bottom: 100px;
+
+                    @media #{$s1300} {
+                        margin-bottom: 70px;
+                    }
                 }
 
                 .list {
                     max-width: 600px;
+                    @include fade-up();
 
                     li {
                         margin-bottom: 15px;
@@ -91,6 +112,15 @@
             font-size: 22px;
             color: $dark-blue;
             margin-top: 18px;
+            @include fade-up();
+
+            @media #{$s1500} {
+                font-size: 18px;
+            }
+        }
+
+        .form-holder{
+            @include fade-up();
         }
 
         form {
