@@ -36,6 +36,8 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
+            <img src="<?= get_template_directory_uri() ?>/images/pink_shape.svg" class="hero_shape" alt="">
+            
         </section>
 
         <?php
@@ -139,7 +141,7 @@ get_header(); ?>
                             <?php if( $acc_section['accordions'] ): ?>
                                 <div class="accorions-wrap">
                                     <?php foreach ( $acc_section['accordions'] as $index => $accordion ): $index++; $next = $index + 1; ?>
-                                        <div class="single-accordion active disabled" id="accordion_<?= $index ?>" data-next="accordion_<?= ( $index == sizeof( $acc_section['accordions'] ) ) ? 1 : $next ?>">
+                                        <div class="single-accordion <?= ( $index == 1 ) ? 'active disabled' : '' ?>" id="accordion_<?= $index ?>" data-next="accordion_<?= ( $index == sizeof( $acc_section['accordions'] ) ) ? 1 : $next ?>">
                                             <div class="accordion-headline">
                                                 <h3><span><?= $index ?></span><?= $accordion['title'] ?></h3>
                                                 <div class="accodion-button">

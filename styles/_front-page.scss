@@ -1,9 +1,13 @@
 .front-page-container {
     .hero-section{
         padding-top: 190px;
-        padding-bottom: 190px;
+        // padding-bottom: 190px;
         box-sizing: border-box;
 
+        .hero_shape{
+            width: 100%;
+            vertical-align: bottom;
+        }
 
         .content-container{
             padding: 0 50px;
@@ -18,6 +22,7 @@
                 .left, .right{
                     img{
                         width: 100%;
+                        width: 23vw;
 
                         &:last-child{
                             margin-top: 40px;
@@ -30,7 +35,8 @@
                     width: 100%;
 
                     h1{
-                        @include h1();
+                        font-family: $font-3-bold;
+                        color: $dark-blue;
                         margin-bottom: 35px;
                         font-size: 4.5vw;
                     }
@@ -48,6 +54,10 @@
                             font-size: 22px;
                             color: #fff;
                             @include transition();
+
+                            @media #{$s1500} {
+                                font-size: 18px;
+                            }
 
                             &:hover{
                                 background-color: $dark-blue;
@@ -67,10 +77,23 @@
             padding: 0 10vw;
             box-sizing: border-box;
 
+            @media #{$s1500} {
+                padding: 0 100px;
+            }
+
+            @media #{$s1300} {
+                padding: 0 80px;
+            }
+
             .headline-holder{
                 padding-top: 200px;
                 padding-bottom: 200px;
                 box-sizing: border-box;
+
+                @media #{$s1500} {
+                    padding-top: 120px;
+                    padding-bottom: 120px;
+                }
 
                 span{
                     color: $dark-blue;
@@ -101,14 +124,6 @@
                             max-width: 500px;
                             box-sizing: border-box;
 
-                            // &:first-child{
-                            //     padding-top: 0;
-                            // }
-
-                            // &:last-child{
-                            //     padding-bottom: 0;
-                            // }
-
                             h2{
                                 @include h3();
                                 margin-bottom: 20px;
@@ -124,7 +139,6 @@
 
                     .right{
                         width: 40%;
-                        // height: 100vh;
 
                         .right-content{
                             position: sticky;
@@ -162,6 +176,10 @@
                             width: 33.33333%;
                             padding: 0 25px;
                             box-sizing: border-box;
+
+                            @media #{$s1500} {
+                                padding: 0 15px;
+                            }
                         }
 
                         .single-feature-box{
@@ -175,6 +193,10 @@
                             flex-direction: column;
                             align-items: center;
                             box-sizing: border-box;
+
+                            @media #{$s1500} {
+                                padding: 60px 30px;
+                            }
 
                             .icon_holder{
                                 margin-bottom: 50px;
@@ -195,6 +217,10 @@
                                     @include h3();
                                     margin-bottom: 10px;
                                     font-size: 22px;
+
+                                    @media #{$s1500} {
+                                        font-size: 18px;
+                                    }
                                 }
 
                                 p{
@@ -217,8 +243,16 @@
             padding: 180px 0;
             box-sizing: border-box;
 
+            @media #{$s1500} {
+                padding: 150px 0;
+            }
+
             .left{
                 width: 35%;
+
+                @media #{$s1300} {
+                    width: 40%;
+                }
 
                 .headline-holder{
                     margin-bottom: 50px;
@@ -281,6 +315,10 @@
                                 font-size: 22px;
                                 color: $dark-blue;
 
+                                @media #{$s1500} {
+                                    font-size: 18px;
+                                }
+
                                 span{
                                     display: inline-block;
                                     font-family: $font-regular;
@@ -330,6 +368,10 @@
 
             .right{
                 width: 65%;
+
+                @media #{$s1300} {
+                    width: 60%;
+                }
 
                 .image-holder{
                     position: relative;

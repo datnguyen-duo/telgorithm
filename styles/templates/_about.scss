@@ -1,6 +1,6 @@
 .page-template-about-container {
     .hero-section{
-        padding: 180px 0;
+        padding: 280px 0;
         box-sizing: border-box;
 
         .section-content{
@@ -28,6 +28,10 @@
                 font-size: 22px;
                 color: $dark-blue;
                 line-height: 1.4em;
+
+                @media #{$s1500} {
+                    font-size: 18px;
+                }
             }
         }
     }
@@ -78,6 +82,10 @@
                             @include h3();
                             margin-bottom: 10px;
                             font-size: 22px;
+
+                            @media #{$s1500} {
+                                font-size: 18px;
+                            }
                         }
 
                         p{
@@ -117,6 +125,10 @@
                 font-size: 22px;
                 font-family: $font-2-medium;
                 color: #fff;
+
+                @media #{$s1500} {
+                    font-size: 18px;
+                }
             }
         }
 

@@ -105,6 +105,14 @@
                             font-family: $font-2-medium;
                             font-size: 22px;
                             color: #fff;
+
+                            &:hover{
+                                font-family: $font-bold;
+                            }
+
+                            @media #{$s1500} {
+                                font-size: 18px;
+                            }
                         }
                     }
                 }
@@ -122,6 +130,10 @@
                     font-family: $font-2-medium;
                     font-size: 22px;
                     color: $dark-blue;
+
+                    @media #{$s1500} {
+                        font-size: 18px;
+                    }
                 }
             }
         }
