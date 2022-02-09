@@ -10,6 +10,7 @@
             $('#' + nextAccordion).trigger('click');
         }, 5000)
     };
+    
 
     accordionTimer();
 
@@ -23,13 +24,27 @@
         $(this).addClass('disabled');
         $(this).find('.accordion-description').slideDown();
     });
+
+    if($('body').hasClass('home')){
+
+        setTimeout(function(){
+            video = document.querySelector('video');
+            gsap.to(".bound", {
+                scrollTrigger: {
+                    trigger: ".bound",
+                    start: "top top",
+                    end: "bottom bottom",
+                    onUpdate: self => video.currentTime = video.duration * self.progress
+                },
+            });
+        }, 500)
+    }
     //Template Home END
 
     //Template About
     jQuery('.history-slider').slick({
         arrows: false,
         slidesToShow: 1,
-        // infinite: true,
         centerMode: true,
         rtl: true,
     });
@@ -82,6 +97,16 @@
             nextEl: '.posts-slider-btn-next',
             prevEl: '.posts-slider-btn-prev',
         },
+        breakpoints: {
+            // when window width is >= 320px
+            320: {
+              spaceBetween: 50
+            },
+            // when window width is >= 640px
+            1500: {
+              spaceBetween: 100
+            }
+        }
     });
 
     //Template Contact

@@ -10,7 +10,10 @@ $post_id = get_the_ID();
             <div class="post">
                 <div class="left">
                     <?php if( $blog_page_id ): ?>
-                        <a href="<?= get_the_permalink($blog_page_id) ?>" class="back-button">All Posts</a>
+                        <a href="<?= get_the_permalink($blog_page_id) ?>" class="back-button">
+                        <img src="<?= get_template_directory_uri() ?>/images/back_icon.svg" alt="">
+                            All Posts
+                        </a>
                     <?php endif; ?>
 
                     <h2 class="title"><?php the_title() ?></h2>

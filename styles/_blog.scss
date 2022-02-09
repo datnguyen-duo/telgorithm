@@ -7,6 +7,11 @@
         position: relative;
         padding-top: 328px;
 
+        @media #{$s1500} {
+            padding-top: 280px;
+            margin-bottom: 200px;
+        }
+
         &:after {
             content: "";
             display: block;
@@ -28,8 +33,7 @@
         }
 
         .title {
-            font-family: $font-3-bold;
-            font-size: 95px;
+            @include h1();
             color: #fff;
             line-height: 1em;
             margin-bottom: 100px;
@@ -85,6 +89,10 @@
                     font-size: 22px;
                     color: $dark-blue;
                     margin-bottom: 7px;
+
+                    @media #{$s1500} {
+                        font-size: 18px;
+                    }
                 }
 
                 .post-excerpt {
@@ -131,6 +139,10 @@
             font-family: $font-2-medium;
             font-size: 22px;
             margin-bottom: 29px;
+
+            @media #{$s1500} {
+                font-size: 18px;
+            }
         }
 
         .swiper-container {
@@ -264,6 +276,10 @@
                     font-size: 22px;
                     color: $dark-blue;
                     margin-bottom: 35px;
+
+                    @media #{$s1500} {
+                        font-size: 18px;
+                    }
                 }
 
                 .posts {
@@ -281,6 +297,16 @@
 
                         &:nth-child(even) {
                             padding-left: 58px;
+                        }
+
+                        @media #{$s1500} {
+                            &:nth-child(odd) {
+                                padding-right: 28px;
+                            }
+    
+                            &:nth-child(even) {
+                                padding-left: 28px;
+                            }
                         }
 
                         .post {
@@ -328,6 +354,10 @@
                             .post-info {
                                 padding: 53px 78px;
                                 box-sizing: border-box;
+
+                                @media #{$s1500} {
+                                    padding: 53px;
+                                }
 
                                 .post-date {
                                     background-color: $cream;

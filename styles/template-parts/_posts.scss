@@ -22,10 +22,19 @@
         width: calc( 100% + 60px );
         margin-left: -30px;
 
+        @media #{$s1500} {
+            width: calc( 100% + 30px );
+            margin-left: -15px;
+        }
+
         .post-container {
             width: 33.333%;
             padding: 0 30px;
             box-sizing: border-box;
+
+            @media #{$s1500} {
+                padding: 0 15px;
+            }
 
             .post {
                 display: block;
@@ -80,6 +89,10 @@
                         font-size: 22px;
                         line-height: 1.3em;
                         color: $dark-blue;
+
+                        @media #{$s1500} {
+                            font-size: 18px;
+                        }
                     }
 
                     .link {

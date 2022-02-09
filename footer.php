@@ -19,7 +19,7 @@ $site_description = get_field('site_description', 'option');
                         </a>
                     </div>
                 </div>
-            <?php else: ?>
+            <?php elseif(!is_page_template('templates/about.php')): ?>
                 <div class="cta_box">
                     <h2>Get the SMS know-how</h2>
                     <p>Navigate the telecom world with knowledge. Subscribe to our blogs to receive the latest industry news, tips, and guidance.</p>

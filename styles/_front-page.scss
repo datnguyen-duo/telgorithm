@@ -152,7 +152,7 @@
                             padding-top: 70%;
                             overflow: hidden;
 
-                            img{
+                            img, video{
                                 @include cropped-img();
                             }
                         }
@@ -205,6 +205,11 @@
                                 width: 190px;
                                 position: relative;
                                 overflow: hidden;
+
+                                @media #{$s1500} {
+                                    height: 150px;
+                                    width: 150px;
+                                }
 
                                 img{
                                     @include cropped-img();

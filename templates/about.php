@@ -6,6 +6,7 @@ get_header(); ?>
         $hero_section = get_field('hero_section');
         if( $hero_section['subtitle'] || $hero_section['title'] || $hero_section['description'] ): ?>
             <section class="hero-section">
+            
                 <div class="content-container">
                     <div class="section-content">
                         <?php if( $hero_section['subtitle'] ): ?>
@@ -21,6 +22,7 @@ get_header(); ?>
                         <?php endif; ?>
                     </div>
                 </div>
+                
             </section>
         <?php endif; ?>
 
@@ -30,6 +32,9 @@ get_header(); ?>
             <section class="second-section">
                 <div class="content-container">
                     <div class="section-content">
+                        <h2>
+                            Transparency, compliance, and personalization are at the heart of who we are.
+                        </h2>
                         <?php if( $cards_section['cards'] ): ?>
                             <div class="boxes-holder">
                                 <?php foreach ( $cards_section['cards'] as $card ): ?>
@@ -57,6 +62,7 @@ get_header(); ?>
                         <?php endif; ?>
                     </div>
                 </div>
+                <img src="<?= get_template_directory_uri() ?>/images/green_shape.svg" class="green_shape" alt="">
             </section>
         <?php endif; ?>
 
