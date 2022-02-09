@@ -438,6 +438,14 @@
                             @include p2();
                             margin-bottom: 20px;
                         }
+                        a{
+                            display: flex;
+                            align-items: center;
+
+                            img{
+                                margin-left: 5px;
+                            }
+                        }
                     }
                 }
             }

@@ -119,7 +119,7 @@ get_header(); ?>
         <?php endif; ?>
 
         <?php
-        $img_with_desc_section = get_field('image_with_description');
+        $img_with_desc_section = get_field('image_with_description_section');
         ?>
         <section class="team-section">
             <div class="content-container">
@@ -140,12 +140,13 @@ get_header(); ?>
                         <img src="<?= get_template_directory_uri() ?>/images/team_icon2.svg" class="team_icon2" alt="">
                         <div class="team_cta">
                             <img src="<?= get_template_directory_uri() ?>/images/team_icon1.svg" alt="">
+                            
                             <div class="team_cta_info">
                                 <h3>Our team is growing</h3>
                                 <p>
                                     You’ll find only the best of the best on our team—and we intend to keep it that way.
                                 </p>
-                                <a href="" class="link">Join Us!</a>
+                                <a href="" class="link">Join Us!<img src="<?= get_template_directory_uri() ?>/images/blue_arrow_right.svg" alt=""></a>
                             </div>
                         </div>
                     </div>

@@ -28,7 +28,7 @@ if( $query->have_posts() ): ?>
                                 <div class="post-info">
                                     <div class="post-date tag"><?= get_the_date() ?></div>
                                     <h2 class="post-title"><?php the_title() ?></h2>
-                                    <a href="<?php the_permalink() ?>" class="link">Learn More</a>
+                                    <a href="<?php the_permalink() ?>" class="link">Read More<img src="<?= get_template_directory_uri() ?>/images/blue_arrow_right.svg" alt=""></a>
                                 </div>
                             </article>
                         </div>

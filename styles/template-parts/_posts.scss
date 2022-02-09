@@ -98,9 +98,15 @@
 
                     .link {
                         @include transition();
-                        display: block;
+                        // display: block;
                         height: 0;
                         overflow: hidden;
+                        display: flex;
+                        align-items: center;
+
+                        img{
+                            margin-left: 5px;
+                        }
                     }
                 }
             }

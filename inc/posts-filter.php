@@ -55,7 +55,7 @@ function print_posts( $query = '' ) {
                             <?php else: ?>
                                 <p class="post-excerpt"><?= wp_trim_words(get_the_content(),40); ?></p>
                             <?php endif; ?>
-                            <a href="<?php the_permalink() ?>" class="link">Learn More</a>
+                            <a href="<?php the_permalink() ?>" class="link">Read More<img src="<?= get_template_directory_uri() ?>/images/blue_arrow_right.svg" alt=""></a>
                         </div>
                     </article>
                 </div>
