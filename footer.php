@@ -12,7 +12,7 @@ $site_description = get_field('site_description', 'option');
         <div class="section-content">
             <?php if (is_front_page()): ?>
                 <div class="cta_box">
-                    <h3>Navigate the complexities of messaging with expert guidance.</h3>
+                    <h3 class="letter_wrap">Navigate the complexities of messaging with expert guidance.</h3>
                     <div class="button-holder">
                         <a href="" target="">
                             Get Started
@@ -21,9 +21,9 @@ $site_description = get_field('site_description', 'option');
                 </div>
             <?php elseif(!is_page_template('templates/about.php')): ?>
                 <div class="cta_box">
-                    <h2>Get the SMS know-how</h2>
-                    <p>Navigate the telecom world with knowledge. Subscribe to our blogs to receive the latest industry news, tips, and guidance.</p>
-                    <form action="">
+                    <h2 class="letter_wrap">Get the SMS know-how</h2>
+                    <p class="fadein_wrap">Navigate the telecom world with knowledge. Subscribe to our blogs to receive the latest industry news, tips, and guidance.</p>
+                    <form action="" class="fadein_wrap">
                         <input type="email" name="email" placeholder="Your Email Address">
                         <input type="submit" value="Get Started">
                     </form>

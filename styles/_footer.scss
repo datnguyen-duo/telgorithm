@@ -107,6 +107,7 @@
                 color: #fff;
                 max-width: 663px;
                 margin: auto;
+                @include fade-up();
 
                 @media #{$s1500} {
                     font-size: 18px;
@@ -117,6 +118,7 @@
                 max-width: 663px;
                 margin: 57px auto 0 auto;
                 position: relative;
+                @include fade-up();
 
                 input:not([type='submit']){
                     @include p2();

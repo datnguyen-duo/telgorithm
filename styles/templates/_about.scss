@@ -23,6 +23,7 @@
                 @include p1();
                 margin-bottom: 20px;
                 color: $dark-blue;
+                @include fade-up();
             }
 
             h1{
@@ -41,6 +42,7 @@
                 max-width: 1100px;
                 margin: auto;
                 line-height: 1.4em;
+                @include fade-up();
 
                 @media #{$s1500} {
                     font-size: 18px;
@@ -72,6 +74,7 @@
                 box-sizing: border-box;
                 width: calc(100% + 50px);
                 margin-left: -25px;
+                @include fade-up();
 
                 @media #{$s1500} {
                     width: calc(100% + 30px);
@@ -178,6 +181,7 @@
                 font-size: 22px;
                 font-family: $font-2-medium;
                 color: #fff;
+                @include fade-up();
 
                 @media #{$s1500} {
                     font-size: 18px;
@@ -370,6 +374,7 @@
                     @include p2();
                     color: $dark-blue;
                     line-height: 1.4em;
+                    @include fade-up();
                 }
             }
 
@@ -378,6 +383,7 @@
                 padding-left: 200px;
                 box-sizing: border-box;
                 position: relative;
+                @include fade-up();
 
 
                 @media #{$s1300} {

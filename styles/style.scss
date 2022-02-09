@@ -54,6 +54,18 @@ body {
     transition: $el $speed $tf $delay;
 }
 
+@mixin fade-up() {
+    position: relative;
+    top: 100px;
+    opacity: 0;
+    @include transition();
+
+    &.in_view{
+        opacity: 1;
+        top: 0;
+    }
+}
+
 @mixin cropped-img() {
     z-index: 0;
     position: absolute;
@@ -62,6 +74,28 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.letter_wrap,
+.letter_wrap_scroll {
+    overflow: hidden;
+  .line {
+    line-height: 1.1em;
+    @include transition();
+
+    .word {
+      display: inline-block;
+      @include transition();
+      overflow: hidden;
+
+      .char {
+        position: relative;
+        display: inline-block;
+        transform: translate(-0, -8px);
+        @include transition();
+      }
+    }
+  }
 }
 
 @import "fonts";

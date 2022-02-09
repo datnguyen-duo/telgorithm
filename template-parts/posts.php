@@ -15,12 +15,12 @@ if( $query->have_posts() ): ?>
         <div class="content-container">
             <div class="section-content">
                 <?php if( $title ): ?>
-                    <h2 class="title <?= $title_type ?>"><?= $title ?></h2>
+                    <h2 class="letter_wrap title <?= $title_type ?>"><?= $title ?></h2>
                 <?php endif; ?>
 
                 <div class="posts">
                     <?php while( $query->have_posts() ): $query->the_post(); ?>
-                        <div class="post-container">
+                        <div class="post-container fadein_wrap">
                             <article class="post">
                                 <div class="post-image">
                                     <?php the_post_thumbnail('full'); ?>

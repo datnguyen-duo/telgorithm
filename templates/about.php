@@ -10,15 +10,15 @@ get_header(); ?>
                 <div class="content-container">
                     <div class="section-content">
                         <?php if( $hero_section['subtitle'] ): ?>
-                            <span><?= $hero_section['subtitle'] ?></span>
+                            <span class="fadein_wrap"><?= $hero_section['subtitle'] ?></span>
                         <?php endif; ?>
 
                         <?php if( $hero_section['title'] ): ?>
-                            <h1><?= $hero_section['title'] ?></h1>
+                            <h1 class="letter_wrap"><?= $hero_section['title'] ?></h1>
                         <?php endif; ?>
 
                         <?php if( $hero_section['description'] ): ?>
-                            <p><?= $hero_section['description'] ?></p>
+                            <p class="fadein_wrap"><?= $hero_section['description'] ?></p>
                         <?php endif; ?>
                     </div>
                 </div>
@@ -32,11 +32,11 @@ get_header(); ?>
             <section class="second-section">
                 <div class="content-container">
                     <div class="section-content">
-                        <h2>
+                        <h2 class="letter_wrap">
                             Transparency, compliance, and personalization are at the heart of who we are.
                         </h2>
                         <?php if( $cards_section['cards'] ): ?>
-                            <div class="boxes-holder">
+                            <div class="boxes-holder fadein_wrap">
                                 <?php foreach ( $cards_section['cards'] as $card ): ?>
                                     <div class="single-box-holder">
                                         <div class="single-box">
@@ -72,11 +72,11 @@ get_header(); ?>
             <section class="history-section">
                 <div class="headline-holder">
                     <?php if( $history_section['title'] ): ?>
-                        <h2><?= $history_section['title'] ?></h2>
+                        <h2 class="letter_wrap"><?= $history_section['title'] ?></h2>
                     <?php endif; ?>
 
                     <?php if( $history_section['description'] ): ?>
-                        <p><?= $history_section['description'] ?></p>
+                        <p class="fadein_wrap"><?= $history_section['description'] ?></p>
                     <?php endif; ?>
                 </div>
 
@@ -126,14 +126,14 @@ get_header(); ?>
                 <div class="section-content">
                     <div class="left">
                         <?php if( $img_with_desc_section['title'] ): ?>
-                            <h2><?= $img_with_desc_section['title'] ?></h2>
+                            <h2 class="letter_wrap"><?= $img_with_desc_section['title'] ?></h2>
                         <?php endif; ?>
 
                         <?php if( $img_with_desc_section['description'] ): ?>
-                            <p><?= $img_with_desc_section['description'] ?></p>
+                            <p class="fadein_wrap"><?= $img_with_desc_section['description'] ?></p>
                         <?php endif; ?>
                     </div>
-                    <div class="right">
+                    <div class="right fadein_wrap">
                         <div class="image-holder">
                             <?= wp_get_attachment_image($img_with_desc_section['image']['id'], 'full') ?>
                         </div>

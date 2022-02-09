@@ -1,4 +1,3 @@
-<?php acf_form_head(); ?>
 <?php get_header();
 $terms = get_the_terms(get_the_ID(),'category');
 $blog_page_id = get_option('page_for_posts');
@@ -16,16 +15,16 @@ $post_id = get_the_ID();
                         </a>
                     <?php endif; ?>
 
-                    <h2 class="title"><?php the_title() ?></h2>
+                    <h2 class="title letter_wrap"><?php the_title() ?></h2>
                 </div>
-                <div class="right">
+                <div class="right fadein_wrap">
                     <div class="image-holder">
                         <?php the_post_thumbnail('full'); ?>
                     </div>
                 </div>
             </div>
             <div class="post-info">
-                <div class="left">
+                <div class="left fadein_wrap">
                     <?php if( $terms ): ?>
                         <p>Tags</p>
 
@@ -41,16 +40,6 @@ $post_id = get_the_ID();
                 </div>
             </div>
         </section>
-        <?php
-        acf_enqueue_uploader();
-        ?>
-        <div id="primary" class="content-area">
-            <div id="content" class="site-content" role="main">
-                <?php while ( have_posts() ) : the_post(); ?>
-                    <?php acf_form(); ?>
-                <?php endwhile; ?>
-            </div><!-- #content -->
-        </div><!-- #primary -->
 
         <section class="editor-section">
             <div class="text-editor">
@@ -66,7 +55,7 @@ $post_id = get_the_ID();
         if( $banner_section['title'] || $banner_section['button'] || $banner_section['image'] ): ?>
         <section class="banner-section">
             <div class="section-content">
-                <div class="left">
+                <div class="left fadein_wrap">
                     <div class="image-holder">
                         <?php if( $banner_section['image'] ): ?>
                             <?= wp_get_attachment_image($banner_section['image']['id'],'full') ?>
@@ -75,7 +64,7 @@ $post_id = get_the_ID();
                 </div>
                 <div class="right">
                     <?php if( $banner_section['title'] ): ?>
-                        <h2 class="title"><?= $banner_section['title'] ?></h2>
+                        <h2 class="title letter_wrap"><?= $banner_section['title'] ?></h2>
                     <?php endif; ?>
 
                     <?php
@@ -85,7 +74,7 @@ $post_id = get_the_ID();
                         $link_title = $link['title'];
                         $link_target = $link['target'] ? $link['target'] : '_self';
                         ?>
-                        <a href="<?= esc_url( $link_url ); ?>" target="<?= esc_attr( $link_target ); ?>">
+                        <a href="<?= esc_url( $link_url ); ?>" target="<?= esc_attr( $link_target ); ?>" class="fadein_wrap">
                             <?= esc_html( $link_title ); ?>
                         </a>
                     <?php endif; ?>

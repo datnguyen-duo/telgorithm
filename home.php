@@ -6,18 +6,18 @@ get_header(); ?>
         <section class="hero-section">
             <div class="content-container">
                 <?php if( $hero_section['small_title'] ): ?>
-                    <p class="sub-title"><?= $hero_section['small_title'] ?></p>
+                    <p class="sub-title fadein_wrap"><?= $hero_section['small_title'] ?></p>
                 <?php endif; ?>
 
                 <?php if( $hero_section['title'] ): ?>
-                    <h1 class="title"><?= $hero_section['title'] ?></h1>
+                    <h1 class="title letter_wrap"><?= $hero_section['title'] ?></h1>
                 <?php endif; ?>
 
                 <?php if( $hero_section['post'] ): ?>
                     <?php foreach( $hero_section['post'] as $post ): setup_postdata($post);
                         $terms = get_the_terms(get_the_ID(),'category');
                         ?>
-                        <article class="post">
+                        <article class="post fadein_wrap">
                             <?php if( $terms ): ?>
                                 <div class="post-tags">
                                     <?php foreach ( $terms as $term ): ?>
@@ -54,18 +54,18 @@ get_header(); ?>
                 <div class="content-container">
                     <div class="title-container">
                         <?php if( $featured_posts_section['title'] ): ?>
-                            <h2 class="title"><?= $featured_posts_section['title']; ?></h2>
+                            <h2 class="title letter_wrap"><?= $featured_posts_section['title']; ?></h2>
                         <?php endif; ?>
 
-                        <div class="slider-buttons">
+                        <div class="slider-buttons fadein_wrap">
                             <div class="posts-slider-btn-prev circled-button prev"><?php icon_arrow() ?></div>
                             <div class="posts-slider-btn-next circled-button"><?php icon_arrow() ?></div>
                         </div>
                     </div>
 
                     <div class="posts-slider-pagination"></div>
-
-                    <div class="swiper-container posts-slider">
+                            
+                    <div class="swiper-container posts-slider fadein_wrap">
                         <div class="swiper-wrapper">
                             <?php foreach( $featured_posts_section['posts'] as $post ): setup_postdata($post);
                                 $terms = get_the_terms(get_the_ID(),'category');
@@ -112,9 +112,9 @@ get_header(); ?>
                 <div class="content-container">
                     <form class="section-content" id="posts-form">
                         <div class="title-container">
-                            <h2 class="title">See all blog posts</h2>
+                            <h2 class="title letter_wrap">See all blog posts</h2>
 
-                            <div class="search-container">
+                            <div class="search-container fadein_wrap">
                                 <label for="search">Looking for something specific?</label>
                                 <input type="text" id="search-posts" name="search" placeholder="Search key terms">
                                 <input type="hidden" name="action" value="posts_filter">
@@ -122,7 +122,7 @@ get_header(); ?>
                             </div>
                         </div>
 
-                        <div class="posts-container" id="posts-response">
+                        <div class="posts-container fadein_wrap" id="posts-response">
                             <?php print_posts(); ?>
                         </div>
                     </form>

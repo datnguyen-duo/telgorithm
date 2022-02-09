@@ -31,6 +31,7 @@
             width: 33.333%;
             padding: 0 30px;
             box-sizing: border-box;
+            @include fade-up();
 
             @media #{$s1500} {
                 padding: 0 15px;

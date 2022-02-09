@@ -30,6 +30,7 @@
             margin-bottom: 25px;
             color: #fff;
             font-family: $font-2-medium;
+            @include fade-up();
         }
 
         .title {
@@ -46,6 +47,7 @@
             border-radius: 40px;
             overflow: hidden;
             border: solid 1px #fff;
+            @include fade-up();
 
             .post-tags {
                 position: absolute;
@@ -123,6 +125,7 @@
 
             .slider-buttons {
                 display: flex;
+                @include fade-up();
 
                 .posts-slider-btn-prev,
                 .posts-slider-btn-next {
@@ -147,6 +150,7 @@
 
         .swiper-container {
             overflow: visible;
+            @include fade-up();
         }
 
         .post {
@@ -196,8 +200,17 @@
                 .link {
                     @include transition();
                     display: block;
-                    height: 0;
+                    margin-top: 10px;
+                    opacity: 0;
                     overflow: hidden;
+                }
+            }
+
+            &:hover{
+                .post-info{
+                    .link{
+                        opacity: 1;
+                    }
                 }
             }
         }
@@ -241,6 +254,7 @@
                 .search-container {
                     max-width: 450px;
                     width: 100%;
+                    @include fade-up();
 
                     label {
                         display: block;
@@ -270,6 +284,7 @@
 
             .posts-container {
                 margin-top: 80px;
+                @include fade-up();
 
                 .total-posts {
                     font-family: $font-2-medium;

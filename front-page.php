@@ -7,12 +7,12 @@ get_header(); ?>
             <div class="content-container">
                 <div class="section-content">
                     <div class="left">
-                        <img src="<?= get_template_directory_uri() ?>/images/shape2.png" class="shape2" alt="">
-                        <img src="<?= get_template_directory_uri() ?>/images/shape4.png" class="shape4" alt="">
+                        <img src="<?= get_template_directory_uri() ?>/images/shape2.png" class="shape2 hero_icon fadein_wrap" alt="">
+                        <img src="<?= get_template_directory_uri() ?>/images/shape4.png" class="shape4 hero_icon fadein_wrap" alt="">
                     </div>
                     <div class="headline-holder">
                         <?php if( $hero_section['title'] ): ?>
-                            <h1><?= $hero_section['title'] ?></h1>
+                            <h1 class="letter_wrap"><?= $hero_section['title'] ?></h1>
                         <?php endif; ?>
 
                         <?php
@@ -22,7 +22,7 @@ get_header(); ?>
                             $link_title = $link['title'];
                             $link_target = $link['target'] ? $link['target'] : '_self';
                             ?>
-                            <div class="button-holder">
+                            <div class="button-holder fadein_wrap">
                                 <a href="<?= esc_url( $link_url ); ?>" target="<?= esc_attr( $link_target ); ?>">
                                     <?= esc_html( $link_title ); ?>
                                 </a>
@@ -31,8 +31,8 @@ get_header(); ?>
                     </div>
 
                     <div class="right">
-                        <img src="<?= get_template_directory_uri() ?>/images/shape1.png" class="shape1" alt="">
-                        <img src="<?= get_template_directory_uri() ?>/images/shape3.png" class="shape3" alt="">
+                        <img src="<?= get_template_directory_uri() ?>/images/shape1.png" class="shape1 hero_icon fadein_wrap" alt="">
+                        <img src="<?= get_template_directory_uri() ?>/images/shape3.png" class="shape3 hero_icon fadein_wrap" alt="">
                     </div>
                 </div>
             </div>
@@ -49,11 +49,11 @@ get_header(); ?>
                     <?php if( $features_section['subtitle'] || $features_section['title'] ): ?>
                         <div class="headline-holder">
                             <?php if( $features_section['subtitle'] ): ?>
-                                <span><?= $features_section['subtitle'] ?></span>
+                                <span class="fadein_wrap"><?= $features_section['subtitle'] ?></span>
                             <?php endif; ?>
 
                             <?php if( $features_section['title'] ): ?>
-                                <h2><?= $features_section['title'] ?></h2>
+                                <h2 class="letter_wrap"><?= $features_section['title'] ?></h2>
                             <?php endif; ?>
                         </div>
                     <?php endif; ?>
@@ -63,7 +63,7 @@ get_header(); ?>
                             <div class="primary-features bound" id="bound-one">
                                 <div class="left">
                                     <?php foreach ( $features_section['features'] as $feature ): ?>
-                                        <div class="single-feature">
+                                        <div class="single-feature fadein_wrap">
                                             <?php if( $feature['title'] ): ?>
                                                 <h2><?= $feature['title'] ?></h2>
                                             <?php endif; ?>
@@ -91,14 +91,14 @@ get_header(); ?>
                         <?php if( $cards_section['title'] || $cards_section['cards'] ): ?>
                             <div class="other-features-wrap">
                                 <?php if( $cards_section['title'] ): ?>
-                                    <h2><?= $cards_section['title'] ?></h2>
+                                    <h2 class="letter_wrap"><?= $cards_section['title'] ?></h2>
                                 <?php endif; ?>
 
                                 <?php if( $cards_section['cards'] ): ?>
                                     <div class="other-features">
                                         <?php foreach ( $cards_section['cards'] as $card ): ?>
                                             <div class="single-feature-box-holder">
-                                                <div class="single-feature-box">
+                                                <div class="single-feature-box fadein_wrap">
                                                     <?php if( $card['icon'] ): ?>
                                                         <div class="icon_holder">
                                                             <img src="<?= $card['icon']['url'] ?>" alt="<?= $card['icon']['alt'] ?>">
@@ -135,15 +135,15 @@ get_header(); ?>
                         <div class="left">
                             <div class="headline-holder">
                                 <?php if( $acc_section['subtitle'] ): ?>
-                                    <span><?= $acc_section['subtitle'] ?></span>
+                                    <span class="fadein_wrap"><?= $acc_section['subtitle'] ?></span>
                                 <?php endif; ?>
 
                                 <?php if( $acc_section['title'] ): ?>
-                                    <h2><?= $acc_section['title'] ?></h2>
+                                    <h2 class="fadein_wrap"><?= $acc_section['title'] ?></h2>
                                 <?php endif; ?>
                             </div>
                             <?php if( $acc_section['accordions'] ): ?>
-                                <div class="accorions-wrap">
+                                <div class="accorions-wrap fadein_wrap">
                                     <?php foreach ( $acc_section['accordions'] as $index => $accordion ): $index++; $next = $index + 1; ?>
                                         <div class="single-accordion <?= ( $index == 1 ) ? 'active disabled' : '' ?>" id="accordion_<?= $index ?>" data-next="accordion_<?= ( $index == sizeof( $acc_section['accordions'] ) ) ? 1 : $next ?>">
                                             <div class="accordion-headline">
@@ -160,7 +160,7 @@ get_header(); ?>
                                 </div>
                             <?php endif; ?>
                         </div>
-                        <div class="right">
+                        <div class="right fadein_wrap">
                             <?php if( $acc_section['image'] ): ?>
                                 <div class="image-holder">
                                     <?= wp_get_attachment_image($acc_section['image']['id'],'full') ?>

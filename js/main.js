@@ -1,5 +1,45 @@
 (function ($) { //document ready
+    //GLOBAL ANIMATIONS
     gsap.registerPlugin(ScrollTrigger);
+
+    let animationTrigger = $(".fadein_wrap");
+    animationTrigger.each(function () {
+      let trigger = $(this);
+      gsap.to(animationTrigger, {
+        scrollTrigger: {
+          trigger: trigger,
+          start: "top 80%",
+
+          onEnter: function () {
+            $(trigger).addClass("in_view");
+          },
+        },
+      });
+    });
+
+    var mySplitText = new SplitText($(".letter_wrap, .letter_wrap_scroll"), {
+        type: "lines, words, chars",
+        wordsClass: "word word++",
+        linesClass: "line line++",
+        charsClass: "char char++",
+    });
+
+    gsap.utils.toArray(".letter_wrap").forEach((section) => {
+  
+        gsap.from(section.querySelectorAll("div.char"), {
+          scrollTrigger: {
+            trigger: section,
+          },
+  
+          y: 1000,
+          opacity: 0,
+          duration: 0.5,
+          stagger: 0.007,
+          ease: "Power1.easeOut",
+        });
+    });
+    //GLOBAL ANIMATIONS END
+
     //Template Home
 
     var interval;
