@@ -11,16 +11,31 @@ $form_section = get_field('subscription_form_section','option');
 <footer class="site-footer">
     <div class="content-container">
         <div class="section-content">
-            <?php if (is_front_page()): ?>
-                <div class="cta_box">
-                    <h3 class="letter_wrap blue">Navigate the complexities of messaging with expert guidance.</h3>
-                    <div class="button-holder">
-                        <a href="" target="">
-                            Get Started
-                        </a>
+            <?php if ( is_front_page() ): ?>
+                <?php
+                $banner_section = get_field('banner_section');
+                if( $banner_section['title'] || $banner_section['button'] ): ?>
+                    <div class="cta_box">
+                        <?php if( $banner_section['title'] ): ?>
+                            <h3 class="letter_wrap blue"><?= $banner_section['title'] ?></h3>
+                        <?php endif; ?>
+
+                        <?php
+                        $link = $banner_section['button'];
+                        if( $link ):
+                            $link_url = $link['url'];
+                            $link_title = $link['title'];
+                            $link_target = $link['target'] ? $link['target'] : '_self';
+                            ?>
+                            <div class="button-holder">
+                                <a href="<?= esc_url( $link_url ); ?>" target="<?= esc_attr( $link_target ); ?>">
+                                    <?= esc_html( $link_title ); ?>
+                                </a>
+                            </div>
+                        <?php endif; ?>
                     </div>
-                </div>
-            <?php elseif(!is_page_template('templates/about.php')): ?>
+                <?php endif; ?>
+            <?php elseif( !is_page_template('templates/about.php') ): ?>
                 <?php if( $form_section['title'] || $form_section['description'] || $form_section['form_key'] ): ?>
                     <div class="cta_box">
                         <?php if( $form_section['title'] ): ?>
