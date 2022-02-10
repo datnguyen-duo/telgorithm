@@ -1,5 +1,11 @@
+window.addEventListener('load', (event) => {
+    document.body.classList.remove("loading");
+});
+
 (function ($) { //document ready
     //GLOBAL ANIMATIONS
+
+
     gsap.registerPlugin(ScrollTrigger);
 
     let animationTrigger = $(".fadein_wrap");
