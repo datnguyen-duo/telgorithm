@@ -6,6 +6,8 @@
     <link rel="profile" href="https://gmpg.org/xfn/11">
     
     <?php wp_head(); ?>
+
+    <?php the_field('site_script','option') ?>
 </head>
 
 <body <?php body_class('loading'); ?>>
