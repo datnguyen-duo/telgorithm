@@ -128,14 +128,14 @@
                     box-sizing: border-box;
 
                     .left{
-                        width: 60%;
+                        width: 55%;
                         display: flex;
                         flex-direction: column;
                         justify-content: space-around;
 
                         .single-feature{
-                            padding-top: 8vw;
-                            padding-bottom: 8vw;
+                            padding-top: 10vw;
+                            padding-bottom: 10vw;
                             max-width: 500px;
                             box-sizing: border-box;
                             @include fade-up();
@@ -154,12 +154,12 @@
                     }
 
                     .right{
-                        width: 40%;
+                        width: 45%;
 
                         .right-content{
                             position: sticky;
                             top: 20%;
-                            padding-top: 4vw;
+                            padding-top: 5vw;
                         }
 
                         .image-holder{
@@ -179,7 +179,7 @@
                     h2{
                         @include h1();
                         color: $dark-blue;
-                        margin-bottom: 80px;
+                        margin-bottom: 40px;
                         text-align: center;
                     }
 
@@ -297,7 +297,7 @@
                         margin-bottom: 20px;
                         padding: 30px;
                         border: none;
-                        border-bottom: 2px solid $dark-blue;
+                        border-bottom: 1px solid $dark-blue;
                         border-radius: 0px;
                         @include transition();
                         cursor: pointer;
@@ -313,7 +313,7 @@
                         }
 
                         &.active{
-                            border: 2px solid $dark-blue;
+                            border: 1px solid $dark-blue;
                             background-color: #fff;
                             border-radius: 20px;
 
@@ -394,6 +394,8 @@
 
             .right{
                 width: 65%;
+                padding-left: 50px;
+                box-sizing: border-box;
                 @include fade-up();
 
                 @media #{$s1300} {

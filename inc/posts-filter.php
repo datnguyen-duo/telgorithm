@@ -35,7 +35,7 @@ function print_posts( $query = '' ) {
             <?php while( $query->have_posts() ): $query->the_post();
                 $terms = get_the_terms(get_the_ID(),'category'); ?>
                 <div class="post-container">
-                    <article class="post">
+                    <a href="<?php the_permalink() ?>" class="post">
                         <div class="post-image">
                             <?php the_post_thumbnail('full'); ?>
 
@@ -55,9 +55,9 @@ function print_posts( $query = '' ) {
                             <?php else: ?>
                                 <p class="post-excerpt"><?= wp_trim_words(get_the_content(),40); ?></p>
                             <?php endif; ?>
-                            <a href="<?php the_permalink() ?>" class="link">Read More<img src="<?= get_template_directory_uri() ?>/images/blue_arrow_right.svg" alt=""></a>
+                            <p class="link">Read More<img src="<?= get_template_directory_uri() ?>/images/blue_arrow_right.svg" alt=""></p>
                         </div>
-                    </article>
+                    </a>
                 </div>
             <?php endwhile; wp_reset_postdata(); ?>
         </div>

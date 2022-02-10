@@ -13,7 +13,7 @@ Text Domain: telgorithm
 */
 
 $s1920: "only screen and (max-width : 1920px)";
-$s1500: "only screen and (max-width : 1500px)";
+$s1500: "only screen and (max-width : 1650px)";
 $s1300: "only screen and (max-width : 1300px)";
 $s1100: "only screen and (max-width : 1100px)";
 $s1023: "only screen and (max-width : 1023px)";
@@ -106,6 +106,7 @@ body {
 @import "footer";
 @import "front-page";
 @import "single";
+@import "page";
 @import "blog";
 @import "templates/contact";
 @import "templates/about";
@@ -163,6 +164,10 @@ body {
         &::placeholder {
             @include p2();
         }
+
+        &:focus {
+            color: $blue;
+        }
     }
 
     form {
@@ -186,6 +191,10 @@ body {
             border: none;
             font-family: $font-2-medium;
             height: $inputHeight;
+
+            &:focus {
+                color: #fff;
+            }
         }
 
         label {

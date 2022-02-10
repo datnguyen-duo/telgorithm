@@ -10,11 +10,13 @@
         .title {
             @include h1();
             margin-bottom: 55px;
+            color: $dark-blue;
         }
 
         .description {
             font-family: $font-2-medium;
             font-size: 22px;
+            color: $dark-blue;
             @include fade-up();
 
             @media #{$s1500} {
@@ -26,12 +28,12 @@
     .form-section {
         margin: 160px auto 0;
         max-width: 1140px;
+        @include fade-up();
 
         .form-selector {
             display: flex;
             justify-content: center;
             margin-bottom: 80px;
-            @include fade-up();
 
             li {
                 @include h3();

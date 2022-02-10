@@ -36,7 +36,7 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        
+                            
             <img src="<?= get_template_directory_uri() ?>/images/pink_shape.svg" class="hero_shape" alt="">    
         </section>
 
@@ -78,10 +78,10 @@ get_header(); ?>
                                     <div class="right-content">
                                         <div class="image-holder">
                                         <video muted preload>
-                                                <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" type="video/mp4">
-                                                <p>Your user agent does not support the HTML5 Video element.</p>
+                                                <source src="<?= get_template_directory_uri() ?>/videos/features.mp4" type="video/mp4">
+                                                <!-- <p>Your user agent does not support the HTML5 Video element.</p> -->
                                         </video>
-                                            <!-- <img src="<?= get_template_directory_uri() ?>/images/image.jpg" alt=""> -->
+                                            <!-- <img src="<?= get_template_directory_uri() ?>/videos/features.mp4" alt=""> -->
                                         </div>
                                     </div>
                                 </div>

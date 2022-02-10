@@ -24,22 +24,19 @@
 
             .left {
                 width: 53%;
-                padding-right: 164px;
+                padding-right: 8vw;
                 box-sizing: border-box;
-
-                @media #{$s1500} {
-                    padding-right: 100px;
-                }
-
-                @media #{$s1300} {
-                    padding-right: 60px;
-                }
 
                 .title {
                     @include h1();
+                    font-size: 4.5vw;
                     color: $dark-blue;
                     line-height: 1em;
                     margin-bottom: 100px;
+
+                    @media #{$s1500} {
+                        font-size: 4.5vw;
+                    }
 
                     @media #{$s1300} {
                         margin-bottom: 70px;
@@ -88,6 +85,7 @@
 
                     img {
                         @include cropped-img();
+                        object-fit: contain;
                     }
                 }
             }

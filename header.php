@@ -19,7 +19,7 @@
         'templates/thank-you.php',
         'templates/about.php',
     );
-    $is_dark_header = is_page_template($templates_with_dark_header) || is_front_page();
+    $is_dark_header = is_page_template($templates_with_dark_header) || is_front_page() || ( is_page() && !is_page_template() );
     ?>
     <header class="site-header <?= ( $is_dark_header ) ? ' dark-header' : null; ?>">
         <div class="section-content">

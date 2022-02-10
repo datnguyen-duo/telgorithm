@@ -17,7 +17,7 @@ get_header(); ?>
                     <?php foreach( $hero_section['post'] as $post ): setup_postdata($post);
                         $terms = get_the_terms(get_the_ID(),'category');
                         ?>
-                        <article class="post fadein_wrap">
+                        <a href="<?php the_permalink() ?>" class="post fadein_wrap">
                             <?php if( $terms ): ?>
                                 <div class="post-tags">
                                     <?php foreach ( $terms as $term ): ?>
@@ -39,9 +39,9 @@ get_header(); ?>
                                     <p class="post-excerpt"><?= wp_trim_words(get_the_content(),40); ?></p>
                                 <?php endif; ?>
 
-                                <a href="<?php the_permalink() ?>" class="link">Learn More<img src="<?= get_template_directory_uri() ?>/images/blue_arrow_right.svg" alt=""></a>
+                                <p class="link">Learn More<img src="<?= get_template_directory_uri() ?>/images/blue_arrow_right.svg" alt=""></p>
                             </div>
-                        </article>
+                                </a>
                     <?php endforeach; wp_reset_postdata(); ?>
                 <?php endif; ?>
             </div>
@@ -71,7 +71,7 @@ get_header(); ?>
                                 $terms = get_the_terms(get_the_ID(),'category');
                                 ?>
                                 <div class="swiper-slide">
-                                    <article class="post">
+                                    <a href="<?php the_permalink() ?>" class="post">
                                         <div class="post-image">
                                             <?php the_post_thumbnail('full'); ?>
                                             <?php if( $terms ): ?>
@@ -90,9 +90,9 @@ get_header(); ?>
                                             <?php else: ?>
                                                 <p class="post-excerpt"><?= wp_trim_words(get_the_content(),40); ?></p>
                                             <?php endif; ?>
-                                            <a href="<?php the_permalink() ?>" class="link">Read More<img src="<?= get_template_directory_uri() ?>/images/blue_arrow_right.svg" alt=""></a>
+                                            <p class="link">Read More<img src="<?= get_template_directory_uri() ?>/images/blue_arrow_right.svg" alt=""></p>
                                         </div>
-                                    </article>
+                                    </a>
                                 </div>
                             <?php endforeach; wp_reset_postdata(); ?>
                         </div>
