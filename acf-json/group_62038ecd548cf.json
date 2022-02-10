@@ -5,7 +5,7 @@
         {
             "key": "field_62038ee9ec575",
             "label": "Name",
-            "name": "name",
+            "name": "first_name",
             "type": "text",
             "instructions": "",
             "required": 1,
@@ -46,7 +46,7 @@
             "key": "field_6203d645e9578",
             "label": "Email Address",
             "name": "email_address",
-            "type": "text",
+            "type": "email",
             "instructions": "",
             "required": 1,
             "conditional_logic": 0,
@@ -57,10 +57,9 @@
             },
             "hide_admin": 0,
             "default_value": "",
-            "placeholder": "Email Address",
+            "placeholder": "",
             "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "append": ""
         },
         {
             "key": "field_62038f84ec577",
@@ -108,7 +107,7 @@
             {
                 "param": "af_form",
                 "operator": "==",
-                "value": "form_6203970069fb7"
+                "value": "form_6204e1149b06e"
             }
         ]
     ],
@@ -120,5 +119,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1644418726
+    "modified": 1644495499
 }

@@ -1,5 +1,6 @@
 <?php
 /* Template Name: Contact */
+
 get_header(); ?>
     <div class="page-template-contact-container">
         <?php
@@ -39,6 +40,7 @@ get_header(); ?>
 
                                 // Text used for the submit button
                                 'submit_text' => 'Submit',
+                                // 'ajax' => false,
 
                                 // The URL to which the form points. Defaults to the current URL which will automatically display a success message after submission
                                 // If this is overriden you may use af_has_submission to check for a form submission
