@@ -114,11 +114,16 @@
                 }
             }
 
+            .form-holder {
+                position: relative;
+                z-index: 2;
+            }
+
             form {
                 max-width: 663px;
                 margin: 57px auto 0 auto;
                 position: relative;
-                @include fade-up();
+                //@include fade-up();
 
                 input:not([type='submit']){
                     @include p2();
@@ -136,7 +141,17 @@
                     }
                 }
 
-                input[type=submit] {
+                .acf-field {
+                    padding: 0;
+                    border: 0;
+                }
+
+                .acf-form-submit {
+                    padding: 0;
+                }
+
+                input[type=submit],
+                button {
                     position: absolute;
                     top: 0;
                     right: 0;
@@ -148,6 +163,7 @@
                     font-size: 18px;
                     color: $dark-blue;
                     font-family: $font-2-medium;
+                    width: auto;
                 }
             }
         }
