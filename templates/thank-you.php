@@ -7,7 +7,7 @@ get_header(); ?>
                 <div class="section-content">
                     <div class="image-holder">
                         <div class="image">
-                            <img src="<?= get_template_directory_uri() ?>/images/image.jpg" alt="">
+                            <img src="<?= get_template_directory_uri() ?>/images/icon-thankyou.svg" alt="">
                         </div>
                     </div>
 
