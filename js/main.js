@@ -140,6 +140,13 @@ window.addEventListener('load', (event) => {
     });
     //Template About END
 
+    var postsSlider2 = new Swiper(".posts-slider-2", {
+        slidesPerView: 3,
+        spaceBetween: 60,
+        watchOverflow: true,
+        speed: 1000,
+    });
+
     var postsSlider = new Swiper(".posts-slider", {
         slidesPerView: 1.54,
         spaceBetween: 100,

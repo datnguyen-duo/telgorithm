@@ -153,6 +153,7 @@ get_header(); ?>
         </section>
 
         <?php get_template_part( 'template-parts/posts',null, array(
+            'slider' => true,
             'data' => array (
                 'title' => 'Check out our latest blog posts',
             )
