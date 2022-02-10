@@ -6,13 +6,12 @@ get_header(); ?>
         <section class="hero-section">
             <div class="content-container">
                 <div class="section-content">
-                    <div class="left">
-                        <img src="<?= get_template_directory_uri() ?>/images/shape2.png" class="shape2 hero_icon fadein_wrap" alt="">
-                        <img src="<?= get_template_directory_uri() ?>/images/shape4.png" class="shape4 hero_icon fadein_wrap" alt="">
-                    </div>
+                    <video muted preload autoplay loop>
+                        <source src="<?= get_template_directory_uri() ?>/videos/home.mp4" type="video/mp4">
+                    </video>
                     <div class="headline-holder">
                         <?php if( $hero_section['title'] ): ?>
-                            <h1 class="letter_wrap"><?= $hero_section['title'] ?></h1>
+                            <h1 class="letter_wrap cream"><?= $hero_section['title'] ?></h1>
                         <?php endif; ?>
 
                         <?php
@@ -28,11 +27,6 @@ get_header(); ?>
                                 </a>
                             </div>
                         <?php endif; ?>
-                    </div>
-
-                    <div class="right">
-                        <img src="<?= get_template_directory_uri() ?>/images/shape1.png" class="shape1 hero_icon fadein_wrap" alt="">
-                        <img src="<?= get_template_directory_uri() ?>/images/shape3.png" class="shape3 hero_icon fadein_wrap" alt="">
                     </div>
                 </div>
             </div>
@@ -53,7 +47,7 @@ get_header(); ?>
                             <?php endif; ?>
 
                             <?php if( $features_section['title'] ): ?>
-                                <h2 class="letter_wrap"><?= $features_section['title'] ?></h2>
+                                <h2 class="letter_wrap pink"><?= $features_section['title'] ?></h2>
                             <?php endif; ?>
                         </div>
                     <?php endif; ?>
@@ -77,11 +71,9 @@ get_header(); ?>
                                 <div class="right">
                                     <div class="right-content">
                                         <div class="image-holder">
-                                        <video muted preload>
-                                                <source src="<?= get_template_directory_uri() ?>/videos/features.mp4" type="video/mp4">
-                                                <!-- <p>Your user agent does not support the HTML5 Video element.</p> -->
-                                        </video>
-                                            <!-- <img src="<?= get_template_directory_uri() ?>/videos/features.mp4" alt=""> -->
+                                            <video muted preload>
+                                                    <source src="<?= get_template_directory_uri() ?>/videos/features.mp4" type="video/mp4">
+                                            </video>
                                         </div>
                                     </div>
                                 </div>
@@ -91,7 +83,7 @@ get_header(); ?>
                         <?php if( $cards_section['title'] || $cards_section['cards'] ): ?>
                             <div class="other-features-wrap">
                                 <?php if( $cards_section['title'] ): ?>
-                                    <h2 class="letter_wrap"><?= $cards_section['title'] ?></h2>
+                                    <h2 class="letter_wrap pink"><?= $cards_section['title'] ?></h2>
                                 <?php endif; ?>
 
                                 <?php if( $cards_section['cards'] ): ?>

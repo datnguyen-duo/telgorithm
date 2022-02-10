@@ -1,8 +1,12 @@
 .front-page-container {
     .hero-section{
-        padding-top: 190px;
+        // padding-top: 190px;
         // padding-bottom: 190px;
         box-sizing: border-box;
+
+        @media #{$s1500} {
+            padding-top: 50px;
+        }
 
         .hero_shape{
             width: 100%;
@@ -22,6 +26,7 @@
         .content-container{
             padding: 0 50px;
             max-width: 100%;
+            box-sizing: border-box;
 
             .section-content{
                 position: relative;
@@ -29,26 +34,24 @@
                 align-items: center;
                 justify-content: space-between;
 
-                .left, .right{
-                    img{
-                        width: 100%;
-                        width: 23vw;
-
-                        &:last-child{
-                            margin-top: 40px;
-                        }
-                    }
+                video{
+                    width: 100%;
+                    position: relative;
                 }
 
                 .headline-holder{
                     text-align: center;
-                    width: 100%;
+                    width: 50%;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    position: absolute;
 
                     h1{
                         font-family: $font-3-bold;
                         color: $dark-blue;
                         margin-bottom: 35px;
-                        font-size: 4.5vw;
+                        font-size: 4.3vw;
                     }
 
                     .button-holder {
@@ -68,6 +71,7 @@
 
                             @media #{$s1500} {
                                 font-size: 18px;
+                                min-width: 347px;
                             }
 
                             &:hover{

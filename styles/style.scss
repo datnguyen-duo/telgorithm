@@ -92,23 +92,65 @@ body {
 
 .letter_wrap,
 .letter_wrap_scroll {
-    overflow: hidden;
+    
   .line {
-    line-height: 1.1em;
-    @include transition();
+    position: relative;
+    top: -100px;
+    opacity: 0;
+    @include transition(all, 800ms, ease);
 
-    .word {
-      display: inline-block;
-      @include transition();
-      overflow: hidden;
-
-      .char {
-        position: relative;
-        display: inline-block;
-        transform: translate(-0, -8px);
-        @include transition();
-      }
+    &:after{
+        content: '';
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 130%;
+        @include transition(all, 800ms, ease);
     }
+  }
+
+  &.pink{
+    .line {
+        &:after{
+            background-color: $pink;
+        }
+    }
+  }
+
+  &.cream{
+    .line {
+        &:after{
+            background-color: $cream;
+        }
+    }
+  }
+
+  &.blue{
+    .line {
+        &:after{
+            background-color: #0D40C6;
+        }
+    }
+  }
+
+  &.green{
+    .line {
+        &:after{
+            background-color: $green;
+        }
+    }
+  }
+
+  &.active{
+      .line{
+        top: 0px;
+        opacity: 1;
+
+        &:after{
+            height: 0%;
+        }
+      }
   }
 }
 

@@ -24,10 +24,8 @@ window.addEventListener('load', (event) => {
     });
 
     var mySplitText = new SplitText($(".letter_wrap, .letter_wrap_scroll"), {
-        type: "lines, words, chars",
-        wordsClass: "word word++",
+        type: "lines",
         linesClass: "line line++",
-        charsClass: "char char++",
     });
 
     gsap.utils.toArray(".letter_wrap").forEach((section) => {
@@ -35,12 +33,14 @@ window.addEventListener('load', (event) => {
         gsap.from(section.querySelectorAll("div.char"), {
           scrollTrigger: {
             trigger: section,
+            onEnter: function () {
+                $(section).addClass("active");
+            },
           },
-  
-          y: 1000,
-          opacity: 0,
-          duration: 0.5,
-          stagger: 0.007,
+        //   y: 1000,
+        //   opacity: 0,
+        //   duration: 0.5,
+        //   stagger: 0.007,
           ease: "Power1.easeOut",
         });
     });
