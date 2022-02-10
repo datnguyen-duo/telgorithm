@@ -125,22 +125,20 @@ get_header(); ?>
             <div class="content-container">
                 <div class="section-content">
                     <div class="left">
-                        <?php if( $img_with_desc_section['title'] ): ?>
-                            <h2 class="letter_wrap"><?= $img_with_desc_section['title'] ?></h2>
-                        <?php endif; ?>
-
-                        <?php if( $img_with_desc_section['description'] ): ?>
-                            <p class="fadein_wrap"><?= $img_with_desc_section['description'] ?></p>
-                        <?php endif; ?>
+                        <div class="left-content">
+                            <?php if( $img_with_desc_section['title'] ): ?>
+                                <h2 class="letter_wrap"><?= $img_with_desc_section['title'] ?></h2>
+                            <?php endif; ?>
+    
+                            <?php if( $img_with_desc_section['description'] ): ?>
+                                <p class="fadein_wrap"><?= $img_with_desc_section['description'] ?></p>
+                            <?php endif; ?>
+                        </div>
                     </div>
                     <div class="right fadein_wrap">
-                        <div class="image-holder">
-                            <?= wp_get_attachment_image($img_with_desc_section['image']['id'], 'full') ?>
-                        </div>
-                        <img src="<?= get_template_directory_uri() ?>/images/team_icon2.svg" class="team_icon2" alt="">
-                        <div class="team_cta">
-                            <img src="<?= get_template_directory_uri() ?>/images/team_icon1.svg" alt="">
-                            
+                        <?= wp_get_attachment_image($img_with_desc_section['image']['id'], 'full') ?>
+                        
+                        <div class="team_cta">    
                             <div class="team_cta_info">
                                 <h3>Our team is growing</h3>
                                 <p>
