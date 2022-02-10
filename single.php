@@ -51,7 +51,7 @@ $post_id = get_the_ID();
         </section>
 
         <?php
-        $banner_section = get_field('banner_section');
+        $banner_section = get_field('banner_section','option');
         if( $banner_section['title'] || $banner_section['button'] || $banner_section['image'] ): ?>
         <section class="banner-section">
             <div class="section-content">
