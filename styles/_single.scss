@@ -55,7 +55,7 @@
                 }
 
                 .title {
-                    @include h1();
+                    @include h2();
                     color: #fff;
                 }
             }
@@ -109,17 +109,17 @@
         max-width: 1000px;
         margin: auto;
 
-        h2 {
+        h1 {
             @include h2();
             margin-bottom: 25px;
         }
 
-        h3 {
+        h2 {
             @include h3();
             margin-bottom: 15px;
         }
 
-        h4 {
+        h3, h4, h5 {
             font-size: 22px;
             font-family: $font-2-medium;
             margin-bottom: 7px;
@@ -138,6 +138,28 @@
 
         p {
             margin-bottom: 5px;
+
+            a{
+                color: $blue;
+                text-decoration: underline;
+
+                &:hover{
+                    text-decoration: none;
+                }
+            }
+        }
+
+        table{
+            border: 1px solid $dark-blue;
+
+            td{
+                @include p2();
+                line-height: 1.2em;
+                border-bottom: 1px solid $dark-blue;
+                border-right: 1px solid $dark-blue;
+                padding: 15px;
+                box-sizing: border-box;
+            }
         }
 
         ul {
