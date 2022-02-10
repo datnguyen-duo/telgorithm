@@ -147,6 +147,7 @@ window.addEventListener('load', (event) => {
         spaceBetween: 60,
         watchOverflow: true,
         speed: 1000,
+        autoHeight: true,
     });
 
     var postsSlider = new Swiper(".posts-slider", {
