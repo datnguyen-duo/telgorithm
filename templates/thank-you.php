@@ -11,7 +11,8 @@ get_header(); ?>
                         </div>
                     </div>
 
-                    <h1 class="title">Thank you for your message!</h1>
+                    <h1 class="title">Thank you for reaching out!</h1>
+                    <p class="description">Our team of experts will be in touch with you soon. </p>
                 </div>
             </div>
         </div>

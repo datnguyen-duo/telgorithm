@@ -28,6 +28,14 @@
                 line-height: 1em;
                 text-align: center;
             }
+
+            .description {
+                text-align: center;
+                margin-top: 25px;
+                font-family: $font-2-medium;
+                font-size: 23px;
+                color: $dark-blue;
+            }
         }
     }
 
