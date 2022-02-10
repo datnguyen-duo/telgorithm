@@ -16,6 +16,8 @@
         .hero_shape{
             width: 100%;
             vertical-align: bottom;
+            position: relative;
+            top: 1px;
         }
 
         .section-content {
@@ -32,14 +34,14 @@
                     font-size: 4.5vw;
                     color: $dark-blue;
                     line-height: 1em;
-                    margin-bottom: 100px;
+                    margin-bottom: 60px;
 
                     @media #{$s1500} {
                         font-size: 4.5vw;
                     }
 
                     @media #{$s1300} {
-                        margin-bottom: 70px;
+                        margin-bottom: 40px;
                     }
                 }
 

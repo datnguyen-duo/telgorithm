@@ -15,7 +15,7 @@ $post_id = get_the_ID();
                         </a>
                     <?php endif; ?>
 
-                    <h2 class="title letter_wrap"><?php the_title() ?></h2>
+                    <h1 class="title letter_wrap"><?php the_title() ?></h1>
                 </div>
                 <div class="right fadein_wrap">
                     <div class="image-holder">

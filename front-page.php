@@ -161,11 +161,13 @@ get_header(); ?>
                             <?php endif; ?>
                         </div>
                         <div class="right fadein_wrap">
-                            <?php if( $acc_section['image'] ): ?>
-                                <div class="image-holder">
-                                    <?= wp_get_attachment_image($acc_section['image']['id'],'full') ?>
-                                </div>
-                            <?php endif; ?>
+                            <div class="image-holder">
+                                <?php foreach($acc_section['accordions'] as $index => $accordion): ?>
+                                    <?php if($accordion['image']): ?>
+                                        <img src="<?php echo $accordion['image']['url']; ?>" class="<?= ( $index == 0 ) ? 'active' : '' ?>" data-id="accordion_<?= $index + 1 ?>" alt="">
+                                    <?php endif; ?>
+                                <?php endforeach; ?>
+                            </div>
                         </div>
                     </div>
                 </div>

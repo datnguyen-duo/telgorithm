@@ -100,29 +100,6 @@
             "min_size": "",
             "max_size": "",
             "mime_types": ""
-        },
-        {
-            "key": "field_620545f46c907",
-            "label": "Recaptcha",
-            "name": "recaptcha",
-            "type": "acfe_recaptcha",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "hide_admin": 0,
-            "version": "v3",
-            "v3_hide_logo": 0,
-            "site_key": "",
-            "secret_key": "",
-            "disabled": 0,
-            "readonly": 0,
-            "v2_theme": "light",
-            "v2_size": "normal"
         }
     ],
     "location": [
@@ -130,7 +107,7 @@
             {
                 "param": "af_form",
                 "operator": "==",
-                "value": "form_6203970069fb7"
+                "value": "form_6204e1149b06e"
             }
         ]
     ],
@@ -142,12 +119,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "acfe_display_title": "",
-    "acfe_autosync": [
-        "json"
-    ],
-    "acfe_form": 0,
-    "acfe_meta": "",
-    "acfe_note": "",
-    "modified": 1644522488
+    "modified": 1644517861
 }

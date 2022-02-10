@@ -1,5 +1,11 @@
+window.addEventListener('load', (event) => {
+    document.body.classList.remove("loading");
+});
+
 (function ($) { //document ready
     //GLOBAL ANIMATIONS
+
+
     gsap.registerPlugin(ScrollTrigger);
 
     let animationTrigger = $(".fadein_wrap");
@@ -58,6 +64,14 @@
         // accordionTimer();
 
         if( !$(this).hasClass('active') ) {
+            let currentImage = $(this).attr('id');
+            $( ".faq-section .right img" ).each(function( index ) {
+                if($(this).data('id') == currentImage){
+                    $( ".faq-section .right img" ).removeClass('active');
+                    $(this).addClass('active');
+                }
+            });
+
             $singleAccordion.removeClass('active');
             $('.accordion-description').slideUp();
 
@@ -91,6 +105,8 @@
         slidesToShow: 1,
         centerMode: true,
         rtl: true,
+        draggable: false,
+        touchMove: false,
     });
 
     ScrollTrigger.matchMedia({

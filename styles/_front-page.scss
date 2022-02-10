@@ -409,6 +409,13 @@
 
                     img{
                         @include cropped-img();
+                        opacity: 0;
+                        @include transition();
+                        object-fit: contain;
+
+                        &.active{
+                            opacity: 1;
+                        }
                     }
                 }
             }
