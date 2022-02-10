@@ -65,8 +65,6 @@ if (function_exists('acf_add_options_page')) {
     ));
 }
 
-require_once("inc/posts-filter.php");
-
 function icon_arrow() { ?>
     <svg xmlns="http://www.w3.org/2000/svg" width="17.065" height="16.098" viewBox="0 0 17.065 16.098">
         <g id="Group_601" data-name="Group 601" transform="translate(-843.499 -780.451)">
@@ -78,86 +76,5 @@ function icon_arrow() { ?>
     </svg>
 <?php }
 
-function handle_form_submission( $form, $fields, $args ) {
-    
-    if($fields){
-        //SLACK WEBHOOK
-        $data = json_encode(array(
-            "text" => 'New message from '.$form['title'].' form', //"Hello, Foo-Bar channel message.",
-        ));
-    
-        $ch = curl_init('https://hooks.slack.com/services/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');
-        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-        curl_setopt($ch, CURLOPT_POSTFIELDS, array('payload' => $data));
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        $result = curl_exec($ch);
-        curl_close($ch);
-
-        //MAILCHIMP WEBHOOK
-        $email = '';
-        $first_name = '';
-        $last_name = '';
-        
-        foreach($fields as $field){
-            if($field['type'] == 'email'){
-                $email = $field['value'];
-            }
-
-            if($field['name'] == 'first_name'){
-                $first_name = $field['value'];
-            }
-
-            if($field['name'] == 'last_name'){
-                $last_name = $field['value'];
-            }
-        }
-        
-        if($email){
-
-            $api_key = '161c573517003678b6dccd2ddbf933a8-us14'; // YOUR API KEY
-
-            // server name followed by a dot. 
-            // We use us13 because us13 is present in API KEY
-            $server = 'us14.'; 
-
-            $list_id = '5d1bacc37c'; // YOUR LIST ID
-
-            $auth = base64_encode( 'user:'.$api_key );
-                
-            $data = array(
-                'apikey'        => $api_key,
-                'email_address' => $email,
-                'status'        => 'subscribed',
-                'merge_fields'  => array(
-                    'FNAME' => $first_name,
-                    'LNAME'	=> $last_name
-                    )	
-                );
-            $json_data = json_encode($data);
-
-            $ch = curl_init();
-            curl_setopt($ch, CURLOPT_URL, 'https://'.$server.'api.mailchimp.com/3.0/lists/'.$list_id.'/members/');
-            curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json',
-                'Authorization: Basic '.$auth));
-            curl_setopt($ch, CURLOPT_USERAGENT, 'PHP-MCAPI/2.0');
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            curl_setopt($ch, CURLOPT_TIMEOUT, 10);
-            curl_setopt($ch, CURLOPT_POST, true);	
-            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $json_data);
-
-            $result = curl_exec($ch);
-
-            $result_obj = json_decode($result);
-
-            // printing the result obtained	
-            // echo $result_obj->status;
-            // echo '<br>';
-            // echo '<pre>'; print_r($result_obj); echo '</pre>';
-        }
-    }
-}
-add_action( 'af/form/submission', 'handle_form_submission', 10, 3 );
-
-
-
+require_once("inc/posts-filter.php");
+require_once("inc/forms-integrations.php");

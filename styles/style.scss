@@ -209,6 +209,15 @@ body {
             margin-bottom: 60px;
         }
 
+        //add this class on field in order to hide it
+        .hidden-field {
+            margin: 0;
+            opacity: 0;
+            height: 0;
+            position: absolute;
+            z-index: -1;
+        }
+
         .acf-notice {
             border-radius: 10px;
             border: 0;
