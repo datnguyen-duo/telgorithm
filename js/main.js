@@ -42,27 +42,31 @@
 
     //Template Home
 
-    var interval;
-    var accordionTimer = function(){
-        interval = setInterval(function(){
-            var activeSlider = $('.single-accordion.active');
-            var nextAccordion = activeSlider.data('next');
-            $('#' + nextAccordion).trigger('click');
-        }, 5000)
-    };
-    
-
-    accordionTimer();
+    // var interval;
+    // var accordionTimer = function(){
+    //     interval = setInterval(function(){
+    //         var activeSlider = $('.single-accordion.active');
+    //         var nextAccordion = activeSlider.data('next');
+    //         $('#' + nextAccordion).trigger('click');
+    //     }, 5000)
+    // };
+    // accordionTimer();
 
     let $singleAccordion = $('.single-accordion');
     $singleAccordion.on('click', function(e){
-        clearInterval(interval);
-        accordionTimer();
-        $('.accordion-description').slideUp();
-        $('.single-accordion').removeClass('active disabled');
-        $(this).addClass('active');
-        $(this).addClass('disabled');
-        $(this).find('.accordion-description').slideDown();
+        // clearInterval(interval);
+        // accordionTimer();
+
+        if( !$(this).hasClass('active') ) {
+            $singleAccordion.removeClass('active');
+            $('.accordion-description').slideUp();
+
+            $(this).addClass('active');
+            $(this).find('.accordion-description').slideDown();
+        } else {
+            $(this).removeClass('active');
+            $('.accordion-description').slideUp();
+        }
     });
 
     if($('body').hasClass('home')){
