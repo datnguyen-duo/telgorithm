@@ -6,8 +6,11 @@ get_header(); ?>
         <section class="hero-section">
             <div class="content-container">
                 <div class="section-content">
-                    <video muted preload autoplay loop>
+                    <video muted preload autoplay loop class="desktop_video">
                         <source src="<?= get_template_directory_uri() ?>/videos/home.mp4" type="video/mp4">
+                    </video>
+                    <video muted preload autoplay loop class="mobile_video">
+                        <source src="<?= get_template_directory_uri() ?>/videos/home_mobile1.mp4" type="video/mp4">
                     </video>
                     <div class="headline-holder">
                         <?php if( $hero_section['title'] ): ?>
@@ -28,6 +31,9 @@ get_header(); ?>
                             </div>
                         <?php endif; ?>
                     </div>
+                    <video muted preload autoplay loop class="mobile_video">
+                        <source src="<?= get_template_directory_uri() ?>/videos/home_mobile2.mp4" type="video/mp4">
+                    </video>
                 </div>
             </div>
                             
@@ -139,7 +145,8 @@ get_header(); ?>
                                     <?php foreach ( $acc_section['accordions'] as $index => $accordion ): $index++; $next = $index + 1; ?>
                                         <div class="single-accordion <?= ( $index == 1 ) ? 'active disabled' : '' ?>" id="accordion_<?= $index ?>" data-next="accordion_<?= ( $index == sizeof( $acc_section['accordions'] ) ) ? 1 : $next ?>">
                                             <div class="accordion-headline">
-                                                <h3><span><?= $index ?></span><?= $accordion['title'] ?></h3>
+                                            <span><?= $index ?></span>
+                                                <h3><?= $accordion['title'] ?></h3>
                                                 <div class="accodion-button">
                                                     <img src="<?= get_template_directory_uri() ?>/images/accordion_opener.svg" alt="">
                                                 </div>
@@ -153,6 +160,15 @@ get_header(); ?>
                             <?php endif; ?>
                         </div>
                         <div class="right fadein_wrap">
+                            <div class="headline-holder">
+                                <?php if( $acc_section['subtitle'] ): ?>
+                                    <span class="fadein_wrap"><?= $acc_section['subtitle'] ?></span>
+                                <?php endif; ?>
+
+                                <?php if( $acc_section['title'] ): ?>
+                                    <h2 class="fadein_wrap"><?= $acc_section['title'] ?></h2>
+                                <?php endif; ?>
+                            </div>
                             <div class="image-holder">
                                 <?php foreach($acc_section['accordions'] as $index => $accordion): ?>
                                     <?php if($accordion['image']): ?>

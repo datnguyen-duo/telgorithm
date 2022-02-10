@@ -21,6 +21,18 @@
     @media #{$s1500} {
         font-size: 75px;
     }
+
+    @media #{$s1100} {
+        font-size: 60px;
+    }
+
+    @media #{$s1023} {
+        font-size: 40px;
+    }
+
+    @media #{$s750} {
+        font-size: 36px;
+    }
 }
 
 @mixin h2 {
@@ -31,6 +43,18 @@
     @media #{$s1500} {
         font-size: 50px;
     }
+
+    @media #{$s1100} {
+        font-size: 40px;
+    }
+
+    @media #{$s1023} {
+        font-size: 30px;
+    }
+
+    @media #{$s750} {
+        font-size: 26px;
+    }
 }
 
 @mixin h3 {
@@ -40,5 +64,13 @@
 
     @media #{$s1500} {
         font-size: 26px;
+    }
+
+    @media #{$s1100} {
+        font-size: 24px;
+    }
+
+    @media #{$s1023} {
+        font-size: 22px;
     }
 }

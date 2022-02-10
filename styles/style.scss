@@ -189,6 +189,14 @@ body {
     @media #{$s1300} {
         padding: 0 80px;
     }
+    
+    @media #{$s1100} {
+        padding: 0 30px;
+    }
+
+    @media #{$s750} {
+        padding: 0 25px;
+    }
 }
 
 .tag {
