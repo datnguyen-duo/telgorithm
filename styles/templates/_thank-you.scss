@@ -17,6 +17,7 @@
 
                     img {
                         @include cropped-img();
+                        object-fit: contain;
                     }
                 }
             }
