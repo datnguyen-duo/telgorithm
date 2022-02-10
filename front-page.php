@@ -164,7 +164,7 @@ get_header(); ?>
                             <div class="image-holder">
                                 <?php foreach($acc_section['accordions'] as $index => $accordion): ?>
                                     <?php if($accordion['image']): ?>
-                                        <img src="<?php echo $accordion['image']['url']; ?>" class="<?= ( $index == 1 ) ? 'active' : '' ?>" data-id="accordion_<?= $index + 1 ?>" alt="">
+                                        <img src="<?php echo $accordion['image']['url']; ?>" class="<?= ( $index == 0 ) ? 'active' : '' ?>" data-id="accordion_<?= $index + 1 ?>" alt="">
                                     <?php endif; ?>
                                 <?php endforeach; ?>
                             </div>

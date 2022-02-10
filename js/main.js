@@ -99,6 +99,8 @@
         slidesToShow: 1,
         centerMode: true,
         rtl: true,
+        draggable: false,
+        touchMove: false,
     });
 
     ScrollTrigger.matchMedia({
