@@ -222,10 +222,10 @@
                     padding-top: 84.6%;
                     border-radius: 30px;
                     overflow: hidden;
-                    border: solid 1px $dark-blue;
 
                     img {
                         @include cropped-img();
+                        object-fit: contain;
                     }
                 }
             }
@@ -245,10 +245,10 @@
                     color: $dark-blue;
                     margin-bottom: 50px;
                     line-height: 1.2em;
-                    max-width: 693px;
+                    // max-width: 693px;
 
                     @media #{$s1500} {
-                        font-size: 50px;
+                        font-size: 40px;
                     }
                 }
 
