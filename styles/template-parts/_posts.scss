@@ -27,6 +27,7 @@
                 display: block;
                 background-color: #fff;
                 border: solid 1px $dark-blue;
+                box-sizing: border-box;
                 border-radius: 30px;
                 overflow: hidden;
                 height: 100%;
@@ -106,6 +107,22 @@
         }
     }
 
+    .slider-posts {
+        .swiper-container {
+            //overflow: visible;
+
+            .swiper-wrapper {
+                .swiper-slide {
+                    height: 100%;
+
+                    .post-container {
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+
     .posts {
         display: flex;
         width: calc( 100% + 60px );
@@ -115,7 +132,6 @@
             width: calc( 100% + 30px );
             margin-left: -15px;
         }
-
 
         .post-container {
             width: 33.333%;
