@@ -9,7 +9,7 @@ get_header(); ?>
                 <div class="section-content">
                     <div class="left">
                         <?php if( $hero_section['title'] ): ?>
-                            <h1 class="title letter_wrap"><?= $hero_section['title'] ?></h1>
+                            <h1 class="title letter_wrap pink"><?= $hero_section['title'] ?></h1>
                         <?php endif; ?>
 
                         <?php if( $hero_section['list'] ): ?>
@@ -42,7 +42,7 @@ get_header(); ?>
             <div class="form-section">
                 <div class="form-container">
                     <?php if( $form_section['title'] ): ?>
-                        <h2 class="title letter_wrap"><?= $form_section['title'] ?></h2>
+                        <h2 class="title letter_wrap cream"><?= $form_section['title'] ?></h2>
                     <?php endif; ?>
 
                     <?php if( $form_section['subtitle'] ): ?>

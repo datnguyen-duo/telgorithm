@@ -14,7 +14,7 @@ get_header(); ?>
                         <?php endif; ?>
 
                         <?php if( $hero_section['title'] ): ?>
-                            <h1 class="letter_wrap"><?= $hero_section['title'] ?></h1>
+                            <h1 class="letter_wrap cream"><?= $hero_section['title'] ?></h1>
                         <?php endif; ?>
 
                         <?php if( $hero_section['description'] ): ?>
@@ -32,7 +32,7 @@ get_header(); ?>
             <section class="second-section">
                 <div class="content-container">
                     <div class="section-content">
-                        <h2 class="letter_wrap">
+                        <h2 class="letter_wrap cream">
                             Transparency, compliance, and personalization are at the heart of who we are.
                         </h2>
                         <?php if( $cards_section['cards'] ): ?>
@@ -72,7 +72,7 @@ get_header(); ?>
             <section class="history-section">
                 <div class="headline-holder">
                     <?php if( $history_section['title'] ): ?>
-                        <h2 class="letter_wrap"><?= $history_section['title'] ?></h2>
+                        <h2 class="letter_wrap green"><?= $history_section['title'] ?></h2>
                     <?php endif; ?>
 
                     <?php if( $history_section['description'] ): ?>
@@ -127,7 +127,7 @@ get_header(); ?>
                     <div class="left">
                         <div class="left-content">
                             <?php if( $img_with_desc_section['title'] ): ?>
-                                <h2 class="letter_wrap"><?= $img_with_desc_section['title'] ?></h2>
+                                <h2 class="letter_wrap cream"><?= $img_with_desc_section['title'] ?></h2>
                             <?php endif; ?>
     
                             <?php if( $img_with_desc_section['description'] ): ?>

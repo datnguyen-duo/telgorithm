@@ -86,7 +86,7 @@ window.addEventListener('load', (event) => {
     if($('body').hasClass('home')){
 
         setTimeout(function(){
-            video = document.querySelector('video');
+            video = document.getElementById('features_video');
             gsap.to(".bound", {
                 scrollTrigger: {
                     trigger: ".bound",

@@ -15,7 +15,7 @@ $post_id = get_the_ID();
                         </a>
                     <?php endif; ?>
 
-                    <h1 class="title letter_wrap"><?php the_title() ?></h1>
+                    <h1 class="title letter_wrap green"><?php the_title() ?></h1>
                 </div>
                 <div class="right fadein_wrap">
                     <div class="image-holder">
@@ -64,7 +64,7 @@ $post_id = get_the_ID();
                 </div>
                 <div class="right">
                     <?php if( $banner_section['title'] ): ?>
-                        <h2 class="title letter_wrap"><?= $banner_section['title'] ?></h2>
+                        <h2 class="title letter_wrap pink"><?= $banner_section['title'] ?></h2>
                     <?php endif; ?>
 
                     <?php

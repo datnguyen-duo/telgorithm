@@ -25,16 +25,21 @@
             align-items: center;
 
             .left {
-                width: 53%;
-                padding-right: 8vw;
+                width: 45%;
+                padding-right: 5vw;
                 box-sizing: border-box;
 
                 .title {
                     @include h1();
-                    font-size: 4.5vw;
+                    font-size: 4vw;
                     color: $dark-blue;
                     line-height: 1em;
                     margin-bottom: 50px;
+
+                    
+                    @media #{$s1920} {
+                        font-size: 4.5vw;
+                    }
 
                     @media #{$s1500} {
                         font-size: 4.5vw;
@@ -77,7 +82,7 @@
             }
 
             .right {
-                width: 47%;
+                width: 55%;
 
                 .image-holder {
                     position: relative;

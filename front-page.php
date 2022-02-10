@@ -71,7 +71,7 @@ get_header(); ?>
                                 <div class="right">
                                     <div class="right-content">
                                         <div class="image-holder">
-                                            <video muted preload>
+                                            <video muted preload id="features_video">
                                                     <source src="<?= get_template_directory_uri() ?>/videos/features.mp4" type="video/mp4">
                                             </video>
                                         </div>

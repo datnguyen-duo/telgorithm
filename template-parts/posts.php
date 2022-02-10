@@ -16,7 +16,7 @@ if( $query->have_posts() ): ?>
         <div class="content-container">
             <div class="section-content">
                 <?php if( $title ): ?>
-                    <h2 class="letter_wrap title <?= $title_type ?>"><?= $title ?></h2>
+                    <h2 class="letter_wrap cream title <?= $title_type ?>"><?= $title ?></h2>
                 <?php endif; ?>
 
                 <?php if( $slider ): ?>

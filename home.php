@@ -10,7 +10,7 @@ get_header(); ?>
                 <?php endif; ?>
 
                 <?php if( $hero_section['title'] ): ?>
-                    <h1 class="title letter_wrap"><?= $hero_section['title'] ?></h1>
+                    <h1 class="title letter_wrap green"><?= $hero_section['title'] ?></h1>
                 <?php endif; ?>
 
                 <?php if( $hero_section['post'] ): ?>
@@ -54,7 +54,7 @@ get_header(); ?>
                 <div class="content-container">
                     <div class="title-container">
                         <?php if( $featured_posts_section['title'] ): ?>
-                            <h2 class="title letter_wrap"><?= $featured_posts_section['title']; ?></h2>
+                            <h2 class="title letter_wrap cream"><?= $featured_posts_section['title']; ?></h2>
                         <?php endif; ?>
 
                         <div class="slider-buttons fadein_wrap">
@@ -112,7 +112,7 @@ get_header(); ?>
                 <div class="content-container">
                     <form class="section-content" id="posts-form">
                         <div class="title-container">
-                            <h2 class="title letter_wrap">See all blog posts</h2>
+                            <h2 class="title letter_wrap cream">See all blog posts</h2>
 
                             <div class="search-container fadein_wrap">
                                 <label for="search">Looking for something specific?</label>
