@@ -32,9 +32,10 @@ get_header(); ?>
             <section class="second-section">
                 <div class="content-container">
                     <div class="section-content">
-                        <h2 class="letter_wrap cream">
-                            Transparency, compliance, and personalization are at the heart of who we are.
-                        </h2>
+                        <?php if( $cards_section['title'] ): ?>
+                            <h2 class="letter_wrap cream"><?= $cards_section['title'] ?></h2>
+                        <?php endif; ?>
+
                         <?php if( $cards_section['cards'] ): ?>
                             <div class="boxes-holder fadein_wrap">
                                 <?php foreach ( $cards_section['cards'] as $card ): ?>
@@ -119,38 +120,56 @@ get_header(); ?>
         <?php endif; ?>
 
         <?php
-        $img_with_desc_section = get_field('image_with_description_section');
-        ?>
-        <section class="team-section">
-            <div class="content-container">
-                <div class="section-content">
-                    <div class="left">
-                        <div class="left-content">
-                            <?php if( $img_with_desc_section['title'] ): ?>
-                                <h2 class="letter_wrap cream"><?= $img_with_desc_section['title'] ?></h2>
-                            <?php endif; ?>
-    
-                            <?php if( $img_with_desc_section['description'] ): ?>
-                                <p class="fadein_wrap"><?= $img_with_desc_section['description'] ?></p>
-                            <?php endif; ?>
+        $img_desc_section = get_field('image_with_description_section');
+
+        if( $img_desc_section['title'] || $img_desc_section['description'] || $img_desc_section['image'] || $img_desc_section['title_2'] || $img_desc_section['description_2'] || $img_desc_section['link'] ): ?>
+            <section class="team-section">
+                <div class="content-container">
+                    <div class="section-content">
+                        <div class="left">
+                            <div class="left-content">
+                                <?php if( $img_desc_section['title'] ): ?>
+                                    <h2 class="letter_wrap cream"><?= $img_desc_section['title'] ?></h2>
+                                <?php endif; ?>
+
+                                <?php if( $img_desc_section['description'] ): ?>
+                                    <p class="fadein_wrap"><?= $img_desc_section['description'] ?></p>
+                                <?php endif; ?>
+                            </div>
                         </div>
-                    </div>
-                    <div class="right fadein_wrap">
-                        <?= wp_get_attachment_image($img_with_desc_section['image']['id'], 'full') ?>
-                        
-                        <div class="team_cta">    
-                            <div class="team_cta_info">
-                                <h3>Our team is growing</h3>
-                                <p>
-                                    You’ll find only the best of the best on our team—and we intend to keep it that way.
-                                </p>
-                                <a href="" class="link">Join Us!<img src="<?= get_template_directory_uri() ?>/images/blue_arrow_right.svg" alt=""></a>
+                        <div class="right fadein_wrap">
+                            <?= wp_get_attachment_image($img_desc_section['image']['id'], 'full') ?>
+
+                            <?php if( $img_desc_section['title_2'] || $img_desc_section['description_2'] || $img_desc_section['link'] ): ?>
+                                <div class="team_cta">
+                                    <div class="team_cta_info">
+                                        <?php if( $img_desc_section['title_2'] ): ?>
+                                            <h3><?= $img_desc_section['title_2'] ?></h3>
+                                        <?php endif; ?>
+
+                                        <?php if( $img_desc_section['description_2'] ): ?>
+                                            <p><?= $img_desc_section['description_2'] ?></p>
+                                        <?php endif; ?>
+
+                                        <?php
+                                        $link = $img_desc_section['link'];
+                                        if( $link ):
+                                            $link_url = $link['url'];
+                                            $link_title = $link['title'];
+                                            $link_target = $link['target'] ? $link['target'] : '_self'; ?>
+                                            <a class="link" href="<?= esc_url( $link_url ); ?>" target="<?= esc_attr( $link_target ); ?>">
+                                                <?= esc_html( $link_title ); ?>
+                                                <img src="<?= get_template_directory_uri() ?>/images/blue_arrow_right.svg" alt="">
+                                            </a>
+                                        <?php endif; ?>
+                                    </div>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        <?php endif; ?>
 
         <?php get_template_part( 'template-parts/posts',null, array(
             'slider' => true,
