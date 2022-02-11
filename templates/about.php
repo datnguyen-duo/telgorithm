@@ -102,11 +102,20 @@ get_header(); ?>
                                         <div class="year-holder">
                                             <div class="white-line"></div>
                                             <img src="<?= get_template_directory_uri() ?>/images/dashed-line.svg" class="dashed-line" alt="">
+                                            <img src="<?= get_template_directory_uri() ?>/images/mobile_dash.svg" class="mobile_dash" alt="">
+                                            
                                             <div class="year">
                                                 <p><?= $history['year'] ?></p>
                                             </div>
                                         </div>
                                         <div class="info-holder">
+
+                                            <div class="image-holder-mobile">
+                                                <?= wp_get_attachment_image($history['image']['id'],'full') ?>
+                                            </div>
+                                            <div class="year">
+                                                <p class="mobile_year"><?= $history['year'] ?></p>
+                                            </div>
                                             <h3><?= $history['title'] ?></h3>
                                             <p><?= $history['description'] ?></p>
                                         </div>
@@ -163,8 +172,8 @@ get_header(); ?>
                                             </a>
                                         <?php endif; ?>
                                     </div>
-                                <?php endif; ?>
-                            </div>
+                                </div>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>

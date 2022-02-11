@@ -1,13 +1,20 @@
 .page-template-get-started-container {
     padding-bottom: 154px;
 
+    @media #{$s750} {
+        padding-bottom: 80px;
+    }
+
     .hero-section {
         padding-top: 230px;
-        // padding-bottom: 80px;
         position: relative;
         margin-bottom: 50px;
         z-index: 1;
         background-color: $pink;
+
+        @media #{$s750} {
+            padding-top: 130px;
+        }
 
         .content-container{
             padding-bottom: 80px;
@@ -24,10 +31,20 @@
             display: flex;
             align-items: center;
 
+            @media #{$s750} {
+                flex-wrap: wrap;
+            }
+
             .left {
                 width: 45%;
                 padding-right: 5vw;
                 box-sizing: border-box;
+
+                @media #{$s750} {
+                    padding: 0px;
+                    width: 100%;
+                    order: 2;
+                }
 
                 .title {
                     @include h1();
@@ -36,7 +53,6 @@
                     line-height: 1em;
                     margin-bottom: 50px;
 
-                    
                     @media #{$s1920} {
                         font-size: 4.5vw;
                     }
@@ -47,6 +63,12 @@
 
                     @media #{$s1300} {
                         margin-bottom: 40px;
+                    }
+
+                    @media #{$s750} {
+                        font-size: 36px;
+                        text-align: center;
+                        display: none;
                     }
                 }
 
@@ -84,6 +106,38 @@
             .right {
                 width: 55%;
 
+                @media #{$s750} {
+                    padding: 0px;
+                    width: 100%;
+                }
+
+                .title {
+                    @include h1();
+                    font-size: 4vw;
+                    color: $dark-blue;
+                    line-height: 1em;
+                    margin-bottom: 50px;
+                    display: none;
+
+                    @media #{$s1920} {
+                        font-size: 4.5vw;
+                    }
+
+                    @media #{$s1500} {
+                        font-size: 4.5vw;
+                    }
+
+                    @media #{$s1300} {
+                        margin-bottom: 40px;
+                    }
+
+                    @media #{$s750} {
+                        font-size: 36px;
+                        text-align: center;
+                        display: block;
+                    }
+                }
+
                 .image-holder {
                     position: relative;
                     padding-top: 82.6%;
@@ -102,6 +156,12 @@
     .form-section {
         margin: auto;
         max-width: 1140px;
+        padding: 0 30px;
+        box-sizing: border-box;
+
+        @media #{$s750} {
+            padding: 0 25px;
+        }
 
         .title {
             font-family: $font-3-bold;
@@ -109,6 +169,14 @@
             color: $dark-blue;
             text-align: center;
             line-height: 1.3em;
+
+            @media #{$s1100} {
+                font-size: 40px;
+            }
+
+            @media #{$s750} {
+                font-size: 36px;
+            }
         }
 
         .subtitle {
@@ -130,6 +198,10 @@
 
         form {
             margin-top: 115px;
+
+            @media #{$s750} {
+                margin-top: 70px;
+            }
         }
     }
 }

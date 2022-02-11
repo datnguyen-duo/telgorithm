@@ -145,7 +145,7 @@ get_header(); ?>
                                     <?php foreach ( $acc_section['accordions'] as $index => $accordion ): $index++; $next = $index + 1; ?>
                                         <div class="single-accordion <?= ( $index == 1 ) ? 'active disabled' : '' ?>" id="accordion_<?= $index ?>" data-next="accordion_<?= ( $index == sizeof( $acc_section['accordions'] ) ) ? 1 : $next ?>">
                                             <div class="accordion-headline">
-                                            <span><?= $index ?></span>
+                                                <span><?= $index ?></span>
                                                 <h3><?= $accordion['title'] ?></h3>
                                                 <div class="accodion-button">
                                                     <img src="<?= get_template_directory_uri() ?>/images/accordion_opener.svg" alt="">

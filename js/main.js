@@ -113,6 +113,34 @@ window.addEventListener('load', (event) => {
 
     ScrollTrigger.matchMedia({
         // desktop
+        "(min-width: 100px)": function () {
+            let sections = $(".page-template-about-container .single_box");
+            let container = $(".history-slider");
+
+            sections.each(function () {
+                let trigger = $(this);
+                let slideIndex = trigger.index();
+
+                gsap.to(container, {
+                    scrollTrigger: {
+                        trigger: trigger,
+                        start: "top 0%",
+                        markers: true,
+                        end: "bottom 50%",
+                        onEnter: function () {
+                            $('.history-slider').slick('slickGoTo', slideIndex);
+                            $(trigger).find('.year').addClass('active');
+                        },
+                        onLeaveBack: function () {
+                            $('.history-slider').slick('slickGoTo', slideIndex);
+                            $(trigger).find('.year').removeClass('active');
+                        },
+                        onUpdate: self => $(this).find('.white-line').css('height', self.progress * 100+'%' )
+                    },
+                });
+            });
+        },
+
         "(min-width: 800px)": function () {
             let sections = $(".page-template-about-container .single_box");
             let container = $(".history-slider");

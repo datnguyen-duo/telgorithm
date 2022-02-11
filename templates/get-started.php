@@ -24,6 +24,9 @@ get_header(); ?>
                         <?php endif; ?>
                     </div>
                     <div class="right">
+                        <?php if( $hero_section['title'] ): ?>
+                            <h1 class="title letter_wrap pink"><?= $hero_section['title'] ?></h1>
+                        <?php endif; ?>
                         <?php if( $hero_section['image'] ): ?>
                             <div class="image-holder">
                                 <?= wp_get_attachment_image($hero_section['image']['id'],'full') ?>

@@ -6,9 +6,20 @@
         max-width: 900px;
         margin: auto;
 
+        @media #{$s750} {
+            padding-top: 130px;
+            padding-bottom: 80px;
+        }
+
         .editor-section {
             max-width: 1000px;
             margin: auto;
+            padding: 0 30px;
+            box-sizing: border-box;
+
+            @media #{$s750} {
+                padding: 0 25px;
+            }
     
             h1 {
                 @include h2();
@@ -96,6 +107,18 @@
                 border-radius: 30px;
                 padding: 32px;
                 box-sizing: border-box;
+
+                @media #{$s750} {
+                    width: calc(100% + 50px);
+                    left: -25px;
+                    position: relative;
+                    border-radius: 0px;
+                }
+            }
+
+            .wp-block-image{
+                width: calc(100% + 50px);
+                left: -25px;
             }
         }
     }

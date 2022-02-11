@@ -209,6 +209,11 @@ body {
     margin-right: 10px;
     text-align: center;
 
+    @media #{$s750} {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
     &:last-of-type {
         margin-right: 0;
     }
@@ -224,6 +229,10 @@ body {
         box-sizing: border-box;
         padding: 0 33px !important;
         @include p2();
+
+        @media #{$s750} {
+            padding: 0 15px !important;
+        }
 
         &::placeholder {
             @include p2();
@@ -243,10 +252,18 @@ body {
 
         input {
             height: 72px;
+
+            @media #{$s750} {
+                height: 50px;
+            }
         }
 
         textarea {
             padding: 20px 33px !important;
+
+            @media #{$s750} {
+                padding: 15px!important;
+            }
         }
 
         button {
@@ -255,6 +272,11 @@ body {
             border: none;
             font-family: $font-2-medium;
             height: $inputHeight;
+
+            @media #{$s750} {
+                height: auto;
+                padding: 14px!important;
+            }
 
             &:focus {
                 color: #fff;
@@ -298,6 +320,17 @@ body {
             border: none !important;
             padding: 0 20px !important;
             margin-bottom: 60px;
+            box-sizing: border-box;
+            
+            @media #{$s1023} {
+                margin-bottom: 40px;
+            }
+
+            @media #{$s750} {
+                margin-bottom: 25px;
+                width: 100%!important;
+                padding: 0px!important;
+            }
         }
 
         .af-submit {
@@ -349,11 +382,20 @@ body {
                             margin-left: -7px;
                             display: flex;
 
+                            @media #{$s750} {
+                                flex-wrap: wrap;
+                            }
+
                             li {
                                 margin: 0;
                                 padding: 0 7px;
                                 box-sizing: border-box;
                                 width: 100%;
+
+                                @media #{$s750} {
+                                    padding: 0;
+                                    margin-bottom: 25px;
+                                }
                             }
                         }
 
@@ -371,6 +413,11 @@ body {
                                 justify-content: center;
                                 cursor: pointer;
                                 margin: 0;
+
+                                @media #{$s750} {
+                                    height: 50px;
+                                    padding: 0 15px !important;
+                                }
 
                                 &.selected {
                                     background-color: $blue;
@@ -391,6 +438,11 @@ body {
                     @include inputStyles();
                     cursor: pointer;
                     position: relative;
+
+                    @media #{$s750} {
+                        padding: 50px 15px!important;
+                        overflow: hidden;
+                    }
 
                     .file-name {
                         position: absolute;
@@ -418,6 +470,18 @@ body {
                             top: 50%;
                             left: 47%;
                             transform: translate(-50%,-50%);
+
+                            @media #{$s1100} {
+                                left: 46%;
+                            }
+
+                            @media #{$s1023} {
+                                left: 43%;
+                            }
+
+                            @media #{$s750} {
+                                left: 26%;
+                            }
                         }
 
                         &:before {

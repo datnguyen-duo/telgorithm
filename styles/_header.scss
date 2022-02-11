@@ -4,6 +4,8 @@
     top: 0;
     left: 0;
     z-index: 10;
+
+
     
     &.dark-header {
         .section-content {
@@ -76,6 +78,10 @@
                 margin-bottom: 15px;
             }
 
+            @media #{$s750} {
+                display: none;
+            }
+
             ul {
                 display: flex;
                 justify-content: flex-end;
@@ -110,10 +116,22 @@
                     @media #{$s1023} {
                         margin-right: 25px;
                     }
+
+                    @media #{$s750} {
+                        width: 150px;
+
+                        img{
+                            width: 100%;
+                        }
+                    }
                 }
 
                 ul {
                     display: flex;
+
+                    @media #{$s750} {
+                        display: none;
+                    }
 
                     li {
                         margin-right: 40px;
@@ -153,6 +171,9 @@
             }
 
             .button-holder {
+                @media #{$s750} {
+                    display: none;
+                }
                 a {
                     display: inline-flex;
                     align-items: center;

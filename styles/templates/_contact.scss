@@ -2,15 +2,34 @@
     padding-top: 337px;
     padding-bottom: 137px;
 
+    @media #{$s1100} {
+        padding-top: 250px;
+        padding-bottom: 100px;
+    }
+
+    @media #{$s750} {
+        padding-top: 130px;
+        padding-bottom: 80px;
+    }
+
     .hero-section {
         max-width: 1200px;
         margin: auto;
         text-align: center;
 
+        @media #{$s1100} {
+            padding: 0 30px;
+            box-sizing: border-box;
+        }
+
         .title {
             @include h1();
             margin-bottom: 55px;
             color: $dark-blue;
+
+            @media #{$s750} {
+                margin-bottom: 30px;
+            }
         }
 
         .description {
@@ -27,13 +46,26 @@
 
     .form-section {
         margin: 160px auto 0;
+        padding: 0 30px;
         max-width: 1140px;
         @include fade-up();
+
+        @media #{$s1100} {
+            margin: 100px auto 0;
+        }
+
+        @media #{$s750} {
+            margin: 70px auto 0;
+        }
 
         .form-selector {
             display: flex;
             justify-content: center;
             margin-bottom: 80px;
+
+            @media #{$s1023} {
+                margin-bottom: 40px;
+            }
 
             li {
                 @include h3();
