@@ -2,8 +2,11 @@
 //Posts page
 get_header(); ?>
     <div class="blog-page-container">
-        <?php $hero_section = get_field('hero_section', get_option('page_for_posts')); ?>
-        <section class="hero-section">
+        <?php
+        $hero_section = get_field('hero_section', get_option('page_for_posts'));
+        $render_hero_sub_section = ($hero_section['active'] && ( $hero_section['post'] || $hero_section['image'] ));
+        ?>
+        <section class="hero-section <?= ( !$render_hero_sub_section ) ? ' sub-section-doesnt-exists' : null; ?>">
             <div class="content-container">
                 <?php if( $hero_section['small_title'] ): ?>
                     <p class="sub-title fadein_wrap"><?= $hero_section['small_title'] ?></p>
@@ -13,7 +16,7 @@ get_header(); ?>
                     <h1 class="title letter_wrap green"><?= $hero_section['title'] ?></h1>
                 <?php endif; ?>
 
-                <?php if( $hero_section['active'] && ( $hero_section['post'] || $hero_section['image'] ) ): ?>
+                <?php if( $render_hero_sub_section ): ?>
                     <div class="post fadein_wrap">
                         <div class="post-image-holder">
                             <?= wp_get_attachment_image( $hero_section['image']['id'], 'full', '' ,array('class'=>'post-image '.$hero_section['image_fit']) ) ?>
