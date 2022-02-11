@@ -1,4 +1,6 @@
 .template-part-posts-section {
+    overflow: hidden;
+
     .title {
         color: $dark-blue;
         text-align: center;
@@ -7,6 +9,17 @@
             font-family: $font-3-bold;
             font-size: 60px;
             margin-bottom: 78px;
+
+            @media #{$s1023} {
+                font-size: 45px;
+                margin-bottom: 45px;
+            }
+
+            @media #{$s750} {
+                font-size: 26px;
+                max-width: 306px;
+                margin: 0 auto 25px auto;
+            }
         }
 
         &.type_2 {
@@ -35,15 +48,17 @@
                 $linkHeight: 23px;
                 $linkMarginTop: 10px;
 
-                &:hover {
-                    .post-image {
-                        padding-top: calc(#{$imageHeight} - (#{$linkHeight} + #{$linkMarginTop}));
-                    }
+                @media screen and (min-width: 1280px) {
+                    &:hover {
+                        .post-image {
+                            padding-top: calc(#{$imageHeight} - (#{$linkHeight} + #{$linkMarginTop}));
+                        }
 
-                    .post-info {
-                        .link {
-                            height: $linkHeight;
-                            margin-top: $linkMarginTop;
+                        .post-info {
+                            .link {
+                                height: $linkHeight;
+                                margin-top: $linkMarginTop;
+                            }
                         }
                     }
                 }
@@ -62,6 +77,10 @@
                 .post-info {
                     box-sizing: border-box;
                     padding: 34px 40px 55px;
+
+                    @media #{$s1300} {
+                        padding: 30px;
+                    }
 
                     .tag {
                         background-color: $cream;
@@ -84,22 +103,11 @@
                     }
 
                     .link {
-                        @include transition();
-                        // display: block;
-                        height: 0;
-                        overflow: hidden;
-                        display: flex;
-                        align-items: center;
+                        margin-top: 3px;
 
-                        img{
-                            margin-left: 5px;
-                            @include transition();
-                        }
-
-                        &:hover{
-                            img{
-                                margin-left: 7px;
-                            }
+                        @media screen and (min-width: 1280px) {
+                            height: 0;
+                            overflow: hidden;
                         }
                     }
                 }
@@ -109,7 +117,7 @@
 
     .slider-posts {
         .swiper-container {
-            //overflow: visible;
+            overflow: visible;
 
             .swiper-wrapper {
                 .swiper-slide {

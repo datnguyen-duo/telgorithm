@@ -175,6 +175,7 @@ body {
 @import "template-parts/posts";
 
 .link {
+    @include transition();
     font-family: $font-2-medium;
     font-size: 18px;
     color: $blue;

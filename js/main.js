@@ -193,11 +193,25 @@ window.addEventListener('load', (event) => {
     //Template About END
 
     var postsSlider2 = new Swiper(".posts-slider-2", {
-        slidesPerView: 3,
-        spaceBetween: 60,
+        slidesPerView: 1.15,
+        spaceBetween: 30,
         watchOverflow: true,
         speed: 1000,
         autoHeight: true,
+        breakpoints: {
+            // when window width is >= 320px
+            768: {
+                slidesPerView: 2.2
+            },
+            // when window width is >= 640px
+            1024: {
+                slidesPerView: 3
+            },
+            1400: {
+                spaceBetween: 60,
+                slidesPerView: 3
+            }
+        }
     });
 
     var postsSlider = new Swiper(".posts-slider", {
