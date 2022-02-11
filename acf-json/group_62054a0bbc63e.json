@@ -199,7 +199,7 @@
                     "label": "Title",
                     "name": "slack_title",
                     "type": "text",
-                    "instructions": "",
+                    "instructions": "Title for slack message",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -219,7 +219,7 @@
                     "label": "Title Link",
                     "name": "title_link",
                     "type": "text",
-                    "instructions": "If you leave empty Title field link won't show in the slack message",
+                    "instructions": "Link your title. If you leave empty Title field link won't show in the slack message",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -239,7 +239,7 @@
                     "label": "Text",
                     "name": "text",
                     "type": "text",
-                    "instructions": "Message for the channel",
+                    "instructions": "Slack message under title",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -281,5 +281,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1644591549
+    "modified": 1644592354
 }
