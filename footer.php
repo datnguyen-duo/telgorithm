@@ -56,7 +56,7 @@ $form_section = get_field('subscription_form_section','option');
                                 'display_description' => false,
 
                                 // Text used for the submit button
-                                'submit_text' => 'Get Started',
+                                'submit_text' => 'Subscribe',
                                 // 'ajax' => false,
 
                                 // The URL to which the form points. Defaults to the current URL which will automatically display a success message after submission
