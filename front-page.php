@@ -9,7 +9,7 @@ get_header(); ?>
                     <video muted preload autoplay loop class="desktop_video">
                         <source src="<?= get_template_directory_uri() ?>/videos/home.mp4" type="video/mp4">
                     </video>
-                    <video muted preload autoplay loop class="mobile_video">
+                    <video muted preload autoplay loop playsinline poster="" class="mobile_video">
                         <source src="<?= get_template_directory_uri() ?>/videos/home_mobile1.mp4" type="video/mp4">
                     </video>
                     <div class="headline-holder">
@@ -31,7 +31,7 @@ get_header(); ?>
                             </div>
                         <?php endif; ?>
                     </div>
-                    <video muted preload autoplay loop class="mobile_video">
+                    <video muted preload autoplay loop playsinline poster="" class="mobile_video">
                         <source src="<?= get_template_directory_uri() ?>/videos/home_mobile2.mp4" type="video/mp4">
                     </video>
                 </div>
