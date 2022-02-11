@@ -496,7 +496,7 @@
 
                     .single-accordion{
                         margin-bottom: 20px;
-                        padding: 30px;
+                        padding: 20px;
                         border: none;
                         border-bottom: 1px solid $dark-blue;
                         border-radius: 0px;
@@ -560,7 +560,7 @@
                                 font-family: $font-regular;
                                 font-size: 20px;
                                 color: $dark-blue;
-                                width: 25px;
+                                width: 20px;
 
                                 @media #{$s1500} {
                                     font-size: 16px;
@@ -571,7 +571,7 @@
                                 }
 
                                 @media #{$s750} {
-                                    width: 20px;
+                                    width: 15px;
                                 }
                             }
 
@@ -586,6 +586,11 @@
                                 position: relative;
                                 border: 1px solid $dark-blue;
                                 margin-left: auto;
+
+                                @media #{$s1500} {
+                                    width: 30px;
+                                    height: 30px;
+                                }
 
                                 img{
                                     position: relative;
