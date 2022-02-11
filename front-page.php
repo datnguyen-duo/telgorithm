@@ -84,9 +84,11 @@ get_header(); ?>
                                     <div class="right-content">
                                         <div class="image-holder">
                                             <video muted preload id="features_video">
-                                                    <source src="<?= get_template_directory_uri() ?>/videos/features.mp4" type="video/mp4">
+                                                    <source src="<?= get_template_directory_uri() ?>/videos/features_new.mp4" type="video/mp4">
                                             </video>
                                         </div>
+
+                                        <!-- <canvas id="hero-lightpass" style="position: absolute; left: 50%; top: 50%; z-index: 0;" /> -->
                                     </div>
                                 </div>
                             </div>

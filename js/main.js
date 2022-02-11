@@ -4,6 +4,13 @@ window.addEventListener('load', (event) => {
 
 (function ($) { //document ready
     //GLOBAL ANIMATIONS
+    $('#search-posts').keypress(function(e){
+        if ( e.which == 13 ) return false;
+        //or...
+        if ( e.which == 13 ) e.preventDefault();
+    });
+
+
     $('.mobile_opener').on('click', function(){
         $(this).toggleClass('active white');
         $('.site-header').toggleClass('white dark-header');
@@ -67,6 +74,7 @@ window.addEventListener('load', (event) => {
 
     //Template Home
 
+    let faqTrigger = $(".faq-section");
     var interval;
     var accordionTimer = function(){
         interval = setInterval(function(){
@@ -75,7 +83,22 @@ window.addEventListener('load', (event) => {
             $('#' + nextAccordion).trigger('click');
         }, 5000)
     };
-    accordionTimer();
+
+    faqTrigger.each(function () {
+        let trigger = $(this);
+        gsap.to(faqTrigger, {
+        scrollTrigger: {
+            trigger: trigger,
+            start: "top 80%",
+
+            onEnter: function () {
+                accordionTimer();
+            },
+        },
+        });
+    });
+
+    
 
     let $singleAccordion = $('.single-accordion');
     $singleAccordion.on('click', function(e){
@@ -111,7 +134,7 @@ window.addEventListener('load', (event) => {
                     trigger: ".bound",
                     start: "top top",
                     end: "bottom bottom",
-                    onUpdate: self => video.currentTime = video.duration * self.progress
+                    onUpdate: self => video.currentTime = video.duration * self.progress * 1.6
                 },
             });
         }, 500)

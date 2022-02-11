@@ -5,6 +5,11 @@
     left: 0;
     z-index: 10;
 
+    @media #{$s750} {
+        position: fixed;
+        background-color: $green;
+    }
+    
     .mobile_navigation{
         height: 100vh;
         background-color: $blue;
@@ -73,6 +78,11 @@
     
 
     &.dark-header {
+
+        @media #{$s750} {
+            background-color: $cream;
+        }
+
         .section-content {
             .top {
                 border-bottom: solid 1px $dark-blue;
