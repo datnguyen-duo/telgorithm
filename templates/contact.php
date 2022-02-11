@@ -9,7 +9,7 @@ get_header(); ?>
         if( $title || $desc ): ?>
             <section class="hero-section">
                 <?php if( $title ): ?>
-                    <h1 class="title letter_wrap cream"><?= $title ?></h1>
+                    <h1 class="title letter_wrap cream" id="join"><?= $title ?></h1>
                 <?php endif; ?>
 
                 <?php if( $desc ): ?>

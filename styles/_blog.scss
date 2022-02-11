@@ -659,6 +659,7 @@
                                 }
 
                                 .link {
+                                    
                                     @include transition();
                                     // display: block;
                                     height: 0;

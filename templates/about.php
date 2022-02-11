@@ -90,6 +90,10 @@ get_header(); ?>
                                         <div class="image-holder">
                                             <?= wp_get_attachment_image($history['image']['id'],'full') ?>
                                         </div>
+
+                                        <?php if($history['image_credit']): ?>
+                                            <p><?php echo $history['image_credit']; ?></p>
+                                        <?php endif; ?>
                                     </div>
                                 <?php endforeach; ?>
                             </div>
@@ -113,6 +117,10 @@ get_header(); ?>
                                             <div class="image-holder-mobile">
                                                 <?= wp_get_attachment_image($history['image']['id'],'full') ?>
                                             </div>
+                                            <?php if($history['image_credit']): ?>
+                                                <div class="credit"><?php echo $history['image_credit']; ?></div>
+                                            <?php endif; ?>
+                                            
                                             <div class="year">
                                                 <p class="mobile_year"><?= $history['year'] ?></p>
                                             </div>
