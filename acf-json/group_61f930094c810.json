@@ -72,6 +72,71 @@
                     "new_lines": "br"
                 },
                 {
+                    "key": "field_620640bc031da",
+                    "label": "Hero Subsection - Banner",
+                    "name": "",
+                    "type": "accordion",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "hide_admin": 0,
+                    "open": 0,
+                    "multi_expand": 0,
+                    "endpoint": 0
+                },
+                {
+                    "key": "field_62064039031d8",
+                    "label": "Active",
+                    "name": "active",
+                    "type": "true_false",
+                    "instructions": "Determine section visibility by toggling button",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "hide_admin": 0,
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 1,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
+                    "key": "field_6206407b031d9",
+                    "label": "Image",
+                    "name": "image",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "hide_admin": 0,
+                    "uploader": "",
+                    "acfe_thumbnail": 0,
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "library": "all"
+                },
+                {
                     "key": "field_61f9313dd0dae",
                     "label": "Post",
                     "name": "post",
@@ -84,6 +149,7 @@
                         "class": "",
                         "id": ""
                     },
+                    "hide_admin": 0,
                     "post_type": [
                         "post"
                     ],
@@ -95,9 +161,12 @@
                     "elements": [
                         "featured_image"
                     ],
-                    "min": 1,
+                    "min": 0,
                     "max": 1,
-                    "return_format": "object"
+                    "return_format": "object",
+                    "acfe_bidirectional": {
+                        "acfe_bidirectional_enabled": "0"
+                    }
                 }
             ]
         },
@@ -201,5 +270,12 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1644339649
+    "acfe_display_title": "",
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1644577816
 }

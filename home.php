@@ -13,36 +13,40 @@ get_header(); ?>
                     <h1 class="title letter_wrap green"><?= $hero_section['title'] ?></h1>
                 <?php endif; ?>
 
-                <?php if( $hero_section['post'] ): ?>
-                    <?php foreach( $hero_section['post'] as $post ): setup_postdata($post);
-                        $terms = get_the_terms(get_the_ID(),'category');
-                        ?>
-                        <a href="<?php the_permalink() ?>" class="post fadein_wrap">
-                            <?php if( $terms ): ?>
-                                <div class="post-tags">
-                                    <?php foreach ( $terms as $term ): ?>
-                                        <div class="tag"><?= $term->name ?></div>
-                                    <?php endforeach; ?>
-                                </div>
-                            <?php endif; ?>
+                <?php if( $hero_section['active'] && ( $hero_section['post'] || $hero_section['image'] ) ): ?>
+                    <div class="post fadein_wrap">
+                        <?= wp_get_attachment_image( $hero_section['image']['id'], 'full', '' ,array('class'=>'post-image') ) ?>
 
-                            <?php the_post_thumbnail('full',array('class'=>'post-image')); ?>
-
-                            <div class="post-info">
-                                <h2>Find out everything that’s happening at Telgorithm.</h2>
-
-                                <h3 class="post-title"><?php the_title(); ?></h3>
-
-                                <?php if( has_excerpt() ): ?>
-                                    <p class="post-excerpt"><?= get_the_excerpt(); ?></p>
-                                <?php else: ?>
-                                    <p class="post-excerpt"><?= wp_trim_words(get_the_content(),40); ?></p>
+                        <?php if( $hero_section['post'] ):
+                            foreach( $hero_section['post'] as $post ): setup_postdata($post);
+                                $terms = get_the_terms(get_the_ID(),'category');
+                                if( $terms ): ?>
+                                    <div class="post-tags">
+                                        <?php foreach ( $terms as $term ): ?>
+                                            <div class="tag"><?= $term->name ?></div>
+                                        <?php endforeach; ?>
+                                    </div>
                                 <?php endif; ?>
 
-                                <p class="link">Learn More<img src="<?= get_template_directory_uri() ?>/images/blue_arrow_right.svg" alt=""></p>
-                            </div>
-                                </a>
-                    <?php endforeach; wp_reset_postdata(); ?>
+                                <div class="post-info">
+                                    <h2>Find out everything that’s happening at Telgorithm.</h2>
+
+                                    <h3 class="post-title"><?php the_title(); ?></h3>
+
+                                    <?php if( has_excerpt() ): ?>
+                                        <p class="post-excerpt"><?= get_the_excerpt(); ?></p>
+                                    <?php else: ?>
+                                        <p class="post-excerpt"><?= wp_trim_words(get_the_content(),40); ?></p>
+                                    <?php endif; ?>
+
+                                    <a href="<?php the_permalink() ?>" class="link">
+                                        Learn More
+                                        <img src="<?= get_template_directory_uri() ?>/images/blue_arrow_right.svg" alt="">
+                                    </a>
+                                </div>
+                            <?php endforeach; wp_reset_postdata();
+                        endif; ?>
+                    </div>
                 <?php endif; ?>
             </div>
         </section>
