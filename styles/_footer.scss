@@ -26,6 +26,8 @@
 
             @media #{$s750} {
                 padding: 55px 20px;
+                margin-bottom: 70px;
+                margin-top: 20px;
             }
 
             &:after {
@@ -39,7 +41,11 @@
                 border: solid 1px #fff;
                 border-radius: 38px;
                 z-index: 0;
-                
+
+                @media #{$s750} {
+                    top: -8px;
+                    left: -8px;
+                }
             }
 
             &:before {
@@ -58,6 +64,10 @@
             .button-holder{
                 text-align: center;
                 margin-top: 40px;
+
+                @media #{$s750} {
+                    margin-top: 20px;
+                }
 
                 a {
                     display: inline-flex;
@@ -79,6 +89,14 @@
 
                     @media #{$s1500} {
                         font-size: 18px;
+                    }
+
+                    @media #{$s750} {
+                        border-radius: 5px;
+                        min-width: 240px;
+                        padding: 14px;
+                        height: auto;
+                        font-size: 14px;
                     }
                 }
             }
@@ -145,6 +163,11 @@
                 @media #{$s1500} {
                     font-size: 18px;
                 }
+
+                @media #{$s750} {
+                    font-size: 16px;
+                }
+                
             }
 
             .form-holder {
@@ -168,6 +191,11 @@
                     padding: 0 20px;
                     box-sizing: border-box;
                     color: #fff;
+
+                    @media #{$s750} {
+                        height: 40px;
+                        border-radius: 5px;
+                    }
 
                     &::placeholder {
                         color: inherit;
@@ -197,6 +225,16 @@
                     color: $dark-blue;
                     font-family: $font-2-medium;
                     width: auto;
+
+                    @media #{$s750} {
+                        height: 40px;
+                        width: 100%;
+                        border-radius: 5px;
+                        position: relative;
+                        top: auto;
+                        left: auto;
+                        margin-top: 10px;
+                    }
                 }
             }
         }
@@ -383,6 +421,10 @@
 
                     li {
                         margin-right: 26px;
+
+                        @media #{$s750} {
+                            margin-right: 15px;
+                        }
 
                         &:last-of-type {
                             margin-right: 0;

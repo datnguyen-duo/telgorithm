@@ -11,6 +11,7 @@ if ( ! function_exists( 'site_setup' ) ) :
                 'menu-2' => esc_html__( 'Header - Top Bar', 'telgorithm' ),
                 'menu-3' => esc_html__( 'Footer - Primary', 'telgorithm' ),
                 'menu-4' => esc_html__( 'Footer - Bottom Bar', 'telgorithm' ),
+                'menu-5' => esc_html__( 'Header - Mobile menu', 'telgorithm' ),
             )
         );
 

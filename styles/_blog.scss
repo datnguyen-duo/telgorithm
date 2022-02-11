@@ -12,6 +12,16 @@
             margin-bottom: 200px;
         }
 
+        @media #{$s1100} {
+            padding-top: 220px;
+            margin-bottom: 100px;
+        }
+
+        @media #{$s750} {
+            padding-top: 120px;
+            margin-bottom: 80px;
+        }
+
         &:after {
             content: "";
             display: block;
@@ -44,6 +54,10 @@
                 font-size: 4.3vw;
                 margin-bottom: 80px;
             }
+
+            @media #{$s1023} {
+                margin-bottom: 40px;
+            }
         }
 
         .post {
@@ -55,6 +69,10 @@
             overflow: hidden;
             border: solid 1px #fff;
             @include fade-up();
+
+            @media #{$s1023} {
+                padding-top: 73%;
+            }
 
             .post-tags {
                 position: absolute;
@@ -77,6 +95,10 @@
                 padding: 50px 32px 50px 58px;
                 box-sizing: border-box;
                 max-width: 745px;
+
+                @media #{$s1023} {
+                    max-width: 70%;
+                }
 
                 &:after{
                     content: '';
@@ -153,13 +175,41 @@
     .posts-slider-section {
         margin-bottom: 130px;
 
+        @media #{$s1023} {
+            margin-bottom: 70px;
+        }
+
+        @media #{$s750} {
+            margin-bottom: 50px;
+        }
+
+
         .title-container {
             display: flex;
             justify-content: space-between;
             margin-bottom: 71px;
+            
+            @media #{$s1100} {
+                margin-bottom: 40px;
+            }
+            
+            @media #{$s1023} {
+                align-items: center;
+            }
+
+            @media #{$s750} {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
 
             .title {
                 @include h2();
+
+                @media #{$s750} {
+                    width: 100%;
+                    text-align: center;
+                    margin-bottom: 20px;
+                }
             }
 
             .slider-buttons {
@@ -170,8 +220,21 @@
                 .posts-slider-btn-next {
                     cursor: pointer;
 
+                    @media #{$s750} {
+                        width: 34px;
+                        height: 34px;
+
+                        svg{
+                            width: 10px;
+                        }
+                    }
+
                     &.prev {
                         margin-right: 30px;
+
+                        @media #{$s750} {
+                            margin-right: 10px;
+                        }
                     }
                 }
             }
@@ -184,6 +247,11 @@
 
             @media #{$s1500} {
                 font-size: 18px;
+            }
+
+            @media #{$s750} {
+                font-size: 12px;
+                margin-bottom: 10px;
             }
         }
 
@@ -203,6 +271,10 @@
                 padding-top: 60%;
                 position: relative;
 
+                @media #{$s750} {
+                    border-radius: 20px;
+                }
+
                 img {
                     @include cropped-img();
                     z-index: 0;
@@ -213,6 +285,10 @@
                     top: 24px;
                     right: 25px;
                     z-index: 1;
+
+                    @media #{$s750} {
+                        display: none;
+                    }
                 }
             }
 
@@ -220,6 +296,10 @@
                 box-sizing: border-box;
                 margin-top: 46px;
                 max-width: 836px;
+
+                @media #{$s750} {
+                    margin-top: 15px;
+                }
 
                 .post-date {
                     z-index: 2;
@@ -229,6 +309,11 @@
                 .post-title {
                     @include h3();
                     margin-bottom: 24px;
+
+                    @media #{$s750} {
+                        font-size: 22px;
+                        margin-bottom: 15px;
+                    }
                 }
 
                 .post-excerpt {
@@ -243,6 +328,10 @@
                     overflow: hidden;
                     display: flex;
                     align-items: center;
+
+                    @media #{$s750} {
+                        opacity: 1;
+                    }
 
                     img{
                         margin-left: 5px;
@@ -292,14 +381,35 @@
             border-top: solid 1px $dark-blue;
             padding-top: 130px;
 
+            @media #{$s1023} {
+                padding-top: 70px;
+            }
+
+            @media #{$s750} {
+                padding-top: 55px;
+            }
+
             .title-container {
                 display: flex;
                 justify-content: space-between;
                 align-items: flex-end;
 
+                @media #{$s1023} {
+                    flex-wrap: wrap;
+                }
+
                 .title {
                     @include h2();
                     color: $dark-blue;
+
+                    @media #{$s1023} {
+                        width: 100%;
+                        margin-bottom: 20px;
+                    }
+
+                    @media #{$s750} {
+                        text-align: center;
+                    }
                 }
 
                 .search-container {
@@ -326,6 +436,11 @@
                         box-sizing: border-box;
                         border: none;
 
+                        @media #{$s750} {
+                            height: 40px;
+                            border-radius: 5px;
+                        }
+
                         &::placeholder {
                             color: inherit;
                         }
@@ -337,6 +452,10 @@
                 margin-top: 80px;
                 @include fade-up();
 
+                @media #{$s750} {
+                    margin-top: 40px;
+                }
+
                 .total-posts {
                     font-family: $font-2-medium;
                     font-size: 22px;
@@ -345,6 +464,10 @@
 
                     @media #{$s1500} {
                         font-size: 18px;
+                    }
+
+                    @media #{$s750} {
+                        display: none;
                     }
                 }
 
@@ -375,6 +498,29 @@
                             }
                         }
 
+                        @media #{$s1023} {
+                            &:nth-child(odd) {
+                                padding-right: 10px;
+                            }
+    
+                            &:nth-child(even) {
+                                padding-left: 10px;
+                            }
+                        }
+
+                        @media #{$s750} {
+                            width: 100%;
+                            margin-bottom: 40px;
+
+                            &:nth-child(odd) {
+                                padding-right: 0px;
+                            }
+    
+                            &:nth-child(even) {
+                                padding-left: 0px;
+                            }
+                        }
+
                         .post {
                             border: solid 1px $dark-blue;
                             border-radius: 30px;
@@ -385,6 +531,10 @@
                             $imageHeight: 60.2%;
                             $linkHeight: 23px;
                             $linkMarginTop: 10px;
+
+                            @media #{$s750} {
+                                border-radius: 20px;
+                            }
 
                             &:hover {
                                 .post-image {
@@ -425,6 +575,10 @@
                                     padding: 53px;
                                 }
 
+                                @media #{$s1023} {
+                                    padding: 30px;
+                                }
+
                                 .post-date {
                                     background-color: $cream;
                                     z-index: 2;
@@ -439,6 +593,10 @@
                                 .post-excerpt {
                                     @include p2();
                                     line-height: 1.3em;
+
+                                    @media #{$s750} {
+                                        display: none;
+                                    }
                                 }
 
                                 .link {
@@ -453,6 +611,10 @@
                                     img{
                                         margin-left: 5px;
                                         @include transition();
+                                    }
+
+                                    @media #{$s750} {
+                                        height: auto;
                                     }
 
                                     &:hover{

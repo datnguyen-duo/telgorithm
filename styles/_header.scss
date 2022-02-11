@@ -5,8 +5,73 @@
     left: 0;
     z-index: 10;
 
+    .mobile_navigation{
+        height: 100vh;
+        background-color: $blue;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9;
+        width: 100%;
+        display: flex;
+        justify-self: center;
+        align-items: center;
+        padding: 0 30px;
+        box-sizing: border-box;
+        display: none;
 
+        .mobile_navigation_content{
+            width: 100%;
+
+            ul{
+                li{
+                    text-align: center;
+                    margin-bottom: 10px;
+                    a{
+                        color: #fff;
+                        font-family: $font-3-bold;
+                        font-size: 40px;
+                    }
+                }
+            }
+
+            .social-media-wrap{
+                margin-top: 80px;
+
+                p, a{
+                    color: #fff;
+                    margin-bottom: 8px;
+                    font-family: $font-regular;
+                    text-align: center;
+                    display: block;
+                }
+
+                .social-media {
+                    position: relative;
+                    top: auto;
+                    left: auto;
+                    width: 100%;
+                    transform: none;
     
+                    ul {
+                        display: flex;
+                        justify-content: center;
+    
+                        li {
+                            margin-right: 8px;
+    
+                            &:last-of-type {
+                                margin-right: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+    
+
     &.dark-header {
         .section-content {
             .top {
@@ -22,6 +87,15 @@
             }
 
             .bottom {
+                @media #{$s750} {
+                    border-bottom: 1px solid $dark-blue;
+                }
+
+                .mobile_opener{
+                    span{
+                        background-color: $dark-blue;
+                    }
+                }
                 nav {
                     ul {
                         li {
@@ -50,6 +124,20 @@
         }
     }
 
+    &.white{
+        .bottom {
+            @media #{$s750} {
+                border-bottom: 1px solid #fff!important;
+            }
+
+            // .mobile_opener{
+            //     span{
+            //         background-color: $dark-blue;
+            //     }
+            // }
+        }
+    }
+
     .section-content {
         max-width: 1980px;
         margin: auto;
@@ -65,7 +153,9 @@
         }
 
         @media #{$s750} {
-            padding: 17px 25px 0;
+            padding: 0px 25px;
+            position: relative;
+            z-index: 11;
         }
 
         .top {
@@ -105,6 +195,62 @@
         .bottom {
             display: flex;
             justify-content: space-between;
+
+            @media #{$s750} {
+                padding-top: 5px;
+                padding-bottom: 5px;
+                align-items: center;
+            }
+
+            @media #{$s750} {
+                border-bottom: 1px solid #fff;
+            }
+
+            .mobile_opener{
+                display: none;
+
+                span{
+                    width: 24px;
+                    height: 3px;
+                    background-color: #fff;
+                    display: block;
+                    margin-bottom: 5px;
+                    position: relative;
+                    @include transition();
+
+                    &:last-child{
+                        margin-bottom: 0px;
+                    }
+                }
+
+                &.active{
+                    span{
+                        &:nth-of-type(1){
+                            transform: rotate(45deg);
+                            top: 6px;
+                        }
+
+                        &:nth-of-type(2){
+                            display: none;
+                        }
+
+                        &:nth-of-type(3){
+                            transform: rotate(-45deg);
+                            top: -2px;
+                        }
+                    }
+                }
+
+                &.white{
+                    span{
+                        background-color: #fff;
+                    }
+                }
+
+                @media #{$s750} {
+                    display: block;
+                }
+            }
 
             nav {
                 display: flex;

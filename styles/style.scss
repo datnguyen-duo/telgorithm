@@ -36,6 +36,10 @@ body {
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
 
+    &.no_scroll{
+        overflow: hidden;
+    }
+
     * {
         font-weight: normal;
     }

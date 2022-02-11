@@ -22,8 +22,48 @@
         'templates/about.php',
     );
     $is_dark_header = is_page_template($templates_with_dark_header) || is_front_page() || ( is_page() && !is_page_template() );
+
+    $linkedin = get_field('linkedin', 'option');
+    $instagram = get_field('instagram', 'option');
+    $facebook = get_field('facebook', 'option');
+    $twitter = get_field('twitter', 'option');
     ?>
-    <header class="site-header <?= ( $is_dark_header ) ? ' dark-header' : null; ?>">
+    <header class="site-header <?= ( $is_dark_header ) ? ' dark-header dark-logo' : null; ?>">
+        <div class="mobile_navigation">
+            <div class="mobile_navigation_content">
+                <?php
+                    wp_nav_menu(
+                        array(
+                            'theme_location' => 'menu-5',
+                            'container' => false,
+                        )
+                    );
+                ?>
+
+                <div class="social-media-wrap">
+                    <p>Contact Us</p>
+                    <a href="mailto:hello@telgorithm.com">hello@telgorithm.com</a>
+                    <div class="social-media">
+                        <?php if( $linkedin || $instagram || $facebook || $twitter ): ?>
+                            <ul>
+                                <?php if( $linkedin ): ?>
+                                    <li><a href="<?= $linkedin ?>"><img src="<?= get_template_directory_uri() ?>/images/linkedin.svg" alt=""></a></li>
+                                <?php endif; ?>
+                                <?php if( $instagram ): ?>
+                                    <li><a href="<?= $instagram ?>"><img src="<?= get_template_directory_uri() ?>/images/instagram.svg" alt=""></a></li>
+                                <?php endif; ?>
+                                <?php if( $facebook ): ?>
+                                    <li><a href="<?= $facebook ?>"><img src="<?= get_template_directory_uri() ?>/images/facebook.svg" alt=""></a></li>
+                                <?php endif; ?>
+                                <?php if( $twitter ): ?>
+                                    <li><a href="<?= $twitter ?>"><img src="<?= get_template_directory_uri() ?>/images/twitter.svg" alt=""></a></li>
+                                <?php endif; ?>
+                            </ul>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="section-content">
             <?php if( has_nav_menu('menu-2') ): ?>
                 <div class="top">
@@ -39,6 +79,7 @@
             <?php endif; ?>
 
             <div class="bottom">
+                
                 <nav>
                     <div class="logo">
                         <a href="<?= site_url() ?>">
@@ -55,6 +96,12 @@
                         );
                     endif; ?>
                 </nav>
+
+                <div class="mobile_opener">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
 
                 <?php
                 $link = get_field('button','option');

@@ -4,6 +4,23 @@ window.addEventListener('load', (event) => {
 
 (function ($) { //document ready
     //GLOBAL ANIMATIONS
+    $('.mobile_opener').on('click', function(){
+        $(this).toggleClass('active white');
+        $('.site-header').toggleClass('white dark-header');
+        $('.mobile_navigation').fadeToggle().css('display', 'flex');
+        $('body').toggleClass('no_scroll');
+
+        if($('.site-header').hasClass('dark-logo')){
+            setTimeout(function(){
+                if(!$('.site-header').hasClass('dark-header')){
+                    $('.site-header .bottom .logo img').attr('src', site_data.theme_url + '/images/logo.svg')
+                } else{
+                    $('.site-header .bottom .logo img').attr('src', site_data.theme_url + '/images/logo-dark.svg')
+                }
+            },200)
+        }
+    });
+
     $( window ).on( "load", function() {
         
         let animationTrigger = $(".fadein_wrap");
@@ -125,7 +142,6 @@ window.addEventListener('load', (event) => {
                     scrollTrigger: {
                         trigger: trigger,
                         start: "top 0%",
-                        markers: true,
                         end: "bottom 50%",
                         onEnter: function () {
                             $('.history-slider').slick('slickGoTo', slideIndex);
@@ -198,8 +214,14 @@ window.addEventListener('load', (event) => {
         breakpoints: {
             // when window width is >= 320px
             320: {
-              spaceBetween: 50
+              spaceBetween: 30,
+              slidesPerView: 1.1
             },
+            // when window width is >= 640px
+            750: {
+                slidesPerView: 1.54,
+                spaceBetween: 50,
+              },
             // when window width is >= 640px
             1500: {
               spaceBetween: 100
