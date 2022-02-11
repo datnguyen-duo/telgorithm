@@ -163,7 +163,7 @@
             border-bottom: solid 1px #fff;
             margin-bottom: 25px;
 
-            @media #{$s1100} {
+            @media #{$s1500} {
                 padding-bottom: 15px;
                 margin-bottom: 15px;
             }
@@ -187,6 +187,10 @@
                         font-family: $font-2-medium;
                         font-size: 16px;
                         color: #fff;
+
+                        @media #{$s1500} {
+                            font-size: 14px;
+                        }
                     }
                 }
             }
@@ -258,6 +262,7 @@
 
                 .logo {
                     margin-right: 55px;
+                    width: 160px;
 
                     @media #{$s1023} {
                         margin-right: 25px;
@@ -265,10 +270,10 @@
 
                     @media #{$s750} {
                         width: 150px;
+                    }
 
-                        img{
-                            width: 100%;
-                        }
+                    img{
+                        width: 100%;
                     }
                 }
 
@@ -296,7 +301,7 @@
 
                         a {
                             font-family: $font-2-medium;
-                            font-size: 22px;
+                            font-size: 20px;
                             color: #fff;
 
                             &:hover{
@@ -304,7 +309,7 @@
                             }
 
                             @media #{$s1500} {
-                                font-size: 18px;
+                                font-size: 16px;
                             }
 
                             @media #{$s1100} {
@@ -324,12 +329,12 @@
                     display: inline-flex;
                     align-items: center;
                     justify-content: center;
-                    min-width: 247px;
-                    height: 55px;
+                    min-width: 237px;
+                    height: 50px;
                     background-color: #fff;
                     border-radius: 10px;
                     font-family: $font-2-medium;
-                    font-size: 22px;
+                    font-size: 20px;
                     color: $dark-blue;
                     @include transition();
 
@@ -339,7 +344,8 @@
                     }
 
                     @media #{$s1500} {
-                        font-size: 18px;
+                        font-size: 16px;
+                        min-width: 207px;
                     }
 
                     @media #{$s1100} {
