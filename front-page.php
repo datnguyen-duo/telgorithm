@@ -64,6 +64,12 @@ get_header(); ?>
                                 <div class="left">
                                     <?php foreach ( $features_section['features'] as $feature ): ?>
                                         <div class="single-feature fadein_wrap">
+                                            <?php if( $feature['image'] ): ?>
+                                                <div class="feature-image-holder">
+                                                    <img src="<?php echo $feature['image']['url']; ?>" alt="">
+                                                </div>
+                                            <?php endif; ?>
+
                                             <?php if( $feature['title'] ): ?>
                                                 <h2><?= $feature['title'] ?></h2>
                                             <?php endif; ?>
