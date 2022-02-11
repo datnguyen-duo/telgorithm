@@ -1,5 +1,5 @@
 <?php
-$per_page = 2;
+$per_page = get_option( 'posts_per_page' );
 function posts_filter() {
     $search = $_GET['search'];
     $current_page = $_GET['page'];
