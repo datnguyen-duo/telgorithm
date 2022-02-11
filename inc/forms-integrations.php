@@ -7,9 +7,44 @@ function handle_form_submission( $form, $fields, $args ) {
     if( $fields ) {
         //SLACK WEBHOOK
         if( $slack_settings['enabled'] && $slack_settings['webhook_url'] ){
-            $text = ( $slack_settings['text'] ) ? $slack_settings['text'] : 'New message from '.$form['title'].' form.';
+            $slack_message_title = $slack_settings['slack_title'];
+            $slack_message_title_link = $slack_settings['title_link'];
+            $slack_message = "";
+
+            if( $slack_message_title && $slack_message_title_link ) {
+                $slack_message.= "<".$slack_message_title_link."|*".$slack_message_title."*>";
+            } elseif( $slack_message_title ) {
+                $slack_message.= "*".$slack_message_title."*";
+            }
+
+            $slack_message.="\n\n";
+
+            if( $slack_settings['text'] ) {
+//                'New message from '.$form['title'].' form.'
+                $slack_message.= $slack_settings['text']."\n\n";
+            }
+
+            foreach ( $fields as $field ){
+                if( $field['name'] != 'recaptcha' ) {
+                    $value = $field['value'];
+
+                    if( $field['name'] == 'attachment' ) {
+                        if( !$value ) {
+                            $value = 'No attachment';
+                        } else {
+                            $value = $field['value']['url'];
+                        }
+                    } else {
+                        if( !$value ) {
+                            $value = 'NA';
+                        }
+                    }
+
+                    $slack_message .= "*".$field['label']."* \n".$value."\n\n";
+                }
+            }
             $data = json_encode(array(
-                "text" => $text
+                "text" => $slack_message
             ));
 
             $ch = curl_init($slack_settings['webhook_url']);
@@ -19,6 +54,7 @@ function handle_form_submission( $form, $fields, $args ) {
             $result = curl_exec($ch);
             curl_close($ch);
         }
+        //SLACK WEBHOOK END
 
         if( $mc_settings['enabled'] && $mc_settings['api_key'] && $mc_settings['list_id'] ) {
             //MAILCHIMP WEBHOOK
@@ -35,7 +71,7 @@ function handle_form_submission( $form, $fields, $args ) {
                     $first_name = $field['value'];
                 }
 
-                if( $field['name'] == 'last_name' ){
+                if( $field['name'] == 'last_name' ) {
                     $last_name = $field['value'];
                 }
             }
