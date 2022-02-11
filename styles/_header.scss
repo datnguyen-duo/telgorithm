@@ -188,6 +188,10 @@
                         font-size: 16px;
                         color: #fff;
 
+                        &:hover{
+                            font-weight: bold;
+                        }
+
                         @media #{$s1500} {
                             font-size: 14px;
                         }
@@ -305,7 +309,7 @@
                             color: #fff;
 
                             &:hover{
-                                font-family: $font-bold;
+                                font-weight: bold;
                             }
 
                             @media #{$s1500} {
