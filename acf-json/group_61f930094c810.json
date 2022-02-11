@@ -118,7 +118,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "50",
                         "class": "",
                         "id": ""
                     },
@@ -135,6 +135,31 @@
                     "max_size": "",
                     "mime_types": "",
                     "library": "all"
+                },
+                {
+                    "key": "field_620655d0d76c4",
+                    "label": "Image Fit",
+                    "name": "image_fit",
+                    "type": "radio",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "hide_admin": 0,
+                    "choices": {
+                        "cover": "Cover",
+                        "contain": "Contain"
+                    },
+                    "allow_null": 0,
+                    "other_choice": 0,
+                    "default_value": "cover",
+                    "layout": "vertical",
+                    "return_format": "value",
+                    "save_other_choice": 0
                 },
                 {
                     "key": "field_61f9313dd0dae",
@@ -277,5 +302,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1644577816
+    "modified": 1644582550
 }

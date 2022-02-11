@@ -15,7 +15,9 @@ get_header(); ?>
 
                 <?php if( $hero_section['active'] && ( $hero_section['post'] || $hero_section['image'] ) ): ?>
                     <div class="post fadein_wrap">
-                        <?= wp_get_attachment_image( $hero_section['image']['id'], 'full', '' ,array('class'=>'post-image') ) ?>
+                        <div class="post-image-holder">
+                            <?= wp_get_attachment_image( $hero_section['image']['id'], 'full', '' ,array('class'=>'post-image '.$hero_section['image_fit']) ) ?>
+                        </div>
 
                         <?php if( $hero_section['post'] ):
                             foreach( $hero_section['post'] as $post ): setup_postdata($post);

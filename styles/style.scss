@@ -178,6 +178,31 @@ body {
     font-family: $font-2-medium;
     font-size: 18px;
     color: $blue;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    @media #{$s750} {
+        font-size: 16px;
+    }
+
+    &:hover {
+        img {
+            margin-left: 7px;
+        }
+    }
+
+    img {
+        position: relative;
+        top: 1px;
+        margin-left: 5px;
+        @include transition();
+
+        @media #{$s750} {
+            top: 2px;
+            margin-left: 3px;
+        }
+    }
 }
 
 .content-container {
@@ -518,6 +543,15 @@ body {
     cursor: pointer;
     @include transition();
     @include p1();
+
+    @media #{$s750} {
+        width: 34px;
+        height: 34px;
+
+        svg{
+            width: 10px;
+        }
+    }
 
     &.active,
     &:hover {
