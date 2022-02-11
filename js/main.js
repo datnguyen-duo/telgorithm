@@ -240,6 +240,13 @@ window.addEventListener('load', (event) => {
     let $formsHolder = $('.forms');
     let $forms = $('.form-container');
 
+    if (window.location.href.indexOf("join") > -1) {
+        console.log('radi')
+        setTimeout(function(){
+            $('.form-selector li[data-form=".form-1"]').trigger('click');
+        }, 500)
+    }
+
     $formFilterItems.on('click', function(){
        if( !$(this).hasClass('active') ) {
            $formsHolder.addClass('loading');
