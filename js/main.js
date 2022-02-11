@@ -67,20 +67,20 @@ window.addEventListener('load', (event) => {
 
     //Template Home
 
-    // var interval;
-    // var accordionTimer = function(){
-    //     interval = setInterval(function(){
-    //         var activeSlider = $('.single-accordion.active');
-    //         var nextAccordion = activeSlider.data('next');
-    //         $('#' + nextAccordion).trigger('click');
-    //     }, 5000)
-    // };
-    // accordionTimer();
+    var interval;
+    var accordionTimer = function(){
+        interval = setInterval(function(){
+            var activeSlider = $('.single-accordion.active');
+            var nextAccordion = activeSlider.data('next');
+            $('#' + nextAccordion).trigger('click');
+        }, 5000)
+    };
+    accordionTimer();
 
     let $singleAccordion = $('.single-accordion');
     $singleAccordion.on('click', function(e){
-        // clearInterval(interval);
-        // accordionTimer();
+        clearInterval(interval);
+        accordionTimer();
 
         if( !$(this).hasClass('active') ) {
             let currentImage = $(this).attr('id');
@@ -128,62 +128,68 @@ window.addEventListener('load', (event) => {
         touchMove: false,
     });
 
-    ScrollTrigger.matchMedia({
-        // desktop
-        "(min-width: 100px)": function () {
-            let sections = $(".page-template-about-container .single_box");
-            let container = $(".history-slider");
-
-            sections.each(function () {
-                let trigger = $(this);
-                let slideIndex = trigger.index();
-
-                gsap.to(container, {
-                    scrollTrigger: {
-                        trigger: trigger,
-                        start: "top 0%",
-                        end: "bottom 50%",
-                        onEnter: function () {
-                            $('.history-slider').slick('slickGoTo', slideIndex);
-                            $(trigger).find('.year').addClass('active');
+    if ($(window).width() < 750) {
+        ScrollTrigger.matchMedia({
+            // desktop
+            "(min-width: 100px)": function () {
+                let sections = $(".page-template-about-container .single_box");
+                let container = $(".history-slider");
+    
+                sections.each(function () {
+                    let trigger = $(this);
+                    let slideIndex = trigger.index();
+    
+                    gsap.to(container, {
+                        scrollTrigger: {
+                            trigger: trigger,
+                            start: "top 0%",
+                            end: "bottom 50%",
+                            onEnter: function () {
+                                $('.history-slider').slick('slickGoTo', slideIndex);
+                                $(trigger).find('.year').addClass('active');
+                            },
+                            onLeaveBack: function () {
+                                $('.history-slider').slick('slickGoTo', slideIndex);
+                                $(trigger).find('.year').removeClass('active');
+                            },
+                            onUpdate: self => $(this).find('.white-line').css('height', self.progress * 100+'%' )
                         },
-                        onLeaveBack: function () {
-                            $('.history-slider').slick('slickGoTo', slideIndex);
-                            $(trigger).find('.year').removeClass('active');
-                        },
-                        onUpdate: self => $(this).find('.white-line').css('height', self.progress * 100+'%' )
-                    },
+                    });
                 });
-            });
-        },
-
-        "(min-width: 800px)": function () {
-            let sections = $(".page-template-about-container .single_box");
-            let container = $(".history-slider");
-
-            sections.each(function () {
-                let trigger = $(this);
-                let slideIndex = trigger.index();
-
-                gsap.to(container, {
-                    scrollTrigger: {
-                        trigger: trigger,
-                        start: "top 50%",
-                        end: "bottom 50%",
-                        onEnter: function () {
-                            $('.history-slider').slick('slickGoTo', slideIndex);
-                            $(trigger).find('.year').addClass('active');
+            },
+        });    
+    }
+    else {
+        ScrollTrigger.matchMedia({
+            "(min-width: 100px)": function () {
+                let sections = $(".page-template-about-container .single_box");
+                let container = $(".history-slider");
+    
+                sections.each(function () {
+                    let trigger = $(this);
+                    let slideIndex = trigger.index();
+    
+                    gsap.to(container, {
+                        scrollTrigger: {
+                            trigger: trigger,
+                            start: "top 50%",
+                            end: "bottom 50%",
+                            onEnter: function () {
+                                $('.history-slider').slick('slickGoTo', slideIndex);
+                                $(trigger).find('.year').addClass('active');
+                            },
+                            onLeaveBack: function () {
+                                $('.history-slider').slick('slickGoTo', slideIndex);
+                                $(trigger).find('.year').removeClass('active');
+                            },
+                            onUpdate: self => $(this).find('.white-line').css('height', self.progress * 100+'%' )
                         },
-                        onLeaveBack: function () {
-                            $('.history-slider').slick('slickGoTo', slideIndex);
-                            $(trigger).find('.year').removeClass('active');
-                        },
-                        onUpdate: self => $(this).find('.white-line').css('height', self.progress * 100+'%' )
-                    },
+                    });
                 });
-            });
-        },
-    });
+            },
+        });
+    }
+    
     //Template About END
 
     var postsSlider2 = new Swiper(".posts-slider-2", {
