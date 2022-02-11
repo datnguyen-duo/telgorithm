@@ -56,11 +56,12 @@ function handle_form_submission( $form, $fields, $args ) {
         }
         //SLACK WEBHOOK END
 
+        //MAILCHIMP WEBHOOK
         if( $mc_settings['enabled'] && $mc_settings['api_key'] && $mc_settings['list_id'] ) {
-            //MAILCHIMP WEBHOOK
             $email = '';
             $first_name = '';
             $last_name = '';
+            $list_tags = array();
 
             foreach( $fields as $field ) {
                 if( $field['type'] == 'email') {
@@ -77,6 +78,10 @@ function handle_form_submission( $form, $fields, $args ) {
             }
 
             if( $email ) {
+                if( $mc_settings['tags'] ) {
+                    $list_tags = explode(',',$mc_settings['tags']);
+                }
+
                 $api_key = $mc_settings['api_key'];
 
                 // server name followed by a dot.(us14.)
@@ -91,6 +96,7 @@ function handle_form_submission( $form, $fields, $args ) {
                     'apikey'        => $api_key,
                     'email_address' => $email,
                     'status'        => 'subscribed',
+                    'tags'  => $list_tags,
                     'merge_fields'  => array(
                         'FNAME' => $first_name,
                         'LNAME'	=> $last_name
@@ -120,6 +126,7 @@ function handle_form_submission( $form, $fields, $args ) {
                 curl_close($ch);
             }
         }
+        //MAILCHIMP WEBHOOK END
     }
 }
 add_action( 'af/form/submission', 'handle_form_submission', 10, 3 );
