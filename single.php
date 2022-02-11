@@ -98,6 +98,7 @@ $post_id = get_the_ID();
         ));
 
         get_template_part( 'template-parts/posts',null, array(
+            'slider' => true,
             'data' => array (
                 'title' => 'Browse similar posts',
                 'query' => $posts

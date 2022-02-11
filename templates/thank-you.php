@@ -18,6 +18,7 @@ get_header(); ?>
         </div>
 
         <?php get_template_part( 'template-parts/posts',null, array(
+                'slider' => true,
                 'title_type' => 'type_2',
                 'data' => array (
                     'title' => 'Browse the blog posts while you wait',
