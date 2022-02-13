@@ -83,9 +83,98 @@ get_header(); ?>
                                 <div class="right">
                                     <div class="right-content">
                                         <div class="image-holder">
-                                            <video muted preload id="features_video">
-                                                    <source src="<?= get_template_directory_uri() ?>/videos/features_new.mp4" type="video/mp4">
-                                            </video>
+                                            <img src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00000.png" alt="video-sequence">
+                                            <img class="messaging" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00001.png" alt="video-sequence">
+                                            <img class="messaging" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00002.png" alt="video-sequence">
+                                            <img class="messaging" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00003.png" alt="video-sequence">
+                                            <img class="messaging" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00004.png" alt="video-sequence">
+                                            <img class="messaging" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00005.png" alt="video-sequence">
+                                            <img class="messaging" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00006.png" alt="video-sequence">
+                                            <img class="messaging" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00007.png" alt="video-sequence">
+                                            <img class="messaging" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00008.png" alt="video-sequence">
+                                            <img class="messaging" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00009.png" alt="video-sequence">
+                                            <img class="messaging" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00010.png" alt="video-sequence">
+                                            <img class="messaging" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00011.png" alt="video-sequence">
+                                            <img class="messaging" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00012.png" alt="video-sequence">
+                                            <img class="messaging" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00013.png" alt="video-sequence">
+                                            <img class="messaging" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00014.png" alt="video-sequence">
+                                            <img class="messaging" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00015.png" alt="video-sequence">
+                                            <img class="messaging" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00016.png" alt="video-sequence">
+                                            <img class="messaging" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00017.png" alt="video-sequence">
+                                            <img class="messaging" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00018.png" alt="video-sequence">
+                                            <img class="messaging" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00019.png" alt="video-sequence">
+                                            <img class="messaging" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00020.png" alt="video-sequence">
+                                            <img class="messaging" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00021.png" alt="video-sequence">
+                                            <img class="messaging" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00022.png" alt="video-sequence">
+                                            <img class="messaging" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00023.png" alt="video-sequence">
+                                            <img class="messaging" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00024.png" alt="video-sequence">
+
+                                            <img class="real-numbers" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00026.png" alt="video-sequence">
+                                            <img class="real-numbers" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00027.png" alt="video-sequence">
+                                            <img class="real-numbers" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00028.png" alt="video-sequence">
+                                            <img class="real-numbers" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00029.png" alt="video-sequence">
+                                            <img class="real-numbers" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00030.png" alt="video-sequence">
+                                            <img class="real-numbers" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00031.png" alt="video-sequence">
+                                            <img class="real-numbers" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00032.png" alt="video-sequence">
+                                            <img class="real-numbers" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00033.png" alt="video-sequence">
+                                            <img class="real-numbers" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00034.png" alt="video-sequence">
+                                            <img class="real-numbers" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00035.png" alt="video-sequence">
+                                            <img class="real-numbers" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00036.png" alt="video-sequence">
+                                            <img class="real-numbers" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00037.png" alt="video-sequence">
+                                            <img class="real-numbers" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00038.png" alt="video-sequence">
+                                            <img class="real-numbers" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00039.png" alt="video-sequence">
+                                            <img class="real-numbers" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00040.png" alt="video-sequence">
+                                            <img class="real-numbers" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00041.png" alt="video-sequence">
+                                            <img class="real-numbers" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00042.png" alt="video-sequence">
+                                            <img class="real-numbers" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00043.png" alt="video-sequence">
+                                            <img class="real-numbers" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00044.png" alt="video-sequence">
+                                            <img class="real-numbers" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00045.png" alt="video-sequence">
+                                            <img class="real-numbers" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00046.png" alt="video-sequence">
+                                            <img class="real-numbers" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00047.png" alt="video-sequence">
+                                            <img class="real-numbers" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00048.png" alt="video-sequence">
+                                            <img class="real-numbers" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00049.png" alt="video-sequence">
+                                            <img class="real-numbers" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00050.png" alt="video-sequence">
+                                            <img class="real-numbers" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00051.png" alt="video-sequence">
+                                            <img class="real-numbers" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00052.png" alt="video-sequence">
+                                            <img class="real-numbers" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00053.png" alt="video-sequence">
+                                            <img class="real-numbers" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00054.png" alt="video-sequence">
+                                            <img class="real-numbers" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00055.png" alt="video-sequence">
+                                            <img class="real-numbers" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00056.png" alt="video-sequence">
+
+                                            <img class="throughput" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00057.png" alt="video-sequence">
+                                            <img class="throughput" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00058.png" alt="video-sequence">
+                                            <img class="throughput" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00059.png" alt="video-sequence">
+                                            <img class="throughput" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00060.png" alt="video-sequence">
+                                            <img class="throughput" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00061.png" alt="video-sequence">
+                                            <img class="throughput" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00062.png" alt="video-sequence">
+                                            <img class="throughput" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00063.png" alt="video-sequence">
+                                            <img class="throughput" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00064.png" alt="video-sequence">
+                                            <img class="throughput" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00065.png" alt="video-sequence">
+                                            <img class="throughput" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00066.png" alt="video-sequence">
+                                            <img class="throughput" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00067.png" alt="video-sequence">
+                                            <img class="throughput" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00068.png" alt="video-sequence">
+                                            <img class="throughput" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00069.png" alt="video-sequence">
+                                            <img class="throughput" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00070.png" alt="video-sequence">
+                                            <img class="throughput" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00071.png" alt="video-sequence">
+                                            <img class="throughput" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00072.png" alt="video-sequence">
+                                            <img class="throughput" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00073.png" alt="video-sequence">
+                                            <img class="throughput" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00074.png" alt="video-sequence">
+                                            <img class="throughput" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00075.png" alt="video-sequence">
+                                            <img class="throughput" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00076.png" alt="video-sequence">
+                                            <img class="throughput" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00077.png" alt="video-sequence">
+                                            <img class="throughput" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00078.png" alt="video-sequence">
+                                            <img class="throughput" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00079.png" alt="video-sequence">
+                                            <img class="throughput" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00080.png" alt="video-sequence">
+                                            <img class="throughput" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00081.png" alt="video-sequence">
+                                            <img class="throughput" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00082.png" alt="video-sequence">
+                                            <img class="throughput" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00083.png" alt="video-sequence">
+                                            <img class="throughput" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00084.png" alt="video-sequence">
+                                            <img class="throughput" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00085.png" alt="video-sequence">
+                                            <img class="throughput" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00086.png" alt="video-sequence">
+                                            <img class="throughput" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00087.png" alt="video-sequence">
+                                            <img class="throughput" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00088.png" alt="video-sequence">
+                                            <img class="throughput" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00089.png" alt="video-sequence">
+                                            <img class="throughput" src="<?= get_template_directory_uri() ?>/videos/sequence/Features animation QUICK VER_00090.png" alt="video-sequence">
                                         </div>
 
                                         <!-- <canvas id="hero-lightpass" style="position: absolute; left: 50%; top: 50%; z-index: 0;" /> -->
