@@ -8,7 +8,6 @@
 
     @media #{$s750} {
         position: fixed;
-        background-color: $green;
     }
     
     .mobile_navigation{
@@ -76,7 +75,12 @@
         }
 
     }
-    
+
+    &.green {
+        @media #{$s750} {
+            background-color: $green;
+        }
+    }
 
     &.dark-header {
 

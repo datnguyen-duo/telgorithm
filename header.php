@@ -22,13 +22,14 @@
         'templates/about.php',
     );
     $is_dark_header = is_page_template($templates_with_dark_header) || is_front_page() || ( is_page() && !is_page_template() );
+    $green = is_single() || (!is_front_page() && is_home());
 
     $linkedin = get_field('linkedin', 'option');
     $instagram = get_field('instagram', 'option');
     $facebook = get_field('facebook', 'option');
     $twitter = get_field('twitter', 'option');
     ?>
-    <header class="site-header <?= ( $is_dark_header ) ? ' dark-header dark-logo' : null; ?>">
+    <header class="site-header <?= ( $is_dark_header ) ? ' dark-header dark-logo' : null; ?> <?= ( $green ) ? 'green' : null; ?>">
         <div class="mobile_navigation">
             <div class="mobile_navigation_content">
                 <?php
