@@ -5,7 +5,7 @@
         {
             "key": "field_6203d80d068d2",
             "label": "Name(Join the team Form)",
-            "name": "name",
+            "name": "first_name",
             "type": "text",
             "instructions": "",
             "required": 1,
@@ -46,7 +46,7 @@
             "key": "field_6203d80d068e3",
             "label": "Email Address",
             "name": "email_address",
-            "type": "text",
+            "type": "email",
             "instructions": "",
             "required": 1,
             "conditional_logic": 0,
@@ -57,10 +57,9 @@
             },
             "hide_admin": 0,
             "default_value": "",
-            "placeholder": "Email Address",
+            "placeholder": "",
             "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "append": ""
         },
         {
             "key": "field_6203d83a2ce37",
@@ -151,7 +150,7 @@
             {
                 "param": "af_form",
                 "operator": "==",
-                "value": "form_6203d7e24df83"
+                "value": "form_6204e114ab1ad"
             }
         ]
     ],
@@ -163,12 +162,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "acfe_display_title": "",
-    "acfe_autosync": [
-        "json"
-    ],
-    "acfe_form": 0,
-    "acfe_meta": "",
-    "acfe_note": "",
-    "modified": 1644522476
+    "modified": 1644857973
 }

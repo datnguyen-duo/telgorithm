@@ -5,7 +5,7 @@
         {
             "key": "field_6203d6b08c952",
             "label": "Name",
-            "name": "name",
+            "name": "first_name",
             "type": "text",
             "instructions": "",
             "required": 1,
@@ -46,7 +46,7 @@
             "key": "field_6203d6b08c979",
             "label": "Email Address",
             "name": "email_address",
-            "type": "text",
+            "type": "email",
             "instructions": "",
             "required": 1,
             "conditional_logic": 0,
@@ -57,10 +57,9 @@
             },
             "hide_admin": 0,
             "default_value": "",
-            "placeholder": "Email Address",
+            "placeholder": "",
             "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "append": ""
         },
         {
             "key": "field_6203d6cefe6e0",
@@ -105,7 +104,7 @@
         {
             "key": "field_6203d6e5fe6e2",
             "label": "Phone Number",
-            "name": "phone_number",
+            "name": "number",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -233,7 +232,7 @@
         {
             "key": "field_6203d6b08c992",
             "label": "What brings you to Telgorithm?",
-            "name": "what_brings_you_to_telgorithm",
+            "name": "message",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -279,7 +278,7 @@
             {
                 "param": "af_form",
                 "operator": "==",
-                "value": "form_6203d7c33532b"
+                "value": "form_6204e114a3302"
             }
         ]
     ],
@@ -291,12 +290,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "acfe_display_title": "",
-    "acfe_autosync": [
-        "json"
-    ],
-    "acfe_form": 0,
-    "acfe_meta": "",
-    "acfe_note": "",
-    "modified": 1644522482
+    "modified": 1644867742
 }

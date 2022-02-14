@@ -1,6 +1,6 @@
 {
     "key": "group_62054a0bbc63e",
-    "title": "Form MailChimp & Slack Integration",
+    "title": "Form MailChimp & Slack Integration & Saleforce Integration",
     "fields": [
         {
             "key": "field_62055c059ca28",
@@ -83,26 +83,6 @@
                     "name": "list_id",
                     "type": "text",
                     "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "hide_admin": 0,
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_62068b43853cc",
-                    "label": "List Tags",
-                    "name": "tags",
-                    "type": "text",
-                    "instructions": "Separate tags with comma (tag 1, tag-2, tag)",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -215,51 +195,166 @@
                     "maxlength": ""
                 },
                 {
-                    "key": "field_620672f66e2d4",
-                    "label": "Title",
-                    "name": "slack_title",
-                    "type": "text",
-                    "instructions": "Title for slack message",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "hide_admin": 0,
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_620673116e2d5",
-                    "label": "Title Link",
-                    "name": "title_link",
-                    "type": "text",
-                    "instructions": "Link your title. If you leave empty Title field link won't show in the slack message",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "hide_admin": 0,
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
                     "key": "field_62056b9c06e63",
                     "label": "Text",
                     "name": "text",
                     "type": "text",
-                    "instructions": "Slack message under title",
+                    "instructions": "Message for the channel",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "hide_admin": 0,
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                }
+            ]
+        },
+        {
+            "key": "field_620aa23d7b232",
+            "label": "Saleforce",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_620aa23b7b22d",
+            "label": "Saleforce Settings",
+            "name": "saleforce_settings",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "layout": "row",
+            "sub_fields": [
+                {
+                    "key": "field_620aa23b7b22e",
+                    "label": "Enabled",
+                    "name": "enabled",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "hide_admin": 0,
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 1,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
+                    "key": "field_620aa23b7b22f",
+                    "label": "My Saleforce URL",
+                    "name": "my_saleforce_url",
+                    "type": "text",
+                    "instructions": "EXAMPLE: https:\/\/MYNAME.my.salesforce.com",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "hide_admin": 0,
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_620aa23b7b230",
+                    "label": "Cleint ID",
+                    "name": "cleint_id",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "hide_admin": 0,
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_620aa23b7b231",
+                    "label": "Cleint Secret",
+                    "name": "cleint_secret",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "hide_admin": 0,
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_620ab58c74dff",
+                    "label": "Saleforce Username",
+                    "name": "saleforce_username",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "hide_admin": 0,
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_620ab59774e00",
+                    "label": "Saleforce Password",
+                    "name": "saleforce_password",
+                    "type": "text",
+                    "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -294,12 +389,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "acfe_display_title": "",
-    "acfe_autosync": [
-        "json"
-    ],
-    "acfe_form": 0,
-    "acfe_meta": "",
-    "acfe_note": "",
-    "modified": 1644596588
+    "modified": 1644869095
 }

@@ -154,34 +154,34 @@ window.addEventListener("load", (event) => {
               if (isActive) {
                 if (direction > 0) {
                   if (i == 0) {
-                    gsap.to(".messaging", { display: "block", stagger: 0.1 });
+                    gsap.to(".messaging", { display: "block", stagger: 0.07 });
                   } else if (i == 1) {
                     gsap.to(".real-numbers", {
                       display: "block",
-                      stagger: 0.1,
+                      stagger: 0.07,
                     });
                   } else if (i == 2) {
-                    gsap.to(".throughput", { display: "block", stagger: 0.1 });
+                    gsap.to(".throughput", { display: "block", stagger: 0.07 });
                   }
                 } else {
                   if (i == 0) {
                     gsap.to(".throughput, .messaging, .real-numbers", {
                       display: "none",
                     });
-                    gsap.to(".messaging", { display: "block", stagger: 0.1 });
+                    gsap.to(".messaging", { display: "block", stagger: 0.07 });
                   } else if (i == 1) {
                     gsap.to(".throughput, .messaging, .real-numbers", {
                       display: "none",
                     });
                     gsap.to(".real-numbers", {
                       display: "block",
-                      stagger: 0.1,
+                      stagger: 0.07,
                     });
                   } else if (i == 2) {
                     gsap.to(".throughput, .messaging, .real-numbers", {
                       display: "none",
                     });
-                    gsap.to(".throughput", { display: "block", stagger: 0.1 });
+                    gsap.to(".throughput", { display: "block", stagger: 0.07 });
                   }
                 }
               }
