@@ -1,6 +1,6 @@
 {
     "key": "group_62054a0bbc63e",
-    "title": "Form MailChimp & Slack Integration & Saleforce Integration",
+    "title": "Form MailChimp & Slack Integration & Salesforce Integration",
     "fields": [
         {
             "key": "field_62055c059ca28",
@@ -218,7 +218,7 @@
         },
         {
             "key": "field_620aa23d7b232",
-            "label": "Saleforce",
+            "label": "Salesforce",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -271,7 +271,7 @@
                 },
                 {
                     "key": "field_620aa23b7b22f",
-                    "label": "My Saleforce URL",
+                    "label": "My Salesforce URL",
                     "name": "my_saleforce_url",
                     "type": "text",
                     "instructions": "EXAMPLE: https:\/\/MYNAME.my.salesforce.com",
@@ -291,7 +291,7 @@
                 },
                 {
                     "key": "field_620aa23b7b230",
-                    "label": "Cleint ID",
+                    "label": "Client ID",
                     "name": "cleint_id",
                     "type": "text",
                     "instructions": "",
@@ -311,7 +311,7 @@
                 },
                 {
                     "key": "field_620aa23b7b231",
-                    "label": "Cleint Secret",
+                    "label": "Client Secret",
                     "name": "cleint_secret",
                     "type": "text",
                     "instructions": "",
@@ -331,7 +331,7 @@
                 },
                 {
                     "key": "field_620ab58c74dff",
-                    "label": "Saleforce Username",
+                    "label": "Salesforce Username",
                     "name": "saleforce_username",
                     "type": "text",
                     "instructions": "",
@@ -351,7 +351,7 @@
                 },
                 {
                     "key": "field_620ab59774e00",
-                    "label": "Saleforce Password",
+                    "label": "Salesforce Password",
                     "name": "saleforce_password",
                     "type": "text",
                     "instructions": "",

@@ -133,15 +133,15 @@ window.addEventListener("load", (event) => {
         ".features-section .left > .single-feature"
       );
 
-      var images = document.querySelectorAll(
-        ".features-section .image-holder > img:not(:first-of-type)"
-      );
+      // var images = document.querySelectorAll(
+      //   ".features-section .image-holder > img:not(:first-of-type)"
+      // );
 
-      setTimeout(() => {
-        images.forEach((img) => {
-          img.style.display = "none";
-        });
-      }, 500);
+      // setTimeout(() => {
+      //   images.forEach((img) => {
+      //     img.style.display = "none";
+      //   });
+      // }, 500);
 
       sections.forEach((section, i) => {
         var end = section.clientHeight;
@@ -152,38 +152,52 @@ window.addEventListener("load", (event) => {
             end: "+=" + end,
             onToggle: function ({ isActive, direction }) {
               if (isActive) {
-                if (direction > 0) {
-                  if (i == 0) {
-                    gsap.to(".messaging", { display: "block", stagger: 0.07 });
-                  } else if (i == 1) {
-                    gsap.to(".real-numbers", {
-                      display: "block",
-                      stagger: 0.07,
-                    });
-                  } else if (i == 2) {
-                    gsap.to(".throughput", { display: "block", stagger: 0.07 });
-                  }
-                } else {
-                  if (i == 0) {
-                    gsap.to(".throughput, .messaging, .real-numbers", {
-                      display: "none",
-                    });
-                    gsap.to(".messaging", { display: "block", stagger: 0.07 });
-                  } else if (i == 1) {
-                    gsap.to(".throughput, .messaging, .real-numbers", {
-                      display: "none",
-                    });
-                    gsap.to(".real-numbers", {
-                      display: "block",
-                      stagger: 0.07,
-                    });
-                  } else if (i == 2) {
-                    gsap.to(".throughput, .messaging, .real-numbers", {
-                      display: "none",
-                    });
-                    gsap.to(".throughput", { display: "block", stagger: 0.07 });
-                  }
+                if (i == 0) {
+                  gsap.to(".features-section .image-holder > img", {
+                    display: "none",
+                  });
+                  gsap.to(".seq__1", { display: "block" });
+                } else if (i == 1) {
+                  gsap.to(".features-section .image-holder > img", {
+                    display: "none",
+                  });
+                  gsap.to(".seq__2", { display: "block" });
+                } else if (i == 2) {
+                  gsap.to(".features-section .image-holder > img", {
+                    display: "none",
+                  });
+                  gsap.to(".seq__3", { display: "block" });
                 }
+                // if (direction > 0) {
+                //   if (i == 0) {
+                //     gsap.to(".messaging", { display: "block" });
+                //   } else if (i == 1) {
+                //     gsap.to(".real-numbers", {
+                //       display: "block",
+                //     });
+                //   } else if (i == 2) {
+                //     gsap.to(".throughput", { display: "block" });
+                //   }
+                // } else {
+                //   if (i == 0) {
+                //     gsap.to(".throughput, .messaging, .real-numbers", {
+                //       display: "none",
+                //     });
+                //     gsap.to(".messaging", { display: "block" });
+                //   } else if (i == 1) {
+                //     gsap.to(".throughput, .messaging, .real-numbers", {
+                //       display: "none",
+                //     });
+                //     gsap.to(".real-numbers", {
+                //       display: "block",
+                //     });
+                //   } else if (i == 2) {
+                //     gsap.to(".throughput, .messaging, .real-numbers", {
+                //       display: "none",
+                //     });
+                //     gsap.to(".throughput", { display: "block" });
+                //   }
+                // }
               }
             },
           },

@@ -302,6 +302,7 @@
                 @include cropped-img();
                 object-fit: contain;
                 background: #ff8d93;
+                display: none;
               }
             }
           }
