@@ -26,28 +26,39 @@ get_header(); ?>
                             foreach( $hero_section['post'] as $post ): setup_postdata($post);
                                 $terms = get_the_terms(get_the_ID(),'category');
                                 if( $terms ): ?>
-                                    <div class="post-tags">
+                                    <!-- <div class="post-tags">
                                         <?php foreach ( $terms as $term ): ?>
                                             <div class="tag"><?= $term->name ?></div>
                                         <?php endforeach; ?>
-                                    </div>
+                                    </div> -->
                                 <?php endif; ?>
+
+                                <div class="post-tags">
+                                    <div class="tag">Press Release</div>
+                                </div>
 
                                 <div class="post-info">
                                     <h2>Find out everything that’s happening at Telgorithm.</h2>
 
-                                    <h3 class="post-title"><?php the_title(); ?></h3>
+                                    <!-- <h3 class="post-title"><?php the_title(); ?></h3> -->
+                                    <h3 class="post-title">Press Release</h3>
 
-                                    <?php if( has_excerpt() ): ?>
+                                    <!-- <?php if( has_excerpt() ): ?>
                                         <p class="post-excerpt"><?= get_the_excerpt(); ?></p>
                                     <?php else: ?>
                                         <p class="post-excerpt"><?= wp_trim_words(get_the_content(),40); ?></p>
-                                    <?php endif; ?>
+                                    <?php endif; ?> -->
 
-                                    <a href="<?php the_permalink() ?>" class="link">
+                                    <p class="post-excerpt">
+                                        Telgorithm Raises $3.8 Million to Expand Compliance-Based Messaging Platform. The seed funding, led by Bonfire Ventures, will allow the Los Angeles tech startup to meet the exploding demand from SaaS verticals to build messaging services into their software applications
+                                    </p>
+
+                                    <a href="/press-release" class="link">
                                         Learn More
                                         <img src="<?= get_template_directory_uri() ?>/images/blue_arrow_right.svg" alt="">
                                     </a>
+                                    
+                                    
                                 </div>
                             <?php endforeach; wp_reset_postdata();
                         endif; ?>
