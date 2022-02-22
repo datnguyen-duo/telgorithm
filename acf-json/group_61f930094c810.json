@@ -176,7 +176,8 @@
                     },
                     "hide_admin": 0,
                     "post_type": [
-                        "post"
+                        "post",
+                        "page"
                     ],
                     "taxonomy": "",
                     "filters": [
@@ -186,12 +187,33 @@
                     "elements": [
                         "featured_image"
                     ],
-                    "min": 0,
+                    "min": "",
                     "max": 1,
                     "return_format": "object",
                     "acfe_bidirectional": {
                         "acfe_bidirectional_enabled": "0"
                     }
+                },
+                {
+                    "key": "field_6214f39256ed1",
+                    "label": "Post Description",
+                    "name": "post_description",
+                    "type": "textarea",
+                    "instructions": "This field will overwrite excerpt field if it exists on the selected post",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "hide_admin": 0,
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": 2,
+                    "new_lines": "",
+                    "acfe_textarea_code": 0
                 }
             ]
         },
@@ -302,5 +324,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1644582550
+    "modified": 1645540365
 }

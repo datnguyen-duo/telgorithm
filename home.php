@@ -23,6 +23,7 @@ get_header(); ?>
                         </div>
 
                         <?php if( $hero_section['post'] ):
+                            $post_desc = $hero_section['post_description'];
                             foreach( $hero_section['post'] as $post ): setup_postdata($post);
                                 $terms = get_the_terms(get_the_ID(),'category');
                                 if( $terms ): ?>
@@ -40,25 +41,21 @@ get_header(); ?>
                                 <div class="post-info">
                                     <h2>Find out everything that’s happening at Telgorithm.</h2>
 
-                                    <!-- <h3 class="post-title"><?php the_title(); ?></h3> -->
-                                    <h3 class="post-title">Press Release</h3>
+                                     <h3 class="post-title"><?php the_title(); ?></h3>
 
-                                    <!-- <?php if( has_excerpt() ): ?>
+                                     <?php
+                                     if( $post_desc ): ?>
+                                         <p class="post-excerpt"><?= $post_desc ?></p>
+                                     <?php elseif( has_excerpt() ): ?>
                                         <p class="post-excerpt"><?= get_the_excerpt(); ?></p>
                                     <?php else: ?>
                                         <p class="post-excerpt"><?= wp_trim_words(get_the_content(),40); ?></p>
-                                    <?php endif; ?> -->
+                                    <?php endif; ?>
 
-                                    <p class="post-excerpt">
-                                        Telgorithm Raises $3.8 Million to Expand Compliance-Based Messaging Platform. The seed funding, led by Bonfire Ventures, will allow the Los Angeles tech startup to meet the exploding demand from SaaS verticals to build messaging services into their software applications
-                                    </p>
-
-                                    <a href="/press-release" class="link">
+                                    <a href="<?php the_permalink() ?>" class="link">
                                         Learn More
                                         <img src="<?= get_template_directory_uri() ?>/images/blue_arrow_right.svg" alt="">
                                     </a>
-                                    
-                                    
                                 </div>
                             <?php endforeach; wp_reset_postdata();
                         endif; ?>
