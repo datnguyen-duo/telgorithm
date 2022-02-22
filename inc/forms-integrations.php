@@ -59,7 +59,7 @@ function handle_form_submission( $form, $fields, $args ) {
     $form_id = $form['post_id'];
     $mc_settings = get_field('mailchimp_settings',$form_id);
     $slack_settings = get_field('slack_settings',$form_id);
-    $saleforce_settings = get_field('saleforce_settings',$form_id);
+    $salesforce_settings = get_field('salesforce_settings',$form_id);
 
     if( $fields ) {
         // var_dump($form['title']);var_dump($fields);die;
@@ -184,24 +184,24 @@ function handle_form_submission( $form, $fields, $args ) {
         }
         //MAILCHIMP WEBHOOK END
 
-        //SALEFROCE WEBHOOK
-        if( $saleforce_settings['enabled'] &&
-            $saleforce_settings['my_saleforce_url'] &&
-            $saleforce_settings['cleint_id'] &&
-            $saleforce_settings['cleint_secret'] &&
-            $saleforce_settings['saleforce_username'] &&
-            $saleforce_settings['saleforce_password'] &&
-            $saleforce_settings['salesforce_object_name']
+        //SALESFORCE WEBHOOK
+        if( $salesforce_settings['enabled'] &&
+            $salesforce_settings['my_salesforce_url'] &&
+            $salesforce_settings['client_id'] &&
+            $salesforce_settings['client_secret'] &&
+            $salesforce_settings['salesforce_username'] &&
+            $salesforce_settings['salesforce_password'] &&
+            $salesforce_settings['salesforce_object_name']
         ) {
             $salesforce_matched_fields = array();
 
-            if( $saleforce_settings['matching_fields'] ) {
+            if( $salesforce_settings['matching_fields'] ) {
                 //Check if matching fields exists
 
                 foreach( $fields as $field ) {
                     //Loop all form fields
 
-                    foreach( $saleforce_settings['matching_fields'] as $m_field ) {
+                    foreach( $salesforce_settings['matching_fields'] as $m_field ) {
                         //Loop all matching fields
 
                         //Concatenated matching fields (full_name = first_name & last_name for example)
@@ -235,27 +235,27 @@ function handle_form_submission( $form, $fields, $args ) {
                 }
             }
 
-            if( $saleforce_settings['additional_fields'] ) {
-                foreach ( $saleforce_settings['additional_fields'] as $additional_field ) {
+            if( $salesforce_settings['additional_fields'] ) {
+                foreach ( $salesforce_settings['additional_fields'] as $additional_field ) {
                     $salesforce_matched_fields[$additional_field['salesforce_filed']] .= $additional_field['value'];
                 }
             }
 
 //            $form_name = $form['title'];
             session_start();
-            $my_url = $saleforce_settings['my_saleforce_url'];
-            $clientId = $saleforce_settings['cleint_id'];
-            $clientSecret = $saleforce_settings['cleint_secret'];
-            $saleforceUsername = $saleforce_settings['saleforce_username'];
-            $saleforcePassword = $saleforce_settings['saleforce_password'];
+            $my_url = $salesforce_settings['my_salesforce_url'];
+            $clientId = $salesforce_settings['client_id'];
+            $clientSecret = $salesforce_settings['client_secret'];
+            $salesforceUsername = $salesforce_settings['salesforce_username'];
+            $salesforcePassword = $salesforce_settings['salesforce_password'];
 
             $token_url ="$my_url/services/oauth2/token";
             $params =
             "grant_type=password"
             . "&client_id=$clientId"
             . "&client_secret=$clientSecret"
-            . "&username=$saleforceUsername"
-            . "&password=$saleforcePassword";
+            . "&username=$salesforceUsername"
+            . "&password=$salesforcePassword";
             $curl = curl_init($token_url);
             curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($curl, CURLOPT_POST, true);
@@ -272,7 +272,7 @@ function handle_form_submission( $form, $fields, $args ) {
             $access_token = $response['access_token'];
             $instance_url= $response['instance_url'];
 
-            $url = "$instance_url/services/data/v47.0/sobjects/".$saleforce_settings['salesforce_object_name']."/";
+            $url = "$instance_url/services/data/v47.0/sobjects/".$salesforce_settings['salesforce_object_name']."/";
             $content = json_encode($salesforce_matched_fields);
 //            $content = json_encode(array("Name" => $name.' '.$lastName, "First_Name__c" => $name, "Last_Name__c" =>$lastName, "Email__c" =>$email, "Message__c" =>$message, "Number__c" =>$number, "Form_Name__c" => $form_name, "Company__c" => $company, "Company_Website__c" => $company_website, "Country__c" => $country, "Other_Country__c" => $other_country, "Messaging_Volume__c" => $messaging_volume, "Average_Annual_Text_Volume__c" => $text_volume));
             $curl = curl_init($url);
@@ -292,7 +292,7 @@ function handle_form_submission( $form, $fields, $args ) {
 //            $response = json_decode($json_response, true);
 //            $id = $response["id"];
         }
-        //SALEFROCE WEBHOOK END
+        //SALESFORCE WEBHOOK END
     }
 }
 add_action( 'af/form/submission', 'handle_form_submission', 10, 3 );
