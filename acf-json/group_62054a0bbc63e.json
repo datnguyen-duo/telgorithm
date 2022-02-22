@@ -386,8 +386,8 @@
         },
         {
             "key": "field_620aa23b7b22d",
-            "label": "Saleforce Settings",
-            "name": "saleforce_settings",
+            "label": "Salesforce Settings",
+            "name": "salesforce_settings",
             "type": "group",
             "instructions": "",
             "required": 0,
@@ -399,6 +399,8 @@
             },
             "hide_admin": 0,
             "layout": "row",
+            "acfe_seamless_style": 0,
+            "acfe_group_modal": 0,
             "sub_fields": [
                 {
                     "key": "field_620aa23b7b22e",
@@ -422,8 +424,8 @@
                 },
                 {
                     "key": "field_620aa23b7b22f",
-                    "label": "My Saleforce URL",
-                    "name": "my_saleforce_url",
+                    "label": "My Salesforce URL",
+                    "name": "my_salesforce_url",
                     "type": "text",
                     "instructions": "EXAMPLE: https:\/\/MYNAME.my.salesforce.com",
                     "required": 0,
@@ -442,8 +444,8 @@
                 },
                 {
                     "key": "field_620aa23b7b230",
-                    "label": "Cleint ID",
-                    "name": "cleint_id",
+                    "label": "Client ID",
+                    "name": "client_id",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -462,8 +464,8 @@
                 },
                 {
                     "key": "field_620aa23b7b231",
-                    "label": "Cleint Secret",
-                    "name": "cleint_secret",
+                    "label": "Client Secret",
+                    "name": "client_secret",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -482,8 +484,8 @@
                 },
                 {
                     "key": "field_620ab58c74dff",
-                    "label": "Saleforce Username",
-                    "name": "saleforce_username",
+                    "label": "Salesforce Username",
+                    "name": "salesforce_username",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -502,8 +504,8 @@
                 },
                 {
                     "key": "field_620ab59774e00",
-                    "label": "Saleforce Password",
-                    "name": "saleforce_password",
+                    "label": "Salesforce Password",
+                    "name": "salesforce_password",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -697,5 +699,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1645534872
+    "modified": 1645549760
 }
