@@ -1,6 +1,5 @@
 <?php
 /* Template Name: Contact */
-
 get_header(); ?>
     <div class="page-template-contact-container">
         <?php
@@ -19,6 +18,57 @@ get_header(); ?>
         <?php endif; ?>
 
         <?php
+        $Phone = '1111';
+        $Title = 'Title';
+        $Company = 'company';
+        $Industry = 'Industry';
+        $OwnerId = 'OwnerId';
+        $LeadSource = 'LeadSource';
+
+//        $apiurl = 'https://spotdigital.lightning.force.com/services/data/v37.0/sobjects/Lead/';
+//        $apiurl = 'https://spotdigital.lightning.force.comservlet/servlet.WebToLead?encoding=UTF-8';
+
+        //url - test
+        $url = 'https://spotdigital.lightning.force.com/servlet/servlet.WebToLead?encoding=UTF-8';
+
+        //your POST data
+        $fields = array('first_name'=>urlencode('Test'),
+            'last_name'=>urlencode('Test'),
+            'company'=>urlencode('Test Inc.'),
+            'description'=>urlencode('Test'),
+            'phone'=>urlencode('+55 41 0000-0000'),
+            'recordType' =>urlencode(''),
+            'oid' => '',
+            'retURL' => urlencode('/'));
+
+        $fields_string = '';
+
+        //url-ify the data for the POST
+        foreach($fields as $key => $value) {
+            $fields_string .= $key.'='.$value.'&';
+        }
+
+        $fields_string = rtrim($fields_string,'&');
+
+        //open connection
+        $ch = curl_init();
+
+        //set the url, number of POST vars, POST data
+        curl_setopt($ch,CURLOPT_URL,$url);
+        curl_setopt($ch,CURLOPT_POST,count($fields));
+        curl_setopt($ch,CURLOPT_POSTFIELDS,$fields_string);
+
+        curl_setopt($ch,CURLOPT_SSL_VERIFYPEER, FALSE);
+        curl_setopt($ch,CURLOPT_RETURNTRANSFER, TRUE);
+        curl_setopt($ch,CURLOPT_FOLLOWLOCATION, TRUE);
+
+        //execute post
+        $result = curl_exec($ch);
+
+        //close connection
+        curl_close($ch);
+
+
         $forms = get_field('forms');
         if( $forms ): ?>
             <div class="form-section fadein_wrap">

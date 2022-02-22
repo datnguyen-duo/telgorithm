@@ -1,6 +1,6 @@
 {
     "key": "group_62054a0bbc63e",
-    "title": "Form MailChimp & Slack Integration & Salesforce Integration",
+    "title": "Form Integrations",
     "fields": [
         {
             "key": "field_62055c059ca28",
@@ -98,6 +98,26 @@
                     "maxlength": ""
                 },
                 {
+                    "key": "field_62068b43853cc",
+                    "label": "List Tags",
+                    "name": "tags",
+                    "type": "text",
+                    "instructions": "Separate tags with comma (tag 1, tag-2, tag)",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "hide_admin": 0,
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
                     "key": "field_62055018453d2",
                     "label": "Server Name",
                     "name": "server_name",
@@ -116,6 +136,97 @@
                     "prepend": "",
                     "append": "",
                     "maxlength": ""
+                },
+                {
+                    "key": "field_620f7647ff45d",
+                    "label": "Email Matching Field",
+                    "name": "mc_email_matching_field",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "hide_admin": 0,
+                    "choices": [],
+                    "default_value": false,
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_620f6d56d5ab3",
+                    "label": "Matching Fields",
+                    "name": "matching_fields",
+                    "type": "repeater",
+                    "instructions": "Match form fields with fields from mailchimp",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "hide_admin": 0,
+                    "acfe_repeater_stylised_button": 0,
+                    "collapsed": "",
+                    "min": 0,
+                    "max": 0,
+                    "layout": "table",
+                    "button_label": "",
+                    "sub_fields": [
+                        {
+                            "key": "field_620f6daed5ab4",
+                            "label": "Form Field",
+                            "name": "form_field",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "hide_admin": 0,
+                            "choices": [],
+                            "default_value": false,
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 1,
+                            "ajax": 0,
+                            "return_format": "value",
+                            "allow_custom": 0,
+                            "search_placeholder": "",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_620f6dbdd5ab5",
+                            "label": "Mailchimp Filed",
+                            "name": "mailchimp_filed",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "hide_admin": 0,
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        }
+                    ]
                 }
             ]
         },
@@ -195,11 +306,51 @@
                     "maxlength": ""
                 },
                 {
+                    "key": "field_620672f66e2d4",
+                    "label": "Title",
+                    "name": "slack_title",
+                    "type": "text",
+                    "instructions": "Title for slack message",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "hide_admin": 0,
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_620673116e2d5",
+                    "label": "Title Link",
+                    "name": "title_link",
+                    "type": "text",
+                    "instructions": "Link your title. If you leave empty Title field link won't show in the slack message",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "hide_admin": 0,
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
                     "key": "field_62056b9c06e63",
                     "label": "Text",
                     "name": "text",
                     "type": "text",
-                    "instructions": "Message for the channel",
+                    "instructions": "Slack message under title",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -217,7 +368,7 @@
             ]
         },
         {
-            "key": "field_620aa23d7b232",
+            "key": "field_620f9316f83c5",
             "label": "Salesforce",
             "name": "",
             "type": "tab",
@@ -271,7 +422,7 @@
                 },
                 {
                     "key": "field_620aa23b7b22f",
-                    "label": "My Salesforce URL",
+                    "label": "My Saleforce URL",
                     "name": "my_saleforce_url",
                     "type": "text",
                     "instructions": "EXAMPLE: https:\/\/MYNAME.my.salesforce.com",
@@ -291,7 +442,7 @@
                 },
                 {
                     "key": "field_620aa23b7b230",
-                    "label": "Client ID",
+                    "label": "Cleint ID",
                     "name": "cleint_id",
                     "type": "text",
                     "instructions": "",
@@ -311,7 +462,7 @@
                 },
                 {
                     "key": "field_620aa23b7b231",
-                    "label": "Client Secret",
+                    "label": "Cleint Secret",
                     "name": "cleint_secret",
                     "type": "text",
                     "instructions": "",
@@ -331,7 +482,7 @@
                 },
                 {
                     "key": "field_620ab58c74dff",
-                    "label": "Salesforce Username",
+                    "label": "Saleforce Username",
                     "name": "saleforce_username",
                     "type": "text",
                     "instructions": "",
@@ -351,7 +502,7 @@
                 },
                 {
                     "key": "field_620ab59774e00",
-                    "label": "Salesforce Password",
+                    "label": "Saleforce Password",
                     "name": "saleforce_password",
                     "type": "text",
                     "instructions": "",
@@ -368,6 +519,73 @@
                     "prepend": "",
                     "append": "",
                     "maxlength": ""
+                },
+                {
+                    "key": "field_620f938d9e5d5",
+                    "label": "Matching Fields",
+                    "name": "matching_fields",
+                    "type": "repeater",
+                    "instructions": "Match form fields with fields from salesforce",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "hide_admin": 0,
+                    "acfe_repeater_stylised_button": 0,
+                    "collapsed": "",
+                    "min": 0,
+                    "max": 0,
+                    "layout": "table",
+                    "button_label": "",
+                    "sub_fields": [
+                        {
+                            "key": "field_620f938d9e5d6",
+                            "label": "Form Field",
+                            "name": "form_field",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "hide_admin": 0,
+                            "choices": [],
+                            "default_value": [],
+                            "allow_null": 0,
+                            "multiple": 1,
+                            "ui": 1,
+                            "ajax": 0,
+                            "return_format": "value",
+                            "allow_custom": 0,
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_620f938d9e5d7",
+                            "label": "Salesforce Filed",
+                            "name": "salesforce_filed",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "hide_admin": 0,
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        }
+                    ]
                 }
             ]
         }
@@ -389,5 +607,12 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1644869095
+    "acfe_display_title": "",
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1645531255
 }
