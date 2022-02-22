@@ -521,11 +521,31 @@
                     "maxlength": ""
                 },
                 {
+                    "key": "field_6214dc32c886b",
+                    "label": "Salesforce Object Name",
+                    "name": "salesforce_object_name",
+                    "type": "text",
+                    "instructions": "e.g. Contact_123",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "hide_admin": 0,
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
                     "key": "field_620f938d9e5d5",
                     "label": "Matching Fields",
                     "name": "matching_fields",
                     "type": "repeater",
-                    "instructions": "Match form fields with fields from salesforce",
+                    "instructions": "Match form fields with fields from salesforce object",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -586,6 +606,69 @@
                             "maxlength": ""
                         }
                     ]
+                },
+                {
+                    "key": "field_6214dda7fa2f4",
+                    "label": "Additional FIelds",
+                    "name": "additional_fields",
+                    "type": "repeater",
+                    "instructions": "Here you can add fields (and their values) that don't exist in the wordpress form but they do in the salesforce object(form)",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "hide_admin": 0,
+                    "acfe_repeater_stylised_button": 0,
+                    "collapsed": "",
+                    "min": 0,
+                    "max": 0,
+                    "layout": "table",
+                    "button_label": "",
+                    "sub_fields": [
+                        {
+                            "key": "field_6214de3bfa2f6",
+                            "label": "Value",
+                            "name": "value",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "hide_admin": 0,
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_6214de28fa2f5",
+                            "label": "Salesforce Filed",
+                            "name": "salesforce_filed",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "hide_admin": 0,
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        }
+                    ]
                 }
             ]
         }
@@ -614,5 +697,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1645531255
+    "modified": 1645534872
 }

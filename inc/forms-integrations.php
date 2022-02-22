@@ -185,9 +185,16 @@ function handle_form_submission( $form, $fields, $args ) {
         //MAILCHIMP WEBHOOK END
 
         //SALEFROCE WEBHOOK
-        if( $saleforce_settings['enabled'] && $saleforce_settings['my_saleforce_url'] && $saleforce_settings['cleint_id'] && $saleforce_settings['cleint_secret'] && $saleforce_settings['saleforce_username'] && $saleforce_settings['saleforce_password']) {
-
+        if( $saleforce_settings['enabled'] &&
+            $saleforce_settings['my_saleforce_url'] &&
+            $saleforce_settings['cleint_id'] &&
+            $saleforce_settings['cleint_secret'] &&
+            $saleforce_settings['saleforce_username'] &&
+            $saleforce_settings['saleforce_password'] &&
+            $saleforce_settings['salesforce_object_name']
+        ) {
             $salesforce_matched_fields = array();
+
             if( $saleforce_settings['matching_fields'] ) {
                 //Check if matching fields exists
 
@@ -205,7 +212,11 @@ function handle_form_submission( $form, $fields, $args ) {
                                 //Loop current matching fields
 
                                 if( $field['name'] == $item ) {
-                                    $salesforce_matched_fields[$m_field['salesforce_filed']] .= $field['value'];
+                                    if( $field['type'] == 'file' ) {
+                                        $salesforce_matched_fields[$m_field['salesforce_filed']] .= $field['value']['url'];
+                                    } else {
+                                        $salesforce_matched_fields[$m_field['salesforce_filed']] .= $field['value'];
+                                    }
 
                                     if( ( sizeof( $m_field['form_field'] ) - 1 ) != $index ) {
                                         //Add spacing between concatenated fields
@@ -215,7 +226,6 @@ function handle_form_submission( $form, $fields, $args ) {
                             }
                         }
                         //Concatenated matching fields (full_name = first_name & last_name for example) END
-
                         //If you don't need concatenation(multiple fields select) you can remove above code and uncomment bellow code
                         //In acf fields settings just disable multi select option
 //                        if( $field['name'] == $m_field['form_field'] ) {
@@ -225,10 +235,13 @@ function handle_form_submission( $form, $fields, $args ) {
                 }
             }
 
-//            $form_name = $form['title'];
-//            var_dump($salesforce_matched_fields);
-//            var_dump(json_encode($salesforce_matched_fields));
+            if( $saleforce_settings['additional_fields'] ) {
+                foreach ( $saleforce_settings['additional_fields'] as $additional_field ) {
+                    $salesforce_matched_fields[$additional_field['salesforce_filed']] .= $additional_field['value'];
+                }
+            }
 
+//            $form_name = $form['title'];
             session_start();
             $my_url = $saleforce_settings['my_saleforce_url'];
             $clientId = $saleforce_settings['cleint_id'];
@@ -259,7 +272,7 @@ function handle_form_submission( $form, $fields, $args ) {
             $access_token = $response['access_token'];
             $instance_url= $response['instance_url'];
 
-            $url = "$instance_url/services/data/v47.0/sobjects/Contact__c/";
+            $url = "$instance_url/services/data/v47.0/sobjects/".$saleforce_settings['salesforce_object_name']."/";
             $content = json_encode($salesforce_matched_fields);
 //            $content = json_encode(array("Name" => $name.' '.$lastName, "First_Name__c" => $name, "Last_Name__c" =>$lastName, "Email__c" =>$email, "Message__c" =>$message, "Number__c" =>$number, "Form_Name__c" => $form_name, "Company__c" => $company, "Company_Website__c" => $company_website, "Country__c" => $country, "Other_Country__c" => $other_country, "Messaging_Volume__c" => $messaging_volume, "Average_Annual_Text_Volume__c" => $text_volume));
             $curl = curl_init($url);
